@@ -21,6 +21,7 @@ public class MenuManager : MonoBehaviour {
 
 	public void ShowMenu(Menu menu)
     {
+        print("showing menu");
         previousMenu = currentMenu;
 
         if (currentMenu != null)
