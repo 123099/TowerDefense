@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.Events;
 
+[DisallowMultipleComponent]
 public class Health : MonoBehaviour {
 
     [SerializeField] private float maxHealth;

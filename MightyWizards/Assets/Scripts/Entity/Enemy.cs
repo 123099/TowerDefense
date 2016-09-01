@@ -1,6 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+[DisallowMultipleComponent]
+[RequireComponent(typeof(Health))]
+[RequireComponent(typeof(Animator))]
 public class Enemy : MonoBehaviour {
 
     private WizardBase wizardBase;
