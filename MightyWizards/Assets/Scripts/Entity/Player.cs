@@ -7,6 +7,8 @@ using System.Collections;
 [RequireComponent(typeof(Collider))]
 public class Player : MonoBehaviour {
 
+    [SerializeField] private Staff staff;
+    [SerializeField] private Transform staffSpawn;
     [SerializeField] private float jumpForce;
 
     private Collider collider;
@@ -24,10 +26,22 @@ public class Player : MonoBehaviour {
         halfHeight = collider.bounds.extents.y;
     }
 
+    private void OnEnable ()
+    {
+        SetStaff(staff);
+    }
+
     private void Update ()
     {
         Move();
         Jump();
+        Attack();
+    }
+
+    private void Attack ()
+    {
+        if (Input.GetButtonDown("Fire1"))
+            staff.Attack();
     }
 
     private void Move ()
@@ -48,5 +62,11 @@ public class Player : MonoBehaviour {
                 //anim.SetTrigger("Jump");
             }
         }
+    }
+
+    public void SetStaff(Staff staff)
+    {
+        this.staff = staff;
+        staff.Equip(staffSpawn);
     }
 }
