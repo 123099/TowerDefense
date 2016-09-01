@@ -8,31 +8,32 @@ public class Turret : MonoBehaviour {
     //Add projectile usage using the Projectile ScriptableObject?
     [SerializeField]
     private float fireRate;
-    [SerializeField]
-    private Transform target=null; //Maybe change to being Enemy, since turrets only target the enemies
+    private Enemy target=null; //Maybe change to being Enemy, since turrets only target the enemies
     [SerializeField]
     private float fireRange;
-
-	void Start () {
-        SetTarget(FindObjectOfType<Enemy>().transform); //Change to finding the nearest enemy, not the first enemy in the scene. Should create a GetNearestEnemy private method
-    }
+    [SerializeField]
+    private Projectile projectile;
+    [SerializeField]
+    private Transform fireLocation;
 	
 	void Update () {
         if (HasTarget())
         {
-            //shoot in it's direction
-            //check if it is still alive, if not, set target to null
+            LookAtEnemy();
+            projectile.Launch(fireLocation);
             if (target.GetComponent<Health>().GetHealth()<=0) //The health component has the GetHealth method, not the transform
                 target = null;
         }
         else
         {
-            SetTarget(FindObjectOfType<Enemy>().transform);
+            SetTarget(GetNearestTarget());
         }
+
+
 
     }
 
-    public void SetTarget(Transform target)
+    public void SetTarget(Enemy target)
     {
         this.target = target;
     }
@@ -43,5 +44,32 @@ public class Turret : MonoBehaviour {
             return true;
         else
             return false;
+    }
+
+    private void LookAtEnemy()
+    {
+        transform.LookAt(target.transform);
+    }
+
+    private Enemy GetNearestTarget()
+    {
+        Enemy[] allEnemies = GameObject.FindObjectsOfType<Enemy>();
+        Enemy nearestEnemy = null;
+        foreach(Enemy enemy in allEnemies)
+        {
+            if (nearestEnemy == null)
+            {
+                nearestEnemy = enemy;
+                continue;
+            }
+            float distanceToCurrentEnemy = (transform.position - enemy.transform.position).sqrMagnitude;
+            float distanceToNearestEnemy = (transform.position - nearestEnemy.transform.position).sqrMagnitude;
+
+            if (distanceToCurrentEnemy < distanceToNearestEnemy)
+                nearestEnemy = enemy;
+        }
+        return nearestEnemy;
+
+
     }
 }

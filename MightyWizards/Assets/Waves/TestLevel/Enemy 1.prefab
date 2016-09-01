@@ -25,6 +25,7 @@ GameObject:
   - 54: {fileID: 54000011664683860}
   - 114: {fileID: 114000010717766848}
   - 95: {fileID: 95000010768022548}
+  - 114: {fileID: 114000011321880050}
   m_Layer: 9
   m_Name: Enemy 1
   m_TagString: Untagged
@@ -124,6 +125,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f6d5d21a3fcd4842a1e9da457294e70, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114000011321880050
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000011223515012}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6bfacfbe67f34af46a3663bcf42e2487, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 20
+  currentHealth: 16
+  OnHeal:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: HealthEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+  OnDamageTaken:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: HealthEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+  OnHealthZero:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
 --- !u!136 &136000012458098876
 CapsuleCollider:
   m_ObjectHideFlags: 1
