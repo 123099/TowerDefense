@@ -18,3 +18,4 @@ MonoBehaviour:
   lifetime: 5
   rotationOffset: {x: 0, y: 0, z: 0}
   rotateAroundZX: 1
+  destroyUponImpact: 1

@@ -6,6 +6,12 @@ using System.Collections;
 public class Projectile : MonoBehaviour {
 
     private float damage;
+    private bool destroyOnImpact;
+
+    public void SetDestroyOnImpact(bool destroyOnImpact)
+    {
+        this.destroyOnImpact = destroyOnImpact;
+    }
 
     public void SetDamage(float damage)
     {
@@ -17,5 +23,8 @@ public class Projectile : MonoBehaviour {
         Health health = col.gameObject.GetComponent<Health>();
         if (health)
             health.Damage(damage);
+
+        if (destroyOnImpact)
+            Destroy(gameObject);
     }
 }

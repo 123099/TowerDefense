@@ -16,19 +16,21 @@ public class ProjectileData : ScriptableObject {
     public Vector3 rotationOffset;
     [Tooltip("Set to true if you want the projectile to be able to be fired up and down")]
     public bool rotateAroundZX;
+    [Tooltip("Set to true to destroy the projectile the moment it hits something")]
+    public bool destroyUponImpact;
 
     public void Launch (Transform fireLocation)
     {
-        Launch(fireLocation, fireLocation.rotation);
+        Launch(fireLocation, fireLocation.rotation, false);
     }
 
-    public void Launch(Transform fireLocation, Quaternion rotation)
+    public void Launch(Transform fireLocation, Quaternion rotation, bool ignoreRotateAroundXZ = true)
     {
         Projectile projectile = Instantiate(projectilePrefab,
             fireLocation.position,
             rotation * Quaternion.Euler(rotationOffset)) as Projectile;
 
-        if (!rotateAroundZX)
+        if (!ignoreRotateAroundXZ && !rotateAroundZX)
         {
             Quaternion rot = projectile.transform.rotation;
             Vector3 eulerRot = rot.eulerAngles;
@@ -36,6 +38,7 @@ public class ProjectileData : ScriptableObject {
             projectile.transform.rotation = Quaternion.Euler(eulerRot);
         }
 
+        projectile.SetDestroyOnImpact(destroyUponImpact);
         projectile.SetDamage(damage);
         projectile.GetComponent<Rigidbody>().AddRelativeForce(Vector3.forward * launchForce);
 
