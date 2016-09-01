@@ -1,15 +1,5 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class WizardBase : MonoBehaviour {
-
-	// Use this for initialization
-	void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
-}
+[RequireComponent(typeof(Health))]
+public class WizardBase : MonoBehaviour {}

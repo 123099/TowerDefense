@@ -95,7 +95,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 112
+  m_Constraints: 120
   m_CollisionDetection: 0
 --- !u!95 &95000010768022548
 Animator:
@@ -125,8 +125,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6bfacfbe67f34af46a3663bcf42e2487, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 10
-  currentHealth: 8
+  maxHealth: 30
+  currentHealth: 0
   OnHeal:
     m_PersistentCalls:
       m_Calls: []
@@ -162,6 +162,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f6d5d21a3fcd4842a1e9da457294e70, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  meleeDamage: 5
 --- !u!136 &136000012458098876
 CapsuleCollider:
   m_ObjectHideFlags: 1

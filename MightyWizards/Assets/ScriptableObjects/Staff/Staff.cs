@@ -11,6 +11,8 @@ public class Staff : ScriptableObject {
     public ProjectileData basicAttack;
     [Tooltip("The spell that goes with this staff")]
     public GameObject spell;
+    [Tooltip("The auto aim range")]
+    public float autoAimRadius;
 
     [Tooltip("The offset to move the staff from the spawn location")]
     public Vector3 locationOffset;
@@ -30,7 +32,14 @@ public class Staff : ScriptableObject {
 
     public void Attack ()
     {
-        basicAttack.Launch(fireLocation);
+        Enemy nearestEnemy = GameUtils.GetNearestEnemyInFrontOf(fireLocation, autoAimRadius);
+        if (nearestEnemy)
+        {
+            Quaternion rotation = Quaternion.LookRotation(nearestEnemy.transform.position - fireLocation.transform.position);
+            basicAttack.Launch(fireLocation, rotation);
+        }
+        else
+            basicAttack.Launch(fireLocation);
     }
 
     public void CastSpell ()

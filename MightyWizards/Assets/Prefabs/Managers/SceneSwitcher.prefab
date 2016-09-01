@@ -116,7 +116,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &191192
 GameObject:
   m_ObjectHideFlags: 1
@@ -190,7 +190,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 182806}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 65d5bd8602b9fad4fb51a5da013a3211, type: 3}
+  m_Script: {fileID: 11500000, guid: 721f8fb12ca17914fa1eb182fc4cf6a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   fadeTime: 0.8
@@ -214,7 +214,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 5533af048156c084e9516631d866cb79, type: 3}
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
     m_FontSize: 14
     m_FontStyle: 2
     m_BestFit: 1
@@ -632,7 +632,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 5533af048156c084e9516631d866cb79, type: 3}
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
     m_FontSize: 14
     m_FontStyle: 0
     m_BestFit: 1
@@ -657,12 +657,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tipUI: {fileID: 114000010385769850}
-  tips:
-  - While in the pause menu, hover over objects to learn more about the story!
-  - Slowing time makes you move faster
-  - If you keep sliding and falling off tilted cars, try jumping!
-  - Beware the Mortech Turrets! They will do anything to stop you, including shooting
-    the cars you are standing on!
+  tips: []
 --- !u!114 &114000010730716764
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -683,7 +678,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 5533af048156c084e9516631d866cb79, type: 3}
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
     m_FontSize: 14
     m_FontStyle: 0
     m_BestFit: 1

@@ -20,24 +20,20 @@ public class Turret : MonoBehaviour {
 
     void Update () {
         timeSinceLastBullet += Time.deltaTime;
-        if (timeSinceLastBullet >= 1f/fireRate)
+        if (target) //Unity override boolean operations for MonoBehaviours, so that if(MonoBehaviour) = if (MonoBehaviour != null)
         {
-            timeSinceLastBullet = 0f;
-            if (HasTarget())
+            LookAtEnemy();
+            if (timeSinceLastBullet >= 1f / fireRate)
             {
-                LookAtEnemy();
+                timeSinceLastBullet = 0f;
                 projectile.Launch(fireLocation);
-                if (target.GetComponent<Health>().GetHealth() <= 0) //The health component has the GetHealth method, not the transform
-                    target = null;
             }
-            else
-            {
-                SetTarget(GetNearestTarget());
-            }
+
+            if (target.GetComponent<Health>().GetHealth() <= 0)
+                target = null;
         }
-
-
-
+        else
+            SetTarget(GameUtils.GetNearestEnemyTo(transform, fireRange));
     }
 
     public void SetTarget(Enemy target)
@@ -45,45 +41,8 @@ public class Turret : MonoBehaviour {
         this.target = target;
     }
 
-    public bool HasTarget()
-    {
-        if (target != null)
-            return true;
-        else
-            return false;
-    }
-
     private void LookAtEnemy()
     {
         transform.LookAt(target.transform);
-    }
-
-    private Enemy GetNearestTarget()
-    {
-        Enemy[] allEnemies = GameObject.FindObjectsOfType<Enemy>();
-        Enemy nearestEnemy = null;
-        foreach(Enemy enemy in allEnemies)
-        {
-            if (nearestEnemy == null)
-            {
-                nearestEnemy = enemy;
-                continue;
-            }
-            float distanceToCurrentEnemy = (transform.position - enemy.transform.position).sqrMagnitude;
-            float distanceToNearestEnemy = (transform.position - nearestEnemy.transform.position).sqrMagnitude;
-
-            if (distanceToCurrentEnemy < distanceToNearestEnemy)
-                nearestEnemy = enemy;
-        }
-        if (nearestEnemy == null)
-            return null;
-
-        float distanceToTarget = (transform.position - nearestEnemy.transform.position).sqrMagnitude;
-        if (distanceToTarget <= fireRange*fireRange)
-            return nearestEnemy;
-        else
-            return null;
-
-
     }
 }

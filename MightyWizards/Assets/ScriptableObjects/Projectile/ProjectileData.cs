@@ -19,9 +19,14 @@ public class ProjectileData : ScriptableObject {
 
     public void Launch (Transform fireLocation)
     {
+        Launch(fireLocation, fireLocation.rotation);
+    }
+
+    public void Launch(Transform fireLocation, Quaternion rotation)
+    {
         Projectile projectile = Instantiate(projectilePrefab,
             fireLocation.position,
-            fireLocation.rotation * Quaternion.Euler(rotationOffset)) as Projectile;
+            rotation * Quaternion.Euler(rotationOffset)) as Projectile;
 
         if (!rotateAroundZX)
         {
