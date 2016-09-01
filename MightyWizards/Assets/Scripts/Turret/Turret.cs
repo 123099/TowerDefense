@@ -8,25 +8,32 @@ public class Turret : MonoBehaviour {
     //Add projectile usage using the Projectile ScriptableObject?
     [SerializeField]
     private float fireRate;
-    private Enemy target=null; //Maybe change to being Enemy, since turrets only target the enemies
+    private Enemy target=null;
     [SerializeField]
     private float fireRange;
     [SerializeField]
     private Projectile projectile;
     [SerializeField]
     private Transform fireLocation;
-	
-	void Update () {
-        if (HasTarget())
+
+    private float timeSinceLastBullet=0f;
+
+    void Update () {
+        timeSinceLastBullet += Time.deltaTime;
+        if (timeSinceLastBullet >= 1f/fireRate)
         {
-            LookAtEnemy();
-            projectile.Launch(fireLocation);
-            if (target.GetComponent<Health>().GetHealth()<=0) //The health component has the GetHealth method, not the transform
-                target = null;
-        }
-        else
-        {
-            SetTarget(GetNearestTarget());
+            timeSinceLastBullet = 0f;
+            if (HasTarget())
+            {
+                LookAtEnemy();
+                projectile.Launch(fireLocation);
+                if (target.GetComponent<Health>().GetHealth() <= 0) //The health component has the GetHealth method, not the transform
+                    target = null;
+            }
+            else
+            {
+                SetTarget(GetNearestTarget());
+            }
         }
 
 
@@ -68,7 +75,14 @@ public class Turret : MonoBehaviour {
             if (distanceToCurrentEnemy < distanceToNearestEnemy)
                 nearestEnemy = enemy;
         }
-        return nearestEnemy;
+        if (nearestEnemy == null)
+            return null;
+
+        float distanceToTarget = (transform.position - nearestEnemy.transform.position).sqrMagnitude;
+        if (distanceToTarget <= fireRange*fireRange)
+            return nearestEnemy;
+        else
+            return null;
 
 
     }

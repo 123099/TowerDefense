@@ -858,7 +858,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fireRate: 2
-  fireRange: 10
+  fireRange: 45
   projectile: {fileID: 11400000, guid: 3dc0899b1c9109c40834647c536de177, type: 2}
   fireLocation: {fileID: 2096246473}
 --- !u!23 &1095265713
