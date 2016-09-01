@@ -13,8 +13,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   modelPrefab: {fileID: 1000010389306780, guid: 027aebd688c48a84c9a23b06ee693b27,
     type: 2}
-  basicAttack: {fileID: 1000013241339548, guid: 0eb0857728fa05e47b7a38f6eb8526c6,
-    type: 2}
+  basicAttack: {fileID: 11400000, guid: 2729e5565a517be47bea564cf71c5803, type: 2}
   spell: {fileID: 0}
   locationOffset: {x: 1, y: 0.5, z: 0}
   rotationOffset: {x: 0, y: 0, z: 0}
