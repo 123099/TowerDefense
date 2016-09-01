@@ -20,7 +20,7 @@ public class Staff : ScriptableObject {
         staffPrefab.transform.position = equipper.position + locationOffset;
         staffPrefab.transform.rotation = equipper.rotation * Quaternion.Euler(rotationOffset);
 
-        fireLocation = GameObject.FindGameObjectsWithTag("FireLocation")[0].transform;
+        fireLocation = GameObjectExtension.FindObjectWithTagIn(staffPrefab, "FireLocation").transform;
     }
 
     public void Attack ()
