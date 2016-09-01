@@ -12,7 +12,7 @@ public class Turret : MonoBehaviour {
     [SerializeField]
     private float fireRange;
     [SerializeField]
-    private Projectile projectile;
+    private ProjectileData projectile;
     [SerializeField]
     private Transform fireLocation;
 

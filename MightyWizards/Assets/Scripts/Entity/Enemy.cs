@@ -23,4 +23,9 @@ public class Enemy : MonoBehaviour {
 
         GetComponent<Animator>().SetFloat("Speed", 1);
     }
+
+    public void DestroySelf ()
+    {
+        Destroy(gameObject);
+    }
 }

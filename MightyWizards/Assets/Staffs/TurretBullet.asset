@@ -11,8 +11,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53f9f62c58de93844894f438f24156cf, type: 3}
   m_Name: TurretBullet
   m_EditorClassIdentifier: 
-  projectilePrefab: {fileID: 54000014119893820, guid: 28729b8991591b046a6650d58fb20a2e,
+  projectilePrefab: {fileID: 114000010493497868, guid: 28729b8991591b046a6650d58fb20a2e,
     type: 2}
   launchForce: 2000
+  damage: 2
   lifetime: 5
   rotationOffset: {x: 0, y: 0, z: 0}
+  rotateAroundZX: 1

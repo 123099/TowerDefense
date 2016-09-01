@@ -967,7 +967,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 4d8afc662a2a2714c9c910516dff241f, type: 2}
   - {fileID: 11400000, guid: 1b196509156a46c44aa0b8a28cbdb7b7, type: 2}
   delayBetweenRounds: 5
-  roundsBetweenBreaks: 0
+  roundsBetweenBreaks: 2
   OnRoundComplete:
     m_PersistentCalls:
       m_Calls: []

@@ -8,7 +8,7 @@ public class Staff : ScriptableObject {
     public GameObject modelPrefab;
 
     [Tooltip("The projectile this staff will fire")]
-    public Projectile basicAttack;
+    public ProjectileData basicAttack;
     [Tooltip("The spell that goes with this staff")]
     public GameObject spell;
 
