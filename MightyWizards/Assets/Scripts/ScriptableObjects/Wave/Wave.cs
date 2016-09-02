@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
-using System.Collections;
 using System;
+using System.Collections.Generic;
 
 [CreateAssetMenu(menuName = "Levels/Wave")]
 public class Wave : ScriptableObject {
@@ -21,34 +21,24 @@ public class Wave : ScriptableObject {
         [Tooltip("Time in seconds to wait after the previous unit has spawned to spawn this unit")]
         public float spawnDelayAfterLastUnit;
     }
+
+    private List<Enemy> spawnedUnits;
     #endregion
 
     #region WaveLogic
     private int currentUnitIndex;
     private float timeOfLastSpawn;
 
-    private bool complete;
-
     public void Initialize ()
     {
-        complete = false;
-
-        if (units.Length == 0)
-        {
-            complete = true;
-            return;
-        }
-
         currentUnitIndex = 0;
         timeOfLastSpawn = Time.time;
+        spawnedUnits = new List<Enemy>();
     }
 
     public void Update ()
     {
-        if (currentUnitIndex >= units.Length)
-            complete = true;
-
-        if (complete)
+        if (FinishedSpawning())
             return;
 
         if (Time.time >= timeOfLastSpawn + units[currentUnitIndex].spawnDelayAfterLastUnit)
@@ -57,15 +47,27 @@ public class Wave : ScriptableObject {
 
     private void spawnNext ()
     {
-        Instantiate(units[currentUnitIndex].modelPrefab, spawnPoint + units[currentUnitIndex].spawnOffset, Quaternion.identity);
+        spawnedUnits.Add(Instantiate(units[currentUnitIndex].modelPrefab, spawnPoint + units[currentUnitIndex].spawnOffset, Quaternion.identity) as Enemy);
 
         ++currentUnitIndex;
         timeOfLastSpawn = Time.time;
     }
     #endregion
 
-    public bool IsComplete ()
+    public bool FinishedSpawning ()
     {
-        return complete;
+        return currentUnitIndex >= units.Length;
+    }
+
+    public bool KilledAll ()
+    {
+        if (spawnedUnits.Count == 0)
+            return false;
+
+        foreach (Enemy enemy in spawnedUnits)
+            if (enemy)
+                return false;
+
+        return true;
     }
 }

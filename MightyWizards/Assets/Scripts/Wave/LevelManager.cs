@@ -18,44 +18,43 @@ public class LevelManager : MonoBehaviour {
         level.Initialize();
         currentRound = 0;
         lastBreakRound = 0;
-
-        StartCoroutine(updateLoop());
 	}
 
-    private IEnumerator updateLoop ()
+    private void Update ()
     {
-        while (true)
+        level.UpdateRound(currentRound);
+
+        if (level.KilledAllInRound(currentRound))
         {
-            if (IsComplete())
+            if (!IsInLastRound() && IsBreakTime())
             {
-                OnLevelComplete.Invoke();
-                break;
+                OnBreakPhaseStart.Invoke();
+                lastBreakRound = currentRound;
             }
-
-            level.UpdateRound(currentRound);
-
-            if (level.IsRoundComplete(currentRound))
-                yield return doRoundComplete();
-
-            yield return new WaitForSeconds(Time.deltaTime);
         }
-    }
-
-    private IEnumerator doRoundComplete ()
-    {
-        OnRoundComplete.Invoke(currentRound);
-        yield return new WaitForSeconds(level.delayBetweenRounds);
-        ++currentRound;
-
-        if (currentRound - lastBreakRound >= level.roundsBetweenBreaks)
+        else if (!IsBreakTime() && level.RoundFinishedSpawning(currentRound))
         {
-            OnBreakPhaseStart.Invoke();
-            lastBreakRound = currentRound;
+            if (!IsInLastRound())
+            {
+                ++currentRound;
+                OnRoundComplete.Invoke(currentRound);
+            }
+        }
+
+        if (level.KilledAll())
+        {
+            OnLevelComplete.Invoke();
+            enabled = false;
         }
     }
 
-    public bool IsComplete ()
+    private bool IsBreakTime ()
     {
-        return currentRound >= level.GetRoundCount();
+        return currentRound + 1 - lastBreakRound >= level.roundsBetweenBreaks;
+    }
+
+    private bool IsInLastRound ()
+    {
+        return currentRound >= level.GetRoundCount() - 1;
     }
 }

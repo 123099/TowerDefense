@@ -19,10 +19,19 @@ public class Round : ScriptableObject {
             wave.Update();
     }
 
-    public bool IsComplete ()
+    public bool FinishedSpawning ()
     {
         foreach(Wave wave in waves)
-            if (!wave.IsComplete())
+            if (!wave.FinishedSpawning())
+                return false;
+
+        return true;
+    }
+
+    public bool KilledAll ()
+    {
+        foreach (Wave wave in waves)
+            if (!wave.KilledAll())
                 return false;
 
         return true;

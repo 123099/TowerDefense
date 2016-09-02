@@ -26,8 +26,22 @@ public class Level : ScriptableObject {
         rounds[roundIndex].Update();
     }
 
-    public bool IsRoundComplete(int roundIndex)
+    public bool RoundFinishedSpawning(int roundIndex)
     {
-        return rounds[roundIndex].IsComplete();
+        return rounds[roundIndex].FinishedSpawning();
+    }
+
+    public bool KilledAllInRound(int roundIndex)
+    {
+        return rounds[roundIndex].KilledAll();
+    }
+
+    public bool KilledAll ()
+    {
+        for (int i = 0; i < rounds.Length; ++i)
+            if (!KilledAllInRound(i))
+                return false;
+
+        return true;
     }
 }

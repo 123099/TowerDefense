@@ -51,8 +51,9 @@ public class Player : MonoBehaviour {
 
     private void Move ()
     {
-        float input = Input.GetAxis("Horizontal");
-        transform.rotation = Quaternion.Euler(0, -90f * input, 0);
+        float input = Input.GetAxisRaw("Horizontal");
+        if(Mathf.Abs(input) == 1)
+            transform.rotation = Quaternion.Euler(0, -90f * input, 0);
         anim.SetFloat("Speed", Mathf.Abs(input));
     }
 

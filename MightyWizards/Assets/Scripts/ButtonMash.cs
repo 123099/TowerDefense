@@ -24,7 +24,7 @@ public class ButtonMash : MonoBehaviour {
     {
         paused = false;
         progress = 0;
-        lastButtonClickTime = Time.time;
+        lastButtonClickTime = 0;
         timeProgressZero = 0;
 
         OnMashStart.Invoke("Mash " + buttonToMash);
