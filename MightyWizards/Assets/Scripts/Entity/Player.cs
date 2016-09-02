@@ -44,10 +44,15 @@ public class Player : MonoBehaviour {
             staff.Attack();
     }
 
+    public void CastSpell ()
+    {
+        staff.CastSpell();
+    }
+
     private void Move ()
     {
         float input = Input.GetAxis("Horizontal");
-        transform.rotation = Quaternion.Euler(0, 90f * input, 0);
+        transform.rotation = Quaternion.Euler(0, -90f * input, 0);
         anim.SetFloat("Speed", Mathf.Abs(input));
     }
 

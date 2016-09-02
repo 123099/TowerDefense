@@ -12,6 +12,7 @@ public static class GameUtils
         return getNearestEnemyFromList(allEnemies, transform, radius);
     }
 
+    //TODO: Fix detection
     public static Enemy GetNearestEnemyInFrontOf(Transform transform, float range)
     {
         Enemy[] allEnemies = GameObject.FindObjectsOfType<Enemy>();
@@ -20,7 +21,7 @@ public static class GameUtils
         foreach(Enemy enemy in allEnemies)
         {
             float angle = Vector3.Angle(enemy.transform.position - transform.position, transform.forward);
-            if (angle <= 90 && angle >= -90)
+            if (angle <= 30 && angle >= -30)
                 enemiesInFront.Add(enemy);
         }
 
