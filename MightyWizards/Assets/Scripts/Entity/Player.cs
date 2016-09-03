@@ -1,29 +1,27 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.Events;
 
 [DisallowMultipleComponent]
-[RequireComponent(typeof(Animator))]
 [RequireComponent(typeof(Rigidbody))]
 [RequireComponent(typeof(Collider))]
 public class Player : MonoBehaviour {
 
     [SerializeField] private Staff staff;
     [SerializeField] private Transform staffSpawn;
-    [SerializeField] private float jumpForce;
 
-    private Collider collider;
-    private Rigidbody rigidbody;
-    private Animator anim;
+    public UnityEvent OnLand;
 
     private float halfHeight;
+    private float halfWidth;
+
+    private bool isGrounded;
 
     private void Awake ()
     {
-        anim = GetComponent<Animator>();
-        rigidbody = GetComponent<Rigidbody>();
-        collider = GetComponent<Collider>();
-
-        halfHeight = collider.bounds.extents.y;
+        Collider col = GetComponent<Collider>();
+        halfWidth = col.bounds.extents.x;
+        halfHeight = col.bounds.extents.y;
     }
 
     private void OnEnable ()
@@ -33,8 +31,7 @@ public class Player : MonoBehaviour {
 
     private void Update ()
     {
-        Move();
-        Jump();
+        CheckGrounded();
         Attack();
     }
 
@@ -44,30 +41,30 @@ public class Player : MonoBehaviour {
             staff.Attack();
     }
 
+    private void CheckGrounded ()
+    {
+        Ray ray = new Ray(transform.position, -transform.up);
+        if(Physics.SphereCast(ray, 0.5f, halfHeight))
+        {
+            if (!isGrounded)
+                OnLand.Invoke();
+
+            isGrounded = true;
+        }
+        else
+        {
+            isGrounded = false;
+        }
+    }
+
     public void CastSpell ()
     {
         staff.CastSpell();
     }
 
-    private void Move ()
+    public bool IsGrounded ()
     {
-        float input = Input.GetAxisRaw("Horizontal");
-        if(Mathf.Abs(input) == 1)
-            transform.rotation = Quaternion.Euler(0, -90f * input, 0);
-        anim.SetFloat("Speed", Mathf.Abs(input));
-    }
-
-    private void Jump ()
-    {
-        if (Input.GetButtonDown("Jump"))
-        {
-            Ray ray = new Ray(transform.position, -transform.up);
-            if (Physics.SphereCast(ray, 0.5f, halfHeight + 0.05f))
-            {
-                rigidbody.AddRelativeForce(Vector3.up * jumpForce);
-                //anim.SetTrigger("Jump");
-            }
-        }
+        return isGrounded;
     }
 
     public void SetStaff(Staff staff)

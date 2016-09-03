@@ -6,6 +6,7 @@ public class Health : MonoBehaviour {
 
     [SerializeField] private float maxHealth;
     [SerializeField] private float currentHealth;
+    [SerializeField] private bool invulnerable;
 
     [SerializeField] private HealthEvent OnHeal;
     [SerializeField] private HealthEvent OnDamageTaken;
@@ -40,7 +41,9 @@ public class Health : MonoBehaviour {
         if (damage <= 0)
             return;
 
-        currentHealth -= damage;
+        if(!invulnerable)
+            currentHealth -= damage;
+
         if (currentHealth < 0)
             currentHealth = 0;
 
