@@ -24,6 +24,7 @@ public class PlayerAnimationController : StateMachineBehaviour {
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
     override public void OnStateUpdate (Animator animator, AnimatorStateInfo stateinfo, int layerindex)
     {
+        if(player.IsStunned()) return;
         Move();
         Jump();
     }

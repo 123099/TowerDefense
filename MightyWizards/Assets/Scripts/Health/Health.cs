@@ -36,6 +36,11 @@ public class Health : MonoBehaviour {
         return currentHealth / maxHealth;
     }
 
+    public bool IsAlive ()
+    {
+        return currentHealth > 0;
+    }
+
     public void Damage(float damage)
     {
         if (damage <= 0)

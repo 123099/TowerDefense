@@ -197,10 +197,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1000011223515012}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7f6d5d21a3fcd4842a1e9da457294e70, type: 3}
+  m_Script: {fileID: 11500000, guid: 36696083f16fc544495647ff01799d4c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  meleeDamage: 10
+  damage: 10
 --- !u!114 &114000011321880050
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -214,6 +214,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 50
   currentHealth: 0
+  invulnerable: 0
   OnHeal:
     m_PersistentCalls:
       m_Calls: []

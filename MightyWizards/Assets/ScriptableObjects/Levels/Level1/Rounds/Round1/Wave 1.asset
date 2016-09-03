@@ -21,7 +21,7 @@ MonoBehaviour:
       type: 2}
     spawnOffset: {x: 0, y: 0, z: 0}
     spawnDelayAfterLastUnit: 1
-  - modelPrefab: {fileID: 114000010717766848, guid: d9da71ee51ac3544ab66b4dc6eb0a6e3,
+  - modelPrefab: {fileID: 114000010717766848, guid: 178d34b162143cf4bac3baf6789f00e7,
       type: 2}
     spawnOffset: {x: 0, y: 0, z: 0}
     spawnDelayAfterLastUnit: 2

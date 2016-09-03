@@ -249,6 +249,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 30
   currentHealth: 0
+  invulnerable: 0
   OnHeal:
     m_PersistentCalls:
       m_Calls: []
@@ -293,7 +294,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1000011223515012}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7f6d5d21a3fcd4842a1e9da457294e70, type: 3}
+  m_Script: {fileID: 11500000, guid: 0f408933458898b488383f7c8627b9cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   meleeDamage: 5

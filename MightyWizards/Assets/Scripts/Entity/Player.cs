@@ -12,13 +12,18 @@ public class Player : MonoBehaviour {
 
     public UnityEvent OnLand;
 
+    private Rigidbody rigidbody;
+
     private float halfHeight;
     private float halfWidth;
 
     private bool isGrounded;
+    private bool isStunned;
 
     private void Awake ()
     {
+        rigidbody = GetComponent<Rigidbody>();
+
         Collider col = GetComponent<Collider>();
         halfWidth = col.bounds.extents.x;
         halfHeight = col.bounds.extents.y;
@@ -31,6 +36,7 @@ public class Player : MonoBehaviour {
 
     private void Update ()
     {
+        if(isStunned) return;
         CheckGrounded();
         Attack();
     }
@@ -67,9 +73,32 @@ public class Player : MonoBehaviour {
         return isGrounded;
     }
 
+    public bool IsStunned ()
+    {
+        return isStunned;
+    }
+
     public void SetStaff(Staff staff)
     {
         this.staff = staff;
         staff.Equip(staffSpawn);
+    }
+
+    public void Knockback(Vector3 force)
+    {
+        rigidbody.AddForce(force);
+    }
+
+    public void Stun(float duration)
+    {
+        if (!isStunned)
+            StartCoroutine(stun(duration));
+    }
+
+    private IEnumerator stun(float duration)
+    {
+        isStunned = true;
+        yield return new WaitForSeconds(duration);
+        isStunned = false;
     }
 }
