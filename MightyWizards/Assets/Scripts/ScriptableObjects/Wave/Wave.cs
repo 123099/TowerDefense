@@ -41,7 +41,7 @@ public class Wave : ScriptableObject {
         if (FinishedSpawning())
             return;
 
-        if (Time.time >= timeOfLastSpawn + units[currentUnitIndex].spawnDelayAfterLastUnit)
+        if (Time.time - timeOfLastSpawn >= units[currentUnitIndex].spawnDelayAfterLastUnit)
             spawnNext();
     }
 

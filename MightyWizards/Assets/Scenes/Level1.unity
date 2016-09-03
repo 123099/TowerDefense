@@ -187,7 +187,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a73e8f4ee16ed72409eee02bfa24bff1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fireRate: 2
+  fireTimer:
+    rate: 2
   fireRange: 10
   projectile: {fileID: 11400000, guid: 3dc0899b1c9109c40834647c536de177, type: 2}
   fireLocation: {fileID: 2097027210}
@@ -948,6 +949,7 @@ GameObject:
   - 114: {fileID: 841685063}
   - 136: {fileID: 841685058}
   - 54: {fileID: 841685059}
+  - 114: {fileID: 841685060}
   m_Layer: 8
   m_Name: Player
   m_TagString: Untagged
@@ -997,6 +999,17 @@ Rigidbody:
   m_Interpolate: 1
   m_Constraints: 120
   m_CollisionDetection: 0
+--- !u!114 &841685060
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 841685056}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 326f5938b3da3884fa68b4073eaccf0b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &841685061
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2174,7 +2187,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a73e8f4ee16ed72409eee02bfa24bff1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fireRate: 2
+  fireTimer:
+    rate: 2
   fireRange: 10
   projectile: {fileID: 11400000, guid: 3dc0899b1c9109c40834647c536de177, type: 2}
   fireLocation: {fileID: 2096246473}
@@ -2383,6 +2397,51 @@ MeshCollider:
   serializedVersion: 2
   m_Convex: 0
   m_Mesh: {fileID: 4300000, guid: 9dd31c0a72d7e2841af36cbeb2f5887c, type: 3}
+--- !u!1 &2045278431
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 2045278432}
+  - 114: {fileID: 2045278433}
+  m_Layer: 0
+  m_Name: PickupSpawn
+  m_TagString: Untagged
+  m_Icon: {fileID: 419385456094870383, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2045278432
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2045278431}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 3.2, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 17
+--- !u!114 &2045278433
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2045278431}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af37f166efde5fc4297515325dce631c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startPickup: {fileID: 0}
+  spawnTime: 2
+  allowMultiplePickups: 0
+  pickups:
+  - {fileID: 11400000, guid: b7ceeb5ce67e40041ad2e6cd8176327d, type: 2}
 --- !u!1 &2068220849
 GameObject:
   m_ObjectHideFlags: 0
@@ -2512,7 +2571,7 @@ GameObject:
   - 33: {fileID: 2136376552}
   - 65: {fileID: 2136376551}
   - 23: {fileID: 2136376550}
-  m_Layer: 14
+  m_Layer: 18
   m_Name: Ground
   m_TagString: Untagged
   m_Icon: {fileID: 0}

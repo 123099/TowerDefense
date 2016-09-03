@@ -3,6 +3,7 @@ using System.Collections;
 using UnityEngine.Events;
 
 [DisallowMultipleComponent]
+[RequireComponent(typeof(ResourceInventory))]
 [RequireComponent(typeof(Rigidbody))]
 [RequireComponent(typeof(Collider))]
 public class Player : MonoBehaviour {
@@ -12,6 +13,7 @@ public class Player : MonoBehaviour {
 
     public UnityEvent OnLand;
 
+    private ResourceInventory resourceInventory;
     private Rigidbody rigidbody;
 
     private float halfHeight;
@@ -20,8 +22,10 @@ public class Player : MonoBehaviour {
     private bool isGrounded;
     private bool isStunned;
 
+
     private void Awake ()
     {
+        resourceInventory = GetComponent<ResourceInventory>();
         rigidbody = GetComponent<Rigidbody>();
 
         Collider col = GetComponent<Collider>();
@@ -39,6 +43,12 @@ public class Player : MonoBehaviour {
         if(isStunned) return;
         CheckGrounded();
         Attack();
+    }
+
+    private void OnTriggerEnter(Collider col)
+    {
+        if (col.GetComponent<Pickup>())
+            col.GetComponent<Pickup>().Collect(resourceInventory);
     }
 
     private void Attack ()

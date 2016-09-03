@@ -5,31 +5,27 @@ using UnityEngine.Events;
 [DisallowMultipleComponent]
 public class Turret : MonoBehaviour {
 
-    //Add projectile usage using the Projectile ScriptableObject?
     [SerializeField]
-    private float fireRate;
-    private Enemy target=null;
+    private RateTimer fireTimer;
     [SerializeField]
     private float fireRange;
+
     [SerializeField]
     private ProjectileData projectile;
     [SerializeField]
     private Transform fireLocation;
 
-    private float timeSinceLastBullet=0f;
+    private Enemy target=null;
 
     void Update () {
-        timeSinceLastBullet += Time.deltaTime;
-        if (target) //Unity override boolean operations for MonoBehaviours, so that if(MonoBehaviour) = if (MonoBehaviour != null)
+        if (target)
         {
             LookAtEnemy();
-            if (timeSinceLastBullet >= 1f / fireRate)
-            {
-                timeSinceLastBullet = 0f;
-                projectile.Launch(fireLocation);
-            }
 
-            if (target.GetComponent<Health>().GetHealth() <= 0)
+            if (fireTimer.IsReady())
+                projectile.Launch(fireLocation);
+
+            if (!target.GetComponent<Health>().IsAlive())
                 target = null;
         }
         else

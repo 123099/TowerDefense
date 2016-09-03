@@ -21,10 +21,10 @@ TagManager:
   - FriendlyProjectile
   - EnemyProjectile
   - Platform
-  - Triggers
+  - Trigger
   - Border
-  - 
-  - 
+  - Pickup
+  - Ground
   - 
   - 
   - 
