@@ -1,8 +1,11 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.Events;
 
 public class ResourceInventory : MonoBehaviour {
+
+    [SerializeField] private ResourceEvent OnResourceAdded;
 
     private Dictionary<PickupData, int> resources;
 
@@ -17,5 +20,7 @@ public class ResourceInventory : MonoBehaviour {
             resources[pickup] += amount;
         else
             resources[pickup] = amount;
+
+        OnResourceAdded.Invoke(pickup, amount);
     }
 }

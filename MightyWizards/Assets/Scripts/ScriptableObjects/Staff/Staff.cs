@@ -13,6 +13,8 @@ public class Staff : ScriptableObject {
     public GameObject spell;
     [Tooltip("The auto aim range")]
     public float autoAimRadius;
+    [Tooltip("The maximum amount of enemies this staff attacks at once")]
+    public int maxEnemiesHit;
 
     [Tooltip("The offset to move the staff from the spawn location")]
     public Vector3 locationOffset;
@@ -32,11 +34,14 @@ public class Staff : ScriptableObject {
 
     public void Attack ()
     {
-        Enemy nearestEnemy = GameUtils.GetNearestEnemyInFrontOf(fireLocation, autoAimRadius);
-        if (nearestEnemy)
+        Enemy[] nearestEnemies = GameUtils.GetNearestEnemiesInFrontOf(fireLocation, autoAimRadius, maxEnemiesHit);
+        if (nearestEnemies.Length > 0)
         {
-            Quaternion rotation = Quaternion.LookRotation(nearestEnemy.transform.position - fireLocation.transform.position);
-            basicAttack.Launch(fireLocation, rotation);
+            foreach (Enemy enemy in nearestEnemies)
+            {
+                Quaternion rotation = Quaternion.LookRotation(enemy.transform.position - fireLocation.transform.position);
+                basicAttack.Launch(fireLocation, rotation);
+            }
         }
         else
             basicAttack.Launch(fireLocation);

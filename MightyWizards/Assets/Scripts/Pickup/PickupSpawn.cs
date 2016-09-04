@@ -35,5 +35,11 @@ public class PickupSpawn : MonoBehaviour {
     {
         lastSpawned = Instantiate(pickup.pickupModel, transform.position, transform.rotation) as Pickup;
         lastSpawned.SetData(pickup);
+        lastSpawned.OnCollect.AddListener(() => onLastSpawnedCollected());
+    }
+
+    private void onLastSpawnedCollected ()
+    {
+        spawnTimer.SetLastReadyTime(Time.time);
     }
 }

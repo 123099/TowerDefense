@@ -18,7 +18,7 @@ public class Turret : MonoBehaviour {
     private Enemy target=null;
 
     void Update () {
-        if (target)
+        if (IsTargetInRange())
         {
             LookAtEnemy();
 
@@ -40,5 +40,10 @@ public class Turret : MonoBehaviour {
     private void LookAtEnemy()
     {
         transform.LookAt(target.transform);
+    }
+
+    private bool IsTargetInRange ()
+    {
+        return target && Vector3.Distance(target.transform.position, transform.position) <= fireRange;
     }
 }

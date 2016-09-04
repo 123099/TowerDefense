@@ -12,20 +12,35 @@ public static class GameUtils
         return getNearestEnemyFromList(allEnemies, transform, radius);
     }
 
-    //TODO: Fix detection
-    public static Enemy GetNearestEnemyInFrontOf(Transform transform, float range)
+    public static Enemy[] GetNearestEnemiesInFrontOf(Transform transform, float range, float amount)
     {
-        Enemy[] allEnemies = GameObject.FindObjectsOfType<Enemy>();
-        List<Enemy> enemiesInFront = new List<Enemy>();
+        float halfRange = range * 0.5f;
+        Vector3 boxCenter = transform.position + transform.forward * halfRange;
+        Vector3 halfExtents = new Vector3(halfRange, halfRange, halfRange);
+        Collider[] collidersInFront = Physics.OverlapBox(boxCenter, halfExtents);
 
-        foreach(Enemy enemy in allEnemies)
+        List<Enemy> enemies = new List<Enemy>();
+
+        foreach (Collider collider in collidersInFront)
         {
-            float angle = Vector3.Angle(enemy.transform.position - transform.position, transform.forward);
-            if (angle <= 30 && angle >= -30)
-                enemiesInFront.Add(enemy);
+            if (collider.GetComponent<Enemy>())
+            {
+                if (enemies.Count < amount)
+                    enemies.Add(collider.GetComponent<Enemy>());
+                else
+                    for(int i = 0; i < enemies.Count; ++i)
+                    {
+                        Enemy enemy = enemies[i];
+                        if (Vector3.Distance(collider.transform.position, transform.position) < Vector3.Distance(enemy.transform.position, transform.position))
+                        {
+                            enemies[i] = collider.GetComponent<Enemy>();
+                            break;
+                        }
+                    }
+            }
         }
 
-        return getNearestEnemyFromList(enemiesInFront.ToArray(), transform, range);
+        return enemies.ToArray();
     }
 
     private static Enemy getNearestEnemyFromList(Enemy[] enemies, Transform transform, float distance)

@@ -8,9 +8,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
+  m_Script: {fileID: 11500000, guid: e6b4d20aa87374148a8eb331edc19af4, type: 3}
   m_Name: Wood
   m_EditorClassIdentifier: Assembly-CSharp::PickupData
   pickupModel: {fileID: 114000011157557372, guid: 60a98aa0be44f4f48868051f584f379b,
     type: 2}
-  stackAmount: 1
+  stackAmount: 5
