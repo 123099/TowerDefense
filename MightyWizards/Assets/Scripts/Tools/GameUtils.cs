@@ -36,11 +36,15 @@ public static class GameUtils
         return getNearestEnemyFromList(GetAllEnemies(), transform, radius);
     }
 
-    public static Enemy[] GetNearestEnemiesInFrontOf(Transform transform, float range, float amount)
+    public static Enemy[] GetNearestEnemiesInFrontOf(Transform transform, float range, float halfHeight, int amount)
     {
         float halfRange = range * 0.5f;
-        Vector3 boxCenter = transform.position + transform.forward * halfRange;
-        Vector3 halfExtents = new Vector3(halfRange, halfRange, halfRange);
+        Vector3 forward = transform.forward;
+        forward.y = 0;
+        
+        Vector3 boxCenter = transform.position + forward.normalized * halfRange;
+        Vector3 halfExtents = new Vector3(halfRange, halfHeight, halfRange);
+
         Collider[] collidersInFront = Physics.OverlapBox(boxCenter, halfExtents);
 
         List<Enemy> enemies = new List<Enemy>();
@@ -107,5 +111,10 @@ public static class GameUtils
         }
 
         return typeEnemies.ToArray();
+    }
+
+    public static bool IsGamePaused ()
+    {
+        return Time.timeScale == 0;
     }
 }

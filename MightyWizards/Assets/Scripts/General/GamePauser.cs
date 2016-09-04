@@ -24,9 +24,4 @@ public class GamePauser : MonoBehaviour {
         yield return new WaitForSecondsRealtime(duration);
         Unpause();
     }
-
-    public bool IsPaused ()
-    {
-        return Time.timeScale == 0;
-    }
 }

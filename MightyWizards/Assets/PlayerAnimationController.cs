@@ -27,6 +27,8 @@ public class PlayerAnimationController : StateMachineBehaviour {
     override public void OnStateUpdate (Animator animator, AnimatorStateInfo stateinfo, int layerindex)
     {
         if(player.IsStunned()) return;
+        if(GameUtils.IsGamePaused()) return;
+
         Move();
         Jump();
     }
@@ -48,7 +50,7 @@ public class PlayerAnimationController : StateMachineBehaviour {
 
     private void Jump()
     {
-        float input = Input.GetAxisRaw("Vertical");
+        float input = Input.GetAxisRaw("Vertical") * Time.timeScale;
 
         if (player.IsGrounded())
         {

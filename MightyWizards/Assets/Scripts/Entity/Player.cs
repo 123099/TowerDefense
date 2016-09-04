@@ -45,6 +45,7 @@ public class Player : MonoBehaviour {
     private void Update ()
     {
         if(isStunned) return;
+        if(GameUtils.IsGamePaused()) return;
 
         CheckGrounded();
         Attack();
