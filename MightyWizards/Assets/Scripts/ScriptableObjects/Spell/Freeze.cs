@@ -3,7 +3,7 @@ using System.Collections;
 using System;
 
 [CreateAssetMenu(menuName = "Spells/Freeze")]
-public class FreezeSpell : Spell
+public class Freeze : Spell
 {
     [Tooltip("The amount of time to freeze ground enemies for")]
     public float freezeDuration;

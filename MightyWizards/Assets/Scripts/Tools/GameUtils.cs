@@ -26,6 +26,11 @@ public static class GameUtils
         return GameObject.FindObjectOfType<WizardBase>();
     }
 
+    public static Wall[] GetAllWalls ()
+    {
+        return GameObject.FindObjectsOfType<Wall>();
+    }
+
     public static Enemy GetNearestEnemyTo (Transform transform, float radius)
     {
         return getNearestEnemyFromList(GetAllEnemies(), transform, radius);

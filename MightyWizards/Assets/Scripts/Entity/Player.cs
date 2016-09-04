@@ -43,8 +43,10 @@ public class Player : MonoBehaviour {
     private void Update ()
     {
         if(isStunned) return;
+
         CheckGrounded();
         Attack();
+        BuildWall();
     }
 
     private void OnTriggerEnter(Collider col)
@@ -53,9 +55,23 @@ public class Player : MonoBehaviour {
             col.GetComponent<Pickup>().Collect(resourceInventory);
     }
 
+    private void BuildWall ()
+    {
+        if (Input.GetButtonDown("Build"))
+        {
+            WizardBase wizardBase = GameUtils.GetBase();
+            Wall wallPrefab = wizardBase.GetWallPrefab();
+            if (resourceInventory.Has(wallPrefab.GetResourceType(), wallPrefab.GetCost()))
+            {
+                if(wizardBase.SpawnWall())
+                    resourceInventory.Add(wallPrefab.GetResourceType(), -wallPrefab.GetCost());
+            }
+        }
+    }
+
     private void Attack ()
     {
-        if (Input.GetButtonDown("Fire1"))
+        if (Input.GetButtonDown("Fire"))
             staff.Attack();
     }
 
