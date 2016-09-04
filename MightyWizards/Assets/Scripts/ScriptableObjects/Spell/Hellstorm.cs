@@ -8,7 +8,7 @@ public class Hellstorm : Spell {
     [Tooltip("Damage to deal to all the enemies")]
     public float damage;
 
-    public override void Activate ()
+    protected override void Effect ()
     {
         Enemy[] enemies = GameUtils.GetAllEnemies();
 

@@ -12,4 +12,5 @@ MonoBehaviour:
   m_Name: Hellstorm
   m_EditorClassIdentifier: 
   spellPrefab: {fileID: 0}
+  uses: 1
   damage: 100

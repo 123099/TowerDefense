@@ -8,7 +8,7 @@ public class FreezeSpell : Spell
     [Tooltip("The amount of time to freeze ground enemies for")]
     public float freezeDuration;
 
-    public override void Activate ()
+    protected override void Effect ()
     {
         Enemy[] groundEnemies = GameUtils.GetAllEnemiesOfType(true);
 
