@@ -11,6 +11,21 @@ public static class GameUtils
         return GameObject.FindObjectsOfType<Enemy>();
     }
 
+    public static Turret[] GetAllTurrets ()
+    {
+        return GameObject.FindObjectsOfType<Turret>();
+    }
+
+    public static Player GetPlayer ()
+    {
+        return GameObject.FindObjectOfType<Player>();
+    }
+
+    public static WizardBase GetBase ()
+    {
+        return GameObject.FindObjectOfType<WizardBase>();
+    }
+
     public static Enemy GetNearestEnemyTo (Transform transform, float radius)
     {
         return getNearestEnemyFromList(GetAllEnemies(), transform, radius);

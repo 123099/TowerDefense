@@ -96,6 +96,11 @@ public class Player : MonoBehaviour {
         staff.Equip(staffSpawn);
     }
 
+    public Staff GetStaff ()
+    {
+        return staff;
+    }
+
     public void Knockback(Vector3 force)
     {
         rigidbody.AddForce(force);

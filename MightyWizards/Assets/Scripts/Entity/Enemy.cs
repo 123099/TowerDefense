@@ -18,7 +18,7 @@ public abstract class Enemy : MonoBehaviour {
     private void Awake ()
     {
         rigidbody = GetComponent<Rigidbody>();
-        wizardBase = FindObjectOfType<WizardBase>();
+        wizardBase = GameUtils.GetBase();
 
         rigidbody.useGravity = isGroundUnit;
     }

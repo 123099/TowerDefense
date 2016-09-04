@@ -46,4 +46,9 @@ public class Turret : MonoBehaviour {
     {
         return target && Vector3.Distance(target.transform.position, transform.position) <= fireRange;
     }
+
+    public ProjectileData GetProjectile ()
+    {
+        return projectile;
+    }
 }
