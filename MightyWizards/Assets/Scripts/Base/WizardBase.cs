@@ -23,7 +23,7 @@ public class WizardBase : MonoBehaviour {
         {
             if(!spawnedWalls[i] || !spawnedWalls[i].GetComponent<Health>().IsAlive())
             {
-                spawnedWalls[i] = Instantiate(wallPrefab, wallSpawnPositions[i].position, Quaternion.identity) as Wall;
+                spawnedWalls[i] = Instantiate(wallPrefab, wallSpawnPositions[i].position, wallSpawnPositions[i].rotation) as Wall;
                 return true;
             }
         }

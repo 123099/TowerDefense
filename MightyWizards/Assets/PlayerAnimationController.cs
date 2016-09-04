@@ -48,12 +48,24 @@ public class PlayerAnimationController : StateMachineBehaviour {
 
     private void Jump()
     {
-        if (Input.GetButtonDown("Jump") && player.IsGrounded())
+        float input = Input.GetAxisRaw("Vertical");
+
+        if (player.IsGrounded())
         {
-            Vector3 rigidbodyVel = rigidbody.velocity;
-            rigidbodyVel.y = jumpSpeed;
-            rigidbody.velocity = rigidbodyVel;
-            animator.SetBool("Jump", true);
+            if (input == 1)
+            {
+                Vector3 rigidbodyVel = rigidbody.velocity;
+                rigidbodyVel.y = jumpSpeed;
+                rigidbody.velocity = rigidbodyVel;
+                animator.SetBool("Jump", true);
+            }
+            else if(input == -1)
+            {
+                if(player.GetGround().gameObject.layer != LayerMask.NameToLayer("Ground"))
+                {
+                    Physics.IgnoreCollision(player.GetComponent<Collider>(), player.GetGround(), true);
+                }
+            }
         }
     }
 

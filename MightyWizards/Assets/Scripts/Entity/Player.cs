@@ -17,22 +17,24 @@ public class Player : MonoBehaviour {
 
     private ResourceInventory resourceInventory;
     private Rigidbody rigidbody;
+    private Collider collider;
 
     private float halfHeight;
     private float halfWidth;
 
-    private bool isGrounded;
     private bool isStunned;
+    private bool isGrounded;
 
+    private Collider ground;
 
     private void Awake ()
     {
         resourceInventory = GetComponent<ResourceInventory>();
         rigidbody = GetComponent<Rigidbody>();
 
-        Collider col = GetComponent<Collider>();
-        halfWidth = col.bounds.extents.x;
-        halfHeight = col.bounds.extents.y;
+        collider = GetComponent<Collider>();
+        halfWidth = collider.bounds.extents.x;
+        halfHeight = collider.bounds.extents.y;
     }
 
     private void OnEnable ()
@@ -77,23 +79,32 @@ public class Player : MonoBehaviour {
 
     private void CheckGrounded ()
     {
+        RaycastHit hit;
         Ray ray = new Ray(transform.position, -transform.up);
-        if(Physics.SphereCast(ray, 0.5f, halfHeight))
+        if(Physics.SphereCast(ray, 0.5f, out hit, halfHeight))
         {
             if (!isGrounded)
                 OnLand.Invoke();
 
             isGrounded = true;
+
+            ground = hit.collider;
         }
         else
         {
             isGrounded = false;
+            ground = null;
         }
     }
 
     public void CastSpell ()
     {
         staff.CastSpell();
+    }
+
+    public Collider GetGround ()
+    {
+        return ground;
     }
 
     public bool IsGrounded ()
