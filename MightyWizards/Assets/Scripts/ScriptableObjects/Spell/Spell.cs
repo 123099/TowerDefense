@@ -10,6 +10,11 @@ public abstract class Spell : ScriptableObject {
 
     protected int useCount;
 
+    public void Initialize ()
+    {
+        useCount = 0;
+    }
+
     public void Activate ()
     {
         if(!HasUsesLeft()) return;

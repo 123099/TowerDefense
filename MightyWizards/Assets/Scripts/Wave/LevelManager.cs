@@ -7,6 +7,7 @@ public class LevelManager : MonoBehaviour {
     [Tooltip("The level this manager is responsible of")]
     [SerializeField] private Level level;
 
+    [SerializeField] private UnityEvent OnLevelStart;
     [SerializeField] private RoundEvent OnRoundComplete;
     [SerializeField] private UnityEvent OnLevelComplete;
     [SerializeField] private UnityEvent OnBreakPhaseStart;
@@ -21,6 +22,8 @@ public class LevelManager : MonoBehaviour {
         currentRound = 0;
         lastBreakRound = 0;
         roundTimer = new RateTimer(1f/level.delayBetweenRounds);
+
+        OnLevelStart.Invoke();
 	}
 
     private void Update ()

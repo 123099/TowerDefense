@@ -30,6 +30,8 @@ public class Staff : ScriptableObject {
         staffPrefab.transform.rotation = equipper.rotation * Quaternion.Euler(rotationOffset);
 
         fireLocation = GameObjectExtension.FindObjectWithTagIn(staffPrefab, "FireLocation").transform;
+
+        spell.Initialize();
     }
 
     public void Attack ()
