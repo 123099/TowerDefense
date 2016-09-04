@@ -15,7 +15,7 @@ MonoBehaviour:
     type: 2}
   basicAttack: {fileID: 11400000, guid: cbad746cb754c124d8cdf1042e999802, type: 2}
   spell: {fileID: 11400000, guid: 60802ca716c60ca4da78d4a7976eba99, type: 2}
-  autoAimRadius: 10
+  autoAimRadius: 20
   maxEnemiesHit: 2
   locationOffset: {x: 0, y: 0, z: 0}
   rotationOffset: {x: 0, y: 180, z: 0}
