@@ -3,9 +3,11 @@ using System.Collections;
 
 public class MenuManager : MonoBehaviour {
 
+    [Tooltip("The current menu that is open")]
     [SerializeField] private Menu currentMenu;
     private Menu previousMenu;
 
+    [Tooltip("A sound that will play every time a new menu is open. If there is no audio component on this object, the sound won't be played")]
     [SerializeField] private AudioClip transitionSound;
     private AudioSource audioSource;
 

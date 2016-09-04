@@ -11,6 +11,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6b4d20aa87374148a8eb331edc19af4, type: 3}
   m_Name: Gold
   m_EditorClassIdentifier: Assembly-CSharp::PickupData
-  pickupModel: {fileID: 114000011157557372, guid: 60a98aa0be44f4f48868051f584f379b,
+  pickupModel: {fileID: 114000011157557372, guid: 347d27a946ba84c42abc1e9e30aa1627,
     type: 2}
   stackAmount: 2

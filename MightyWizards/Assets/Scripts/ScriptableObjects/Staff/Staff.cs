@@ -10,7 +10,7 @@ public class Staff : ScriptableObject {
     [Tooltip("The projectile this staff will fire")]
     public ProjectileData basicAttack;
     [Tooltip("The spell that goes with this staff")]
-    public GameObject spell;
+    public Spell spell;
     [Tooltip("The auto aim range")]
     public float autoAimRadius;
     [Tooltip("The maximum amount of enemies this staff attacks at once")]
@@ -49,6 +49,6 @@ public class Staff : ScriptableObject {
 
     public void CastSpell ()
     {
-        Instantiate(spell, fireLocation.position, Quaternion.identity);
+        spell.Activate();
     }
 }

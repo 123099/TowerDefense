@@ -8,7 +8,9 @@ using UnityEngine.Events;
 [RequireComponent(typeof(Collider))]
 public class Player : MonoBehaviour {
 
+    [Tooltip("The staff this player has equipped")]
     [SerializeField] private Staff staff;
+    [Tooltip("The position and rotation at which staffs spawn")]
     [SerializeField] private Transform staffSpawn;
 
     public UnityEvent OnLand;

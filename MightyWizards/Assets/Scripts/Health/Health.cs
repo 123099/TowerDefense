@@ -4,13 +4,16 @@ using UnityEngine.Events;
 [DisallowMultipleComponent]
 public class Health : MonoBehaviour {
 
+    [Tooltip("The maximum health this object can have")]
     [SerializeField] private float maxHealth;
-    [SerializeField] private float currentHealth;
+    [Tooltip("Set to true if you want this object to not be able to take damage")]
     [SerializeField] private bool invulnerable;
 
     [SerializeField] private HealthEvent OnHeal;
     [SerializeField] private HealthEvent OnDamageTaken;
     [SerializeField] private UnityEvent OnHealthZero;
+
+    private float currentHealth;
 
 	void Start () {
         Heal(maxHealth);

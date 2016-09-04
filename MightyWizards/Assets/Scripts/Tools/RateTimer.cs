@@ -5,6 +5,7 @@ using System;
 [Serializable]
 public class RateTimer {
 
+    [Tooltip("Every how often should the timer be ready, for example, 2 would mean twice a second")]
     [SerializeField] private float rate;
 
     private float lastReadyTime;

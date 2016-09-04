@@ -5,15 +5,15 @@ using UnityEngine.Events;
 [DisallowMultipleComponent]
 public class Turret : MonoBehaviour {
 
-    [SerializeField]
-    private RateTimer fireTimer;
-    [SerializeField]
-    private float fireRange;
+    [Tooltip("The rate timer for firing the turret")]
+    [SerializeField] private RateTimer fireTimer;
+    [Tooltip("The maximum range at which the turret will shoot enemies")]
+    [SerializeField] private float fireRange;
 
-    [SerializeField]
-    private ProjectileData projectile;
-    [SerializeField]
-    private Transform fireLocation;
+    [Tooltip("The projectile this turret will shoot")]
+    [SerializeField] private ProjectileData projectile;
+    [Tooltip("The location from which the projectile will fire")]
+    [SerializeField] private Transform fireLocation;
 
     private Enemy target=null;
 

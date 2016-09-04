@@ -4,8 +4,11 @@ using UnityEngine.Events;
 
 public class ButtonMash : MonoBehaviour {
 
+    [Tooltip("The name of the button as defined in the Input settings that needs to be mashed")]
     [SerializeField] private string buttonToMash;
+    [Tooltip("By how much should the progress be divided every frame. For example, 2 would mean the progress loses 50% of itself every frame")]
     [SerializeField] private float progressGravity;
+    [Tooltip("How much time do you have to successfully mash the button after the mashing started")]
     [SerializeField] private float timeUntilFail;
 
     [SerializeField] private MashStringEvent OnMashStart;

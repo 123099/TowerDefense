@@ -6,10 +6,14 @@ using UnityEngine;
 
 public static class GameUtils
 {
+    public static Enemy[] GetAllEnemies ()
+    {
+        return GameObject.FindObjectsOfType<Enemy>();
+    }
+
     public static Enemy GetNearestEnemyTo (Transform transform, float radius)
     {
-        Enemy[] allEnemies = GameObject.FindObjectsOfType<Enemy>();
-        return getNearestEnemyFromList(allEnemies, transform, radius);
+        return getNearestEnemyFromList(GetAllEnemies(), transform, radius);
     }
 
     public static Enemy[] GetNearestEnemiesInFrontOf(Transform transform, float range, float amount)
@@ -69,5 +73,19 @@ public static class GameUtils
             return nearestEnemy;
         else
             return null;
+    }
+
+    public static Enemy[] GetAllEnemiesOfType(bool groundUnit)
+    {
+        Enemy[] enemies = GetAllEnemies();
+        List<Enemy> typeEnemies = new List<Enemy>();
+
+        foreach(Enemy enemy in enemies)
+        {
+            if (enemy.IsGroundUnit() == groundUnit)
+                typeEnemies.Add(enemy);
+        }
+
+        return typeEnemies.ToArray();
     }
 }

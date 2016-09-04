@@ -5,16 +5,16 @@ using UnityEngine.UI;
 
 public class SceneSwitcher : MonoBehaviour {
 
-    [SerializeField]
-    private Canvas loadingCanvas;
-    [SerializeField]
-    private RectTransform loadingPanel;
-    [SerializeField]
-    private Slider loadingBar;
-    [SerializeField]
-    private UIFader uiFader;
-    [SerializeField]
-    private bool fadeOnLoad = true;
+    [Tooltip("The canvas that contains the loading screen")]
+    [SerializeField] private Canvas loadingCanvas;
+    [Tooltip("The panel that holds the loading UI")]
+    [SerializeField] private RectTransform loadingPanel;
+    [Tooltip("The loading bar slider")]
+    [SerializeField] private Slider loadingBar;
+    [Tooltip("The UI component that will be fading in and out. This is usually a black panel that covers the entire screen")]
+    [SerializeField] private UIFader uiFader;
+    [Tooltip("Set to true to fade out from black once the level loaded")]
+    [SerializeField] private bool fadeOnLoad = true;
 
     private bool switching = false;
 	

@@ -6,6 +6,7 @@ using UnityEngine.UI;
 [RequireComponent(typeof(Text))]
 public class ResourceUI : MonoBehaviour {
 
+    [Tooltip("The type of pickup this UI text tracks")]
     [SerializeField] private PickupData resourceType;
 
     private Text text;

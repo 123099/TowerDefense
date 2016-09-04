@@ -3,7 +3,9 @@ using System.Collections;
 
 public class PlayerAnimationController : StateMachineBehaviour {
 
+    [Tooltip("The speed with which the player moves left and right")]
     [SerializeField] private float moveSpeed;
+    [Tooltip("The upwards speed to set once the player starts jumping")]
     [SerializeField] private float jumpSpeed;
 
     private Player player;

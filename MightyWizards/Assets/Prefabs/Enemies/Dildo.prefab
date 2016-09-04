@@ -200,6 +200,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36696083f16fc544495647ff01799d4c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isGroundUnit: 1
   damage: 10
 --- !u!114 &114000011321880050
 MonoBehaviour:
@@ -213,7 +214,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 50
-  currentHealth: 0
   invulnerable: 0
   OnHeal:
     m_PersistentCalls:

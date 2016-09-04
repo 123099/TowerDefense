@@ -6,8 +6,8 @@ using UnityEngine.UI;
 public class UIFader : MonoBehaviour {
 
     public enum FadeMode { FadeIn = -1, FadeOut = 1 }
-    [SerializeField]
-    private float fadeTime = 0.8f;
+    [Tooltip("The amount of time it takes to fade in or out")]
+    [SerializeField] private float fadeTime = 0.8f;
 
     private Image image;
 

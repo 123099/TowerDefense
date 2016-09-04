@@ -4,8 +4,8 @@ using UnityEngine.Events;
 
 public class LevelManager : MonoBehaviour {
 
-    [SerializeField]
-    private Level level;
+    [Tooltip("The level this manager is responsible of")]
+    [SerializeField] private Level level;
 
     [SerializeField] private RoundEvent OnRoundComplete;
     [SerializeField] private UnityEvent OnLevelComplete;

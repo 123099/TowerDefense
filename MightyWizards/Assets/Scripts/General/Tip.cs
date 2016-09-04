@@ -4,10 +4,10 @@ using UnityEngine.UI;
 
 public class Tip : MonoBehaviour {
 
-    [SerializeField]
-    private Text tipUI;
-    [SerializeField]
-    private string[] tips;
+    [Tooltip("The text area where tips will be shown")]
+    [SerializeField] private Text tipUI;
+    [Tooltip("A list of tips to display. These are chosen at random.")]
+    [SerializeField] private string[] tips;
 
 	private void OnEnable ()
     {
