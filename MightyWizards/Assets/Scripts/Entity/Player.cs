@@ -63,6 +63,8 @@ public class Player : MonoBehaviour {
         if (Input.GetButtonDown("Build"))
         {
             WizardBase wizardBase = GameUtils.GetBase();
+            if(!wizardBase) return;
+
             Wall wallPrefab = wizardBase.GetWallPrefab();
             if (resourceInventory.Has(wallPrefab.GetResourceType(), wallPrefab.GetCost()))
             {
