@@ -64,6 +64,8 @@ public abstract class Enemy : MonoBehaviour {
 
     private void OnCollisionEnter (Collision col)
     {
+        if(!wizardBase) return;
+
         if (col.gameObject.GetComponent<WizardBase>() == wizardBase)
             target = wizardBase.GetComponent<Health>();
         else if (col.gameObject.GetComponent<Wall>())

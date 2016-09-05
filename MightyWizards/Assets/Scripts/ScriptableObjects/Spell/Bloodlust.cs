@@ -13,8 +13,11 @@ public class Bloodlust : Spell {
         Turret[] turrets = GameUtils.GetAllTurrets();
 
         foreach (Turret turret in turrets)
-            turret.GetProjectile().damage *= 1f + damageIncrease;
+            turret.SetDamageMultiplier( 1f + damageIncrease );
 
-        GameUtils.GetPlayer().GetStaff().basicAttack.damage *= 1f + damageIncrease;
+        //Clone the staff so that value changes don't stay
+        Staff staffClone = GameObject.Instantiate(GameUtils.GetPlayer().GetStaff());
+        staffClone.damageMultiplier = 1f + damageIncrease;
+        GameUtils.GetPlayer().SetStaff(staffClone);
     }
 }

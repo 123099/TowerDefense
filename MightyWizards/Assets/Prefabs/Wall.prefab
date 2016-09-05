@@ -372,20 +372,13 @@ MonoBehaviour:
   invulnerable: 0
   OnHeal:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 114000013811914094}
-        m_MethodName: set_normalizedValue
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
     m_TypeName: HealthEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
   OnDamageTaken:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: HealthEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+  OnHealthChange:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 114000013811914094}

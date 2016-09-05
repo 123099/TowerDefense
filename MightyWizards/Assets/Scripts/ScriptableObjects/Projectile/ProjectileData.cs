@@ -19,12 +19,12 @@ public class ProjectileData : ScriptableObject {
     [Tooltip("Set to true to destroy the projectile the moment it hits something")]
     public bool destroyUponImpact;
 
-    public void Launch (Transform fireLocation)
+    public Projectile Launch (Transform fireLocation)
     {
-        Launch(fireLocation, fireLocation.rotation, false);
+        return Launch(fireLocation, fireLocation.rotation, false);
     }
 
-    public void Launch(Transform fireLocation, Quaternion rotation, bool ignoreRotateAroundXZ = true)
+    public Projectile Launch(Transform fireLocation, Quaternion rotation, bool ignoreRotateAroundXZ = true)
     {
         Projectile projectile = Instantiate(projectilePrefab,
             fireLocation.position,
@@ -43,5 +43,7 @@ public class ProjectileData : ScriptableObject {
         projectile.GetComponent<Rigidbody>().AddRelativeForce(Vector3.forward * launchForce);
 
         Destroy(projectile.gameObject, lifetime);
+
+        return projectile;
     }
 }

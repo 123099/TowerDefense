@@ -9,6 +9,8 @@ public class Turret : MonoBehaviour {
     [SerializeField] private RateTimer fireTimer;
     [Tooltip("The maximum range at which the turret will shoot enemies")]
     [SerializeField] private float fireRange;
+    [Tooltip("The amount by which to multiply the damage of all basic attacks")]
+    [SerializeField] private float damageMultiplier;
 
     [Tooltip("The projectile this turret will shoot")]
     [SerializeField] private ProjectileData projectile;
@@ -23,7 +25,7 @@ public class Turret : MonoBehaviour {
             LookAtEnemy();
 
             if (fireTimer.IsReady())
-                projectile.Launch(fireLocation);
+                Shoot();
 
             if (!target.GetComponent<Health>().IsAlive())
                 target = null;
@@ -35,6 +37,22 @@ public class Turret : MonoBehaviour {
     public void SetTarget(Enemy target)
     {
         this.target = target;
+    }
+
+    public float GetDamageMultiplier ()
+    {
+        return damageMultiplier;
+    }
+
+    public void SetDamageMultiplier (float damageMultiplier)
+    {
+        this.damageMultiplier = damageMultiplier;
+    }
+
+    private void Shoot ()
+    {
+        Projectile proj = projectile.Launch(fireLocation);
+        proj.SetDamage(projectile.damage * damageMultiplier);
     }
 
     private void LookAtEnemy()

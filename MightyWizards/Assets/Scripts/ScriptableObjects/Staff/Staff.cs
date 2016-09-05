@@ -11,6 +11,8 @@ public class Staff : ScriptableObject {
     public ProjectileData basicAttack;
     [Tooltip("The spell that goes with this staff")]
     public Spell spell;
+    [Tooltip("The amount by which to multiply the damage of all basic attacks")]
+    public float damageMultiplier;
     [Tooltip("The auto aim range")]
     public float autoAimRadius;
     [Tooltip("The maximum amount of enemies this staff attacks at once")]
@@ -37,16 +39,19 @@ public class Staff : ScriptableObject {
     public void Attack ()
     {
         Enemy[] nearestEnemies = GameUtils.GetNearestEnemiesInFrontOf(fireLocation, autoAimRadius, 2, maxEnemiesHit);
+        Projectile projectile = null;
         if (nearestEnemies.Length > 0)
         {
             foreach (Enemy enemy in nearestEnemies)
             {
                 Quaternion rotation = Quaternion.LookRotation(enemy.transform.position - fireLocation.transform.position);
-                basicAttack.Launch(fireLocation, rotation);
+                projectile = basicAttack.Launch(fireLocation, rotation);
             }
         }
         else
-            basicAttack.Launch(fireLocation);
+            projectile = basicAttack.Launch(fireLocation);
+
+        projectile.SetDamage(basicAttack.damage * damageMultiplier);
     }
 
     public void CastSpell ()

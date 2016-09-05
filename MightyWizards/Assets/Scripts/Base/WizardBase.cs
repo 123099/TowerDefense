@@ -5,6 +5,8 @@ using System.Collections;
 [RequireComponent(typeof(Health))]
 public class WizardBase : MonoBehaviour {
 
+    public AudioSource BGM;
+
     [Tooltip("The wall model to spawn")]
     [SerializeField] private Wall wallPrefab;
     [Tooltip("The locations at which walls can spawn. Walls will spawn at the first free spot")]
@@ -34,5 +36,11 @@ public class WizardBase : MonoBehaviour {
     public Wall GetWallPrefab ()
     {
         return wallPrefab;
+    }
+
+    public void DestroySelf ()
+    {
+        BGM.Play();
+        Destroy(gameObject);
     }
 }
