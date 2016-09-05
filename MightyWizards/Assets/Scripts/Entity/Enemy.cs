@@ -43,6 +43,17 @@ public abstract class Enemy : MonoBehaviour {
             Victory();
     }
 
+    private void OnTriggerStay(Collider col)
+    {
+        if(!wizardBase) return;
+        if(target) return;
+
+        if (col.gameObject.GetComponent<WizardBase>() == wizardBase)
+            target = wizardBase.GetComponent<Health>();
+        else if (col.gameObject.GetComponent<Wall>())
+            target = col.gameObject.GetComponent<Health>();
+    }
+
     private void LookAtBase ()
     {
         Quaternion rot = Quaternion.LookRotation(wizardBase.transform.position - transform.position);
@@ -64,13 +75,7 @@ public abstract class Enemy : MonoBehaviour {
 
     private void OnCollisionEnter (Collision col)
     {
-        if(!wizardBase) return;
-
-        if (col.gameObject.GetComponent<WizardBase>() == wizardBase)
-            target = wizardBase.GetComponent<Health>();
-        else if (col.gameObject.GetComponent<Wall>())
-            target = col.gameObject.GetComponent<Health>();
-        else if(col.gameObject.GetComponent<Player>())
+        if(col.gameObject.GetComponent<Player>())
         {
             Player player = col.gameObject.GetComponent<Player>();
             Vector3 dir = player.transform.position - transform.position;

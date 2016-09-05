@@ -36,7 +36,7 @@ public static class GameUtils
         return getNearestEnemyFromList(GetAllEnemies(), transform, radius);
     }
 
-    public static Enemy[] GetNearestEnemiesInFrontOf(Transform transform, float range, float halfHeight, int amount)
+    public static T[] GetNearestObjectsInFrontOf<T>(Transform transform, float range, float halfHeight, int amount) where T : MonoBehaviour
     {
         float halfRange = range * 0.5f;
         Vector3 forward = transform.forward;
@@ -45,30 +45,35 @@ public static class GameUtils
         Vector3 boxCenter = transform.position + forward.normalized * halfRange;
         Vector3 halfExtents = new Vector3(halfRange, halfHeight, halfRange);
 
+        GameObject cube = GameObject.CreatePrimitive(PrimitiveType.Cube);
+        cube.transform.position = boxCenter;
+        cube.transform.localScale = halfExtents * 2;
+        GameObject.Destroy(cube, 0.1f);
+
         Collider[] collidersInFront = Physics.OverlapBox(boxCenter, halfExtents);
 
-        List<Enemy> enemies = new List<Enemy>();
+        List<T> objects = new List<T>();
 
         foreach (Collider collider in collidersInFront)
         {
-            if (collider.GetComponent<Enemy>())
+            if (collider.GetComponent<T>() != null)
             {
-                if (enemies.Count < amount)
-                    enemies.Add(collider.GetComponent<Enemy>());
+                if (objects.Count < amount)
+                    objects.Add(collider.GetComponent<T>());
                 else
-                    for(int i = 0; i < enemies.Count; ++i)
+                    for(int i = 0; i < objects.Count; ++i)
                     {
-                        Enemy enemy = enemies[i];
-                        if (Vector3.Distance(collider.transform.position, transform.position) < Vector3.Distance(enemy.transform.position, transform.position))
+                        T obj = objects[i];
+                        if (Vector3.Distance(collider.transform.position, transform.position) < Vector3.Distance(obj.transform.position, transform.position))
                         {
-                            enemies[i] = collider.GetComponent<Enemy>();
+                            objects[i] = collider.GetComponent<T>();
                             break;
                         }
                     }
             }
         }
 
-        return enemies.ToArray();
+        return objects.ToArray();
     }
 
     private static Enemy getNearestEnemyFromList(Enemy[] enemies, Transform transform, float distance)

@@ -2,61 +2,41 @@
 using UnityEngine;
 
 [DisallowMultipleComponent]
-[RequireComponent(typeof(AudioSource))]
 public class AdaptiveMusic : MonoBehaviour {
 
     [Tooltip("Clips in increasing intensity")]
     [SerializeField] private AudioClip[] clips;
 
-    private AudioSource audio1;
-    private AudioSource audio2;
-
-    private Coroutine fadingCoroutine;
+    private AudioSource[] audioSources;
 
     private void Awake ()
     {
-        AudioSource[] audios = GetComponents<AudioSource>();
-        audio1 = audios[0];
-        audio2 = audios[1];
+        audioSources = new AudioSource[clips.Length];
+        for (int i = 0; i < clips.Length; ++i)
+        {
+            audioSources[i] = gameObject.AddComponent<AudioSource>();
+            audioSources[i].clip = clips[i];
+            audioSources[i].loop = true;
+            audioSources[i].volume = 0;
+            audioSources[i].Play();
+        }
     }
 
 	void Update () {
         int index = GetClipIndex(GameUtils.GetAllEnemies().Length);
         if (index >= clips.Length) index = clips.Length - 1;
+        if(index < 0) index = 0;
+        for (int i = 0; i < clips.Length; ++i)
+            if(i != index)
+                audioSources[i].volume = 0;
 
-        if (audio1.clip != clips[index] && audio2.clip != clips[index])
-        {
-            StartCoroutine(FadeToClip(clips[index]));
-        }
-    }
-
-    private IEnumerator FadeToClip(AudioClip clip)
-    {
-        AudioSource nextSource = audio1.clip ? audio2 : audio1;
-        AudioSource oldSource = audio1.clip ? audio1 : audio2;
-        AudioClip oldClip = audio1.clip ? audio1.clip : audio2.clip;
-
-        nextSource.clip = clip;
-        nextSource.volume = 0;
-        nextSource.Play();
-
-        oldSource.volume = 1;
-
-        for(float i = 0; i <= 1f; i += 0.01f)
-        {
-            nextSource.volume = i;
-            oldSource.volume = 1 - i;
-            yield return 0;
-        }
-
-        oldSource.clip = null;
+        audioSources[index].volume += 0.01f;
     }
 
     private int GetClipIndex(int enemyCount)
     {
         if(enemyCount == 0) return 0;
-        float clipIndexRaw = 0.8604f * Mathf.Log(enemyCount) + 0.0461f;
-        print("enemy count - " + enemyCount + ": " + clipIndexRaw);
+        float clipIndexRaw = 0.9258f * Mathf.Log(enemyCount) - 0.5978f;
         return (int)Mathf.Round(clipIndexRaw);
     }
 }

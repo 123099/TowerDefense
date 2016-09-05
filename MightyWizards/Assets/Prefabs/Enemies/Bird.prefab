@@ -89,6 +89,7 @@ GameObject:
   - 136: {fileID: 136000012458098876}
   - 54: {fileID: 54000011664683860}
   - 114: {fileID: 114000010717766848}
+  - 135: {fileID: 135000011908631178}
   - 95: {fileID: 95000010768022548}
   - 114: {fileID: 114000010258806972}
   - 82: {fileID: 82000010229319870}
@@ -740,6 +741,18 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
+--- !u!135 &135000011908631178
+SphereCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000011223515012}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 4
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!136 &136000012458098876
 CapsuleCollider:
   m_ObjectHideFlags: 1
