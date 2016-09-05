@@ -320,7 +320,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 50000
-  invulnerable: 0
+  invulnerable: 1
   OnHeal:
     m_PersistentCalls:
       m_Calls: []
