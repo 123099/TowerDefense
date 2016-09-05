@@ -44,7 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c850a2e42c397a47a0192591599860b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 5
+  moveSpeed: 7
   jumpSpeed: 10
 --- !u!206 &206000010756310646
 BlendTree:

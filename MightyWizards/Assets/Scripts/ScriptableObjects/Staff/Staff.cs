@@ -39,19 +39,22 @@ public class Staff : ScriptableObject {
     public void Attack ()
     {
         Enemy[] nearestEnemies = GameUtils.GetNearestEnemiesInFrontOf(fireLocation, autoAimRadius, 2, maxEnemiesHit);
-        Projectile projectile = null;
+
         if (nearestEnemies.Length > 0)
         {
             foreach (Enemy enemy in nearestEnemies)
             {
                 Quaternion rotation = Quaternion.LookRotation(enemy.transform.position - fireLocation.transform.position);
-                projectile = basicAttack.Launch(fireLocation, rotation);
+                Projectile projectile = basicAttack.Launch(fireLocation, rotation);
+                projectile.SetDamage(basicAttack.damage * damageMultiplier);
             }
         }
         else
-            projectile = basicAttack.Launch(fireLocation);
+        {
+            Projectile projectile = basicAttack.Launch(fireLocation);
+            projectile.SetDamage(basicAttack.damage * damageMultiplier);
+        }
 
-        projectile.SetDamage(basicAttack.damage * damageMultiplier);
     }
 
     public void CastSpell ()

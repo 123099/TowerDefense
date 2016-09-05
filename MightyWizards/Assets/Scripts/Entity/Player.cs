@@ -20,7 +20,6 @@ public class Player : MonoBehaviour {
     private Collider collider;
 
     private float halfHeight;
-    private float halfWidth;
 
     private bool isStunned;
     private bool isGrounded;
@@ -33,7 +32,6 @@ public class Player : MonoBehaviour {
         rigidbody = GetComponent<Rigidbody>();
 
         collider = GetComponent<Collider>();
-        halfWidth = collider.bounds.extents.x;
         halfHeight = collider.bounds.extents.y;
     }
 
