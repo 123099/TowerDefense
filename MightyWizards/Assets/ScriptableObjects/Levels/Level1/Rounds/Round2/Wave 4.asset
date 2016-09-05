@@ -11,7 +11,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61b11cc9d84310346adafcacfbfe3820, type: 3}
   m_Name: Wave 4
   m_EditorClassIdentifier: 
-  spawnPoint: {x: 42, y: 8, z: 0}
+  spawnPoint: {x: -42, y: 8, z: 0}
   units:
   - modelPrefab: {fileID: 114000010717766848, guid: ba47c3c73580dd342ac69390408e4a25,
       type: 2}
