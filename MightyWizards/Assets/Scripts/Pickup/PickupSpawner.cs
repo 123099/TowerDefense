@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class PickupSpawn : MonoBehaviour {
+public class PickupSpawner : MonoBehaviour {
 
     [Tooltip("A pickup you want to spawn at the start of the level")]
     [SerializeField] private PickupData startPickup;
@@ -16,23 +16,29 @@ public class PickupSpawn : MonoBehaviour {
     private Pickup lastSpawned;
 
 	private void Start () {
-        if (startPickup)
-            SpawnPickup(startPickup);
+        SpawnPickup(startPickup);
 
         spawnTimer = new RateTimer(1f / spawnTime, Time.time);
 	}
 	
-	void Update () {
+	private void Update () {
         if (pickups.Length == 0)
             return;
 
         if (spawnTimer.IsReady())
-            if(allowMultiplePickups || !lastSpawned)
-                SpawnPickup(pickups[Random.Range(0, pickups.Length)]);
+            if (allowMultiplePickups || !lastSpawned)
+                SpawnRandomPickup();
 	}
 
-    private void SpawnPickup(PickupData pickup)
+    public void SpawnRandomPickup ()
     {
+        SpawnPickup(pickups[Random.Range(0, pickups.Length)]);
+    }
+
+    public void SpawnPickup(PickupData pickup)
+    {
+        if(pickup == null) return;
+
         lastSpawned = Instantiate(pickup.pickupModel, transform.position, transform.rotation) as Pickup;
         lastSpawned.SetData(pickup);
         lastSpawned.OnCollect.AddListener(() => onLastSpawnedCollected());

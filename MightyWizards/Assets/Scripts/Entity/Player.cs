@@ -14,6 +14,7 @@ public class Player : MonoBehaviour {
     [SerializeField] private Transform staffSpawn;
 
     public UnityEvent OnLand;
+    public UnityEvent OnJump;
 
     private ResourceInventory resourceInventory;
     private Rigidbody rigidbody;

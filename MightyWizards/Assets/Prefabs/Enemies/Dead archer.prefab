@@ -108,6 +108,7 @@ GameObject:
   - 114: {fileID: 114000010258806972}
   - 82: {fileID: 82000010229319870}
   - 114: {fileID: 114000011273424912}
+  - 114: {fileID: 114000013068070270}
   m_Layer: 9
   m_Name: Dead archer
   m_TagString: Untagged
@@ -494,6 +495,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 114000013068070270}
+        m_MethodName: SpawnRandomPickup
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
 --- !u!114 &114000010637099110
@@ -664,6 +676,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9483da98b837c824c91a36490c0a233e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114000013068070270
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000011223515012}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af37f166efde5fc4297515325dce631c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startPickup: {fileID: 0}
+  spawnTime: 0
+  allowMultiplePickups: 0
+  pickups:
+  - {fileID: 11400000, guid: 4f7e6e96e8027a8498b5a0798454f5b6, type: 2}
+  - {fileID: 11400000, guid: b7ceeb5ce67e40041ad2e6cd8176327d, type: 2}
+  - {fileID: 0}
 --- !u!114 &114000013259980946
 MonoBehaviour:
   m_ObjectHideFlags: 1

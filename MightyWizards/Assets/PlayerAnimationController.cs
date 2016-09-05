@@ -60,6 +60,8 @@ public class PlayerAnimationController : StateMachineBehaviour {
                 rigidbodyVel.y = jumpSpeed;
                 rigidbody.velocity = rigidbodyVel;
                 animator.SetBool("Jump", true);
+
+                player.OnJump.Invoke();
             }
             else if(input == -1)
             {

@@ -93,6 +93,7 @@ GameObject:
   - 95: {fileID: 95000010768022548}
   - 114: {fileID: 114000010258806972}
   - 82: {fileID: 82000010229319870}
+  - 114: {fileID: 114000010091111016}
   m_Layer: 9
   m_Name: Bird
   m_TagString: Untagged
@@ -392,6 +393,24 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114000010091111016
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000011223515012}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af37f166efde5fc4297515325dce631c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startPickup: {fileID: 0}
+  spawnTime: 0
+  allowMultiplePickups: 0
+  pickups:
+  - {fileID: 11400000, guid: 4f7e6e96e8027a8498b5a0798454f5b6, type: 2}
+  - {fileID: 11400000, guid: b7ceeb5ce67e40041ad2e6cd8176327d, type: 2}
+  - {fileID: 0}
 --- !u!114 &114000010258806972
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -456,6 +475,17 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 114000010717766848}
         m_MethodName: DestroySelf
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 114000010091111016}
+        m_MethodName: SpawnRandomPickup
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

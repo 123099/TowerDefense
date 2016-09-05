@@ -46,7 +46,7 @@ public class ButtonMash : MonoBehaviour {
 
         if (Input.GetButtonDown(buttonToMash))
         {
-            progress += 1f / ( Time.time - lastButtonClickTime ) / 10;
+            progress += 1f / ( Time.time - lastButtonClickTime ) / 15;
             lastButtonClickTime = Time.time;
         }
 
