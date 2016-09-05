@@ -453,7 +453,7 @@ MonoBehaviour:
   OnHealthZero:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 114000011273424912}
         m_MethodName: DestroySelf
         m_Mode: 1
         m_Arguments:
