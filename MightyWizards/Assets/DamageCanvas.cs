@@ -13,12 +13,6 @@ public class DamageCanvas : MonoBehaviour {
         damageTemplate.gameObject.SetActive(false);
     }
 
-    private void Update ()
-    {
-        transform.LookAt(Camera.main.transform);
-        transform.Rotate(0, 180, 0);
-    }
-
     public void ShowDamage(float damage)
     {
         Text damageText = Instantiate(damageTemplate, damageTemplate.transform.parent) as Text;

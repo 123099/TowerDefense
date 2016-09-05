@@ -130,6 +130,7 @@ GameObject:
   - 114: {fileID: 114000010637099110}
   - 114: {fileID: 114000014177631386}
   - 114: {fileID: 114000011399195006}
+  - 114: {fileID: 114000010582397220}
   m_Layer: 9
   m_Name: Damage Canvas
   m_TagString: Untagged
@@ -466,6 +467,17 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
+--- !u!114 &114000010582397220
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000012050585836}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9483da98b837c824c91a36490c0a233e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114000010637099110
 MonoBehaviour:
   m_ObjectHideFlags: 1
