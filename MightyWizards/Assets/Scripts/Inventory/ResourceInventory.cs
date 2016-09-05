@@ -26,6 +26,7 @@ public class ResourceInventory : MonoBehaviour {
 
     public bool Has(PickupData pickup, int amount)
     {
+        if(amount == 0) return true;
         return resources.ContainsKey(pickup) && resources[pickup] >= amount;
     }
 }

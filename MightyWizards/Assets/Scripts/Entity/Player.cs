@@ -26,6 +26,8 @@ public class Player : MonoBehaviour {
 
     private Collider ground;
 
+    private GameObject equippedStaffClone;
+
     private void Awake ()
     {
         resourceInventory = GetComponent<ResourceInventory>();
@@ -120,8 +122,9 @@ public class Player : MonoBehaviour {
 
     public void SetStaff(Staff staff)
     {
+        if(equippedStaffClone) Destroy(equippedStaffClone);
         this.staff = staff;
-        staff.Equip(staffSpawn);
+        equippedStaffClone = staff.Equip(staffSpawn);
     }
 
     public Staff GetStaff ()

@@ -25,7 +25,7 @@ public class Staff : ScriptableObject {
 
     private Transform fireLocation;
 
-    public void Equip(Transform equipper)
+    public GameObject Equip(Transform equipper)
     {
         GameObject staffPrefab = Instantiate(modelPrefab, equipper) as GameObject;
         staffPrefab.transform.position = equipper.position + locationOffset;
@@ -34,6 +34,8 @@ public class Staff : ScriptableObject {
         fireLocation = GameObjectExtension.FindObjectWithTagIn(staffPrefab, "FireLocation").transform;
 
         spell.Initialize();
+
+        return staffPrefab;
     }
 
     public void Attack ()
