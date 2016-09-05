@@ -10,6 +10,11 @@ public class Shop : ScriptableObject {
     [Tooltip("A list of items to sell")]
 	[SerializeField] private ShopItem[] items;
 
+    public PickupData GetCurrency ()
+    {
+        return currency;
+    }
+
     public int GetItemCount ()
     {
         return items.Length;

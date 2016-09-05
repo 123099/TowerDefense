@@ -7,6 +7,9 @@ public class ShopKeeper : MonoBehaviour {
     [Tooltip("The shop this keeper is keeping")]
     [SerializeField] private Shop shop;
 
+    [Tooltip("The subtitle for the shop. This displays the currency of the shop")]
+    [SerializeField] private Text subtitle;
+
     [Tooltip("Staff button template")]
     [SerializeField] private ShopItemUI staffTemplate;
     [Tooltip("Turret button template")]
@@ -14,6 +17,8 @@ public class ShopKeeper : MonoBehaviour {
 
     private void OnEnable ()
     {
+        subtitle.text = "We only accept " + shop.GetCurrency().name;
+
         SetupCategory(ShopItemCategory.Staff, staffTemplate);
         SetupCategory(ShopItemCategory.Turret, turretTemplate);
     }

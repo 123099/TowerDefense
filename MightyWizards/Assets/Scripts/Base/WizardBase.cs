@@ -5,12 +5,12 @@ using System.Collections;
 [RequireComponent(typeof(Health))]
 public class WizardBase : MonoBehaviour {
 
-    public AudioSource BGM;
-
     [Tooltip("The wall model to spawn")]
     [SerializeField] private Wall wallPrefab;
     [Tooltip("The locations at which walls can spawn. Walls will spawn at the first free spot")]
     [SerializeField] private Transform[] wallSpawnPositions;
+    [Tooltip("The locations at which turrets can spawn.")]
+    [SerializeField] private TurretSlot[] turretSpawnPositions;
 
     private Wall[] spawnedWalls;
 
@@ -25,7 +25,9 @@ public class WizardBase : MonoBehaviour {
         {
             if(!spawnedWalls[i] || !spawnedWalls[i].GetComponent<Health>().IsAlive())
             {
-                spawnedWalls[i] = Instantiate(wallPrefab, wallSpawnPositions[i].position, wallSpawnPositions[i].rotation) as Wall;
+                spawnedWalls[i] = Instantiate(wallPrefab, wallSpawnPositions[i]) as Wall;
+                spawnedWalls[i].transform.localPosition = Vector3.zero;
+                spawnedWalls[i].transform.localRotation = Quaternion.identity;
                 return true;
             }
         }
@@ -38,9 +40,20 @@ public class WizardBase : MonoBehaviour {
         return wallPrefab;
     }
 
-    public void DestroySelf ()
+    public TurretSlot[] GetTurretSpawnPositions ()
     {
-        BGM.Play();
-        Destroy(gameObject);
+        return turretSpawnPositions;
+    }
+
+    public void SpawnTurret(Turret turret, int slotIndex)
+    {
+        SpawnTurret(turret, turretSpawnPositions[slotIndex]);
+    }
+
+    public void SpawnTurret(Turret turret, TurretSlot slot)
+    {
+        turret.transform.SetParent(slot.transform);
+        turret.transform.localPosition = Vector3.zero;
+        turret.transform.localRotation = Quaternion.identity;
     }
 }
