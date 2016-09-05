@@ -5,10 +5,10 @@ using System.Collections.Generic;
 [CreateAssetMenu(menuName = "Shop/Shop")]
 public class Shop : ScriptableObject {
 
-    [Tooltip("A list of items to sell")]
-	[SerializeField] private ShopItem[] items;
     [Tooltip("The currency of the shop")]
     [SerializeField] private PickupData currency;
+    [Tooltip("A list of items to sell")]
+	[SerializeField] private ShopItem[] items;
 
     public int GetItemCount ()
     {
