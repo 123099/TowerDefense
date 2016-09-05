@@ -45,11 +45,6 @@ public static class GameUtils
         Vector3 boxCenter = transform.position + forward.normalized * halfRange;
         Vector3 halfExtents = new Vector3(halfRange, halfHeight, halfRange);
 
-        GameObject cube = GameObject.CreatePrimitive(PrimitiveType.Cube);
-        cube.transform.position = boxCenter;
-        cube.transform.localScale = halfExtents * 2;
-        GameObject.Destroy(cube, 0.1f);
-
         Collider[] collidersInFront = Physics.OverlapBox(boxCenter, halfExtents);
 
         List<T> objects = new List<T>();
