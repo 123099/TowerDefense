@@ -52,6 +52,9 @@ public abstract class Enemy : MonoBehaviour {
             target = wizardBase.GetComponent<Health>();
         else if (col.gameObject.GetComponent<Wall>())
             target = col.gameObject.GetComponent<Health>();
+
+        if(target) Stop();
+        else Move();
     }
 
     private void LookAtBase ()
@@ -80,7 +83,7 @@ public abstract class Enemy : MonoBehaviour {
             Player player = col.gameObject.GetComponent<Player>();
             Vector3 dir = player.transform.position - transform.position;
             dir.y += 1;
-            player.Knockback(dir.normalized * 400);
+            player.Knockback(dir.normalized * 30000);
             player.Stun(1f);
         } 
     }

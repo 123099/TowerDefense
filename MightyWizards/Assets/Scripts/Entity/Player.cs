@@ -82,7 +82,7 @@ public class Player : MonoBehaviour {
     {
         RaycastHit hit;
         Ray ray = new Ray(transform.position, -transform.up);
-        if(Physics.SphereCast(ray, 0.5f, out hit, halfHeight))
+        if(Physics.SphereCast(ray, 0.5f, out hit, halfHeight, LayerMask.GetMask("Ground", "Platform", "Wall")))
         {
             if (!isGrounded)
                 OnLand.Invoke();
