@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Name: Level 1
   m_EditorClassIdentifier: 
   rounds:
+  - {fileID: 11400000, guid: cbd40971fa00dd74a8adda49da157377, type: 2}
   - {fileID: 11400000, guid: aeb86b524cd753e4daea2fa69d32c4ae, type: 2}
-  - {fileID: 11400000, guid: aeb86b524cd753e4daea2fa69d32c4ae, type: 2}
-  - {fileID: 11400000, guid: a0a594d48b744504c8bff2ef54c8a98d, type: 2}
-  delayBetweenRounds: 2
+  - {fileID: 11400000, guid: 9cf719782f880b444b4657d0aaa92ad2, type: 2}
+  - {fileID: 11400000, guid: 271e6cfd2cdc4184ba585d8ce1405692, type: 2}
+  delayBetweenRounds: 5
   roundsBetweenBreaks: 2
