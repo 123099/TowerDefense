@@ -32,16 +32,21 @@ public class LevelManager : MonoBehaviour {
         {
             OnLevelComplete.Invoke();
             enabled = false;
+            return;
         }
         else
         {
             if (level.KilledAllInRound(currentRound))
             {
-                ++currentRound;
-                OnRoundComplete.Invoke(currentRound);
-                if (IsBreakTime())
+                roundTimer.SetLastReadyTimeOnce(Time.time);
+                if (roundTimer.IsReady())
                 {
-                    OnBreakPhaseStart.Invoke();
+                    ++currentRound;
+                    OnRoundComplete.Invoke(currentRound);
+                    if (IsBreakTime())
+                    {
+                        OnBreakPhaseStart.Invoke();
+                    }
                 }
             }
         }
