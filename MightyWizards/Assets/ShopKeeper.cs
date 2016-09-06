@@ -2,6 +2,7 @@
 using System.Collections;
 using UnityEngine.UI;
 using System.Collections.Generic;
+using UnityEngine.EventSystems;
 
 public class ShopKeeper : MonoBehaviour {
 
@@ -32,6 +33,9 @@ public class ShopKeeper : MonoBehaviour {
 
         SetupCategory(ShopItemCategory.Staff, staffTemplate);
         SetupCategory(ShopItemCategory.Turret, turretTemplate);
+
+        if(spawnedButtons.Count > 0)
+            StartCoroutine(select(spawnedButtons[0]));
     }
 
     private void OnDisable ()
@@ -108,5 +112,12 @@ public class ShopKeeper : MonoBehaviour {
             funds.text = "Purchased successfully!";
             funds.color = Color.green;
         }
+    }
+
+    private IEnumerator select (GameObject button)
+    {
+        yield return 0;
+        EventSystem.current.SetSelectedGameObject(null);
+        EventSystem.current.SetSelectedGameObject(button);
     }
 }

@@ -3,6 +3,7 @@ using System.Collections;
 using UnityEngine.UI;
 using UnityEngine.Events;
 using System.Collections.Generic;
+using UnityEngine.EventSystems;
 
 public class TurretPlacer : MonoBehaviour {
 
@@ -42,6 +43,11 @@ public class TurretPlacer : MonoBehaviour {
 
             slotButtonTransform.localScale = Vector3.one;
 
+            if (!slot.IsFree())
+                slotButton.GetComponent<Image>().color = Color.red;
+            else
+                slotButton.GetComponent<Image>().color = Color.yellow;
+
             slotButton.onClick.AddListener(() =>
             {
                 PlaceTurret(slot);
@@ -50,6 +56,9 @@ public class TurretPlacer : MonoBehaviour {
 
             spawnedButtons.Add(slotButton.gameObject);
         }
+
+        if(spawnedButtons.Count > 0)
+            StartCoroutine(select(spawnedButtons[0]));
     }
 
     private void OnDisable ()
@@ -77,5 +86,12 @@ public class TurretPlacer : MonoBehaviour {
                 GameUtils.GetPlayer().GetComponent<ResourceInventory>().Add(shop.GetCurrency(), shop.GetItemAt(i).GetPrice() / 2);
                 slot.Clear();
             }
+    }
+
+    private IEnumerator select (GameObject button)
+    {
+        yield return 0;
+        EventSystem.current.SetSelectedGameObject(null);
+        EventSystem.current.SetSelectedGameObject(button);
     }
 }
