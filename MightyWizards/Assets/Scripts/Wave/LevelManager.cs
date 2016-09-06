@@ -13,14 +13,12 @@ public class LevelManager : MonoBehaviour {
     [SerializeField] private UnityEvent OnBreakPhaseStart;
 
     private int currentRound;
-    private int lastBreakRound;
 
     private RateTimer roundTimer;
 
 	void Start () {
         level.Initialize();
         currentRound = 0;
-        lastBreakRound = 0;
         roundTimer = new RateTimer(1f/level.delayBetweenRounds);
 
         OnLevelStart.Invoke();
@@ -32,30 +30,18 @@ public class LevelManager : MonoBehaviour {
 
         if (level.KilledAll())
         {
-            enabled = false;
             OnLevelComplete.Invoke();
+            enabled = false;
         }
         else
         {
-            if(level.KilledAllInRound(currentRound))
+            if (level.KilledAllInRound(currentRound))
             {
-                roundTimer.SetLastReadyTimeOnce(Time.time);
-                if (!IsBreakTime() && roundTimer.IsReady())
+                ++currentRound;
+                OnRoundComplete.Invoke(currentRound);
+                if (IsBreakTime())
                 {
-                    print("Round complete " + currentRound);
-                    ++currentRound;
-                    print("Next round " + currentRound);
-                    OnRoundComplete.Invoke(currentRound);
-                }
-            }
-
-            if (IsBreakTime())
-            {
-                if (level.KilledAllInRound(currentRound))
-                {
-                    print("Break phase in round " + currentRound);
                     OnBreakPhaseStart.Invoke();
-                    lastBreakRound = currentRound;
                 }
             }
         }
@@ -63,12 +49,6 @@ public class LevelManager : MonoBehaviour {
 
     private bool IsBreakTime ()
     {
-        //return currentRound + 1 - lastBreakRound >= level.roundsBetweenBreaks;
         return (currentRound + 1) % level.roundsBetweenBreaks == 0;
-    }
-
-    private bool IsInLastRound ()
-    {
-        return currentRound >= level.GetRoundCount() - 1;
     }
 }
