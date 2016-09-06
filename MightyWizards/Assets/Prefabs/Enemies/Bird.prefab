@@ -563,7 +563,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isGroundUnit: 0
-  damage: 25
+  damage: 12
 --- !u!114 &114000011276510996
 MonoBehaviour:
   m_ObjectHideFlags: 1

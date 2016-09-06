@@ -14,7 +14,7 @@ MonoBehaviour:
   projectilePrefab: {fileID: 114000010493497868, guid: 92015ce69529ac24e9f8e3735da0c09c,
     type: 2}
   launchForce: 2000
-  damage: 50
+  damage: 10
   lifetime: 5
   rotationOffset: {x: 0, y: 0, z: 0}
   rotateAroundZX: 1

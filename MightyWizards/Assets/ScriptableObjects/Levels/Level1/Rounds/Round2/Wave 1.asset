@@ -16,7 +16,7 @@ MonoBehaviour:
   - modelPrefab: {fileID: 114000011273424912, guid: 9c562da3b1219654aa121568b8abae63,
       type: 2}
     spawnOffset: {x: 0, y: 0, z: 0}
-    spawnDelayAfterLastUnit: 0
+    spawnDelayAfterLastUnit: 13
   - modelPrefab: {fileID: 114000011273424912, guid: 9c562da3b1219654aa121568b8abae63,
       type: 2}
     spawnOffset: {x: 0, y: 0, z: 0}
@@ -24,19 +24,43 @@ MonoBehaviour:
   - modelPrefab: {fileID: 114000011273424912, guid: 9c562da3b1219654aa121568b8abae63,
       type: 2}
     spawnOffset: {x: 0, y: 0, z: 0}
-    spawnDelayAfterLastUnit: 0.5
+    spawnDelayAfterLastUnit: 0.78
   - modelPrefab: {fileID: 114000010717766848, guid: 2ed0107323254fc4484ade2f3eb639c8,
+      type: 2}
+    spawnOffset: {x: 0, y: 0, z: 0}
+    spawnDelayAfterLastUnit: 0.64
+  - modelPrefab: {fileID: 114000010717766848, guid: 2ed0107323254fc4484ade2f3eb639c8,
+      type: 2}
+    spawnOffset: {x: 0, y: 0, z: 0}
+    spawnDelayAfterLastUnit: 0.89
+  - modelPrefab: {fileID: 114000010717766848, guid: 2ed0107323254fc4484ade2f3eb639c8,
+      type: 2}
+    spawnOffset: {x: 0, y: 0, z: 0}
+    spawnDelayAfterLastUnit: 0.33
+  - modelPrefab: {fileID: 114000010717766848, guid: 178d34b162143cf4bac3baf6789f00e7,
+      type: 2}
+    spawnOffset: {x: 0, y: 0, z: 0}
+    spawnDelayAfterLastUnit: 2
+  - modelPrefab: {fileID: 114000010717766848, guid: 178d34b162143cf4bac3baf6789f00e7,
       type: 2}
     spawnOffset: {x: 0, y: 0, z: 0}
     spawnDelayAfterLastUnit: 0.5
   - modelPrefab: {fileID: 114000010717766848, guid: 2ed0107323254fc4484ade2f3eb639c8,
       type: 2}
     spawnOffset: {x: 0, y: 0, z: 0}
-    spawnDelayAfterLastUnit: 0.5
+    spawnDelayAfterLastUnit: 0.7
   - modelPrefab: {fileID: 114000010717766848, guid: 2ed0107323254fc4484ade2f3eb639c8,
       type: 2}
     spawnOffset: {x: 0, y: 0, z: 0}
-    spawnDelayAfterLastUnit: 0.5
+    spawnDelayAfterLastUnit: 0.44
+  - modelPrefab: {fileID: 114000010717766848, guid: 2ed0107323254fc4484ade2f3eb639c8,
+      type: 2}
+    spawnOffset: {x: 0, y: 0, z: 0}
+    spawnDelayAfterLastUnit: 0.44
+  - modelPrefab: {fileID: 114000010717766848, guid: 2ed0107323254fc4484ade2f3eb639c8,
+      type: 2}
+    spawnOffset: {x: 0, y: 0, z: 0}
+    spawnDelayAfterLastUnit: 0.69
   - modelPrefab: {fileID: 114000010717766848, guid: 178d34b162143cf4bac3baf6789f00e7,
       type: 2}
     spawnOffset: {x: 0, y: 0, z: 0}
@@ -44,32 +68,8 @@ MonoBehaviour:
   - modelPrefab: {fileID: 114000010717766848, guid: 178d34b162143cf4bac3baf6789f00e7,
       type: 2}
     spawnOffset: {x: 0, y: 0, z: 0}
-    spawnDelayAfterLastUnit: 0.5
-  - modelPrefab: {fileID: 114000010717766848, guid: 2ed0107323254fc4484ade2f3eb639c8,
-      type: 2}
-    spawnOffset: {x: 0, y: 0, z: 0}
-    spawnDelayAfterLastUnit: 1
-  - modelPrefab: {fileID: 114000010717766848, guid: 2ed0107323254fc4484ade2f3eb639c8,
-      type: 2}
-    spawnOffset: {x: 0, y: 0, z: 0}
-    spawnDelayAfterLastUnit: 0.25
-  - modelPrefab: {fileID: 114000010717766848, guid: 2ed0107323254fc4484ade2f3eb639c8,
-      type: 2}
-    spawnOffset: {x: 0, y: 0, z: 0}
-    spawnDelayAfterLastUnit: 0.25
-  - modelPrefab: {fileID: 114000010717766848, guid: 2ed0107323254fc4484ade2f3eb639c8,
-      type: 2}
-    spawnOffset: {x: 0, y: 0, z: 0}
-    spawnDelayAfterLastUnit: 0.25
+    spawnDelayAfterLastUnit: 0.55
   - modelPrefab: {fileID: 114000010717766848, guid: 178d34b162143cf4bac3baf6789f00e7,
       type: 2}
     spawnOffset: {x: 0, y: 0, z: 0}
-    spawnDelayAfterLastUnit: 1
-  - modelPrefab: {fileID: 114000010717766848, guid: 178d34b162143cf4bac3baf6789f00e7,
-      type: 2}
-    spawnOffset: {x: 0, y: 0, z: 0}
-    spawnDelayAfterLastUnit: 1
-  - modelPrefab: {fileID: 114000010717766848, guid: 178d34b162143cf4bac3baf6789f00e7,
-      type: 2}
-    spawnOffset: {x: 0, y: 0, z: 0}
-    spawnDelayAfterLastUnit: 1
+    spawnDelayAfterLastUnit: 0.88
