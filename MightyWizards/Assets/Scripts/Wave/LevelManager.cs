@@ -37,12 +37,14 @@ public class LevelManager : MonoBehaviour {
         }
         else
         {
-            if(level.RoundFinishedSpawning(currentRound))
+            if(level.KilledAllInRound(currentRound))
             {
                 roundTimer.SetLastReadyTimeOnce(Time.time);
                 if (!IsBreakTime() && roundTimer.IsReady())
                 {
+                    print("Round complete " + currentRound);
                     ++currentRound;
+                    print("Next round " + currentRound);
                     OnRoundComplete.Invoke(currentRound);
                 }
             }
@@ -51,6 +53,7 @@ public class LevelManager : MonoBehaviour {
             {
                 if (level.KilledAllInRound(currentRound))
                 {
+                    print("Break phase in round " + currentRound);
                     OnBreakPhaseStart.Invoke();
                     lastBreakRound = currentRound;
                 }
@@ -60,7 +63,8 @@ public class LevelManager : MonoBehaviour {
 
     private bool IsBreakTime ()
     {
-        return currentRound + 1 - lastBreakRound >= level.roundsBetweenBreaks;
+        //return currentRound + 1 - lastBreakRound >= level.roundsBetweenBreaks;
+        return (currentRound + 1) % level.roundsBetweenBreaks == 0;
     }
 
     private bool IsInLastRound ()
