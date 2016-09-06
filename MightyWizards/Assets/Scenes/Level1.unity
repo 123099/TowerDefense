@@ -511,7 +511,8 @@ MonoBehaviour:
   - {fileID: 209618220}
   - {fileID: 1362669496}
   - {fileID: 2025762159}
-  turretSpawnPositions: []
+  turretSpawnPositions:
+  - {fileID: 135983272}
 --- !u!114 &212119325
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1320,7 +1321,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06ee98d8875275645b84d083045e7f86, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  slotTemplate: {fileID: 0}
+  slotTemplate: {fileID: 1722545671}
 --- !u!114 &403685499
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2845,9 +2846,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   clips:
-  - {fileID: 8300000, guid: f56dce00f85eb794dbd28ca6fae4d526, type: 3}
-  - {fileID: 8300000, guid: cf281c238c8ff2d4f8bdfc4f677fc926, type: 3}
-  - {fileID: 8300000, guid: 04c2a34b3298f474ba26f03365eb5190, type: 3}
+  - {fileID: 8300000, guid: 7dd7b7ae8fe45884d9c597caaeb1052e, type: 3}
+  - {fileID: 8300000, guid: 946e6fcbd85760141a706d0bbf0ffc2b, type: 3}
+  - {fileID: 8300000, guid: 9c6b5a2302a64d14f883e220595fadd5, type: 3}
+  - {fileID: 8300000, guid: 6fdc238f3152d5147a48747544020dc2, type: 3}
 --- !u!1 &1071171701
 GameObject:
   m_ObjectHideFlags: 0
@@ -4354,11 +4356,11 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 930534679}
   m_RootOrder: 0
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_Pivot: {x: 0, y: 0}
 --- !u!114 &1722545671
 MonoBehaviour:
   m_ObjectHideFlags: 0
