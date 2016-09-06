@@ -53,10 +53,10 @@ public class Player : MonoBehaviour {
         BuildWall();
     }
 
-    private void OnTriggerEnter(Collider col)
+    private void OnCollisionEnter(Collision col)
     {
-        if (col.GetComponent<Pickup>())
-            col.GetComponent<Pickup>().Collect(resourceInventory);
+        if (col.gameObject.GetComponent<Pickup>())
+            col.gameObject.GetComponent<Pickup>().Collect(resourceInventory);
     }
 
     private void BuildWall ()

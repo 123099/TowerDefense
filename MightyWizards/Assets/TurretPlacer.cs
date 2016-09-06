@@ -1,36 +1,81 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
+using UnityEngine.Events;
+using System.Collections.Generic;
 
 public class TurretPlacer : MonoBehaviour {
+
+    [SerializeField] private UnityEvent OnClose;
 
     [Tooltip("Turret slot button template")]
     [SerializeField] private Button slotTemplate;
 
-    private Turret[] turretsToPlace;
+    private Shop shop;
+    private GameObject turretToPlace;
 
-    public void SetTurrets(Turret[] turrets)
+    private List<GameObject> spawnedButtons;
+
+    public void Initialize(Shop shop, GameObject turret)
     {
-        turretsToPlace = turrets;
+        this.shop = shop;
+        this.turretToPlace = turret;
     }
 
     private void OnEnable ()
     {
+        spawnedButtons = new List<GameObject>();
+        slotTemplate.gameObject.SetActive(false);
+
         TurretSlot[] slots = GameUtils.GetBase().GetTurretSpawnPositions();
         for(int i = 0; i < slots.Length; ++i)
         {
             TurretSlot slot = slots[i];
 
-            if (slot.IsFree())
+            Button slotButton = Instantiate(slotTemplate, slotTemplate.transform.parent) as Button;
+
+            slotButton.gameObject.SetActive(true);
+
+            RectTransform slotButtonTransform = slotButton.GetComponent<RectTransform>();
+            Vector3 positionOnScreen = Camera.main.WorldToScreenPoint(slot.transform.position);
+            slotButtonTransform.anchoredPosition = positionOnScreen;
+
+            slotButtonTransform.localScale = Vector3.one;
+
+            slotButton.onClick.AddListener(() =>
             {
-                Button slotButton = Instantiate(slotTemplate, slotTemplate.transform.parent) as Button;
+                PlaceTurret(slot);
+                OnClose.Invoke();
+            });
 
-                RectTransform slotButtonTransform = slotButton.GetComponent<RectTransform>();
-                Vector3 positionOnScreen = Camera.main.WorldToScreenPoint(slot.transform.position);
-                slotButtonTransform.localPosition = positionOnScreen;
-            }
+            spawnedButtons.Add(slotButton.gameObject);
         }
+    }
 
-        slotTemplate.gameObject.SetActive(false);
+    private void OnDisable ()
+    {
+        foreach (GameObject obj in spawnedButtons)
+            Destroy(obj);
+    }
+
+    private void PlaceTurret(TurretSlot slot)
+    {
+        if (!slot.IsFree())
+            RefundTurret(slot);
+
+        turretToPlace.transform.SetParent(slot.transform);
+        turretToPlace.transform.localPosition = Vector3.zero;
+        turretToPlace.transform.localRotation = Quaternion.identity;
+    }
+
+    private void RefundTurret(TurretSlot slot)
+    {
+        GameObject turretInSlot = slot.GetTurret();
+        for (int i = 0; i < shop.GetItemCount(); ++i)
+            if (shop.GetItemAt(i).name.Equals(turretInSlot.name))
+            {
+                GameUtils.GetPlayer().GetComponent<ResourceInventory>().Add(shop.GetCurrency(), shop.GetItemAt(i).GetPrice() / 2);
+                slot.Clear();
+            }
     }
 }

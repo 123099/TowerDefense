@@ -44,29 +44,30 @@ public class Shop : ScriptableObject {
         return items.ToArray();
     }
 
-    public Object[] Purchase(ResourceInventory resourceInventory, int itemIndex)
+    public Object Purchase(ResourceInventory resourceInventory, int itemIndex)
     {
         return Purchase(resourceInventory, GetItemAt(itemIndex));
     }
 
-    public Object[] Purchase(ResourceInventory resourceInventory, ShopItem item)
+    public Object Purchase(ResourceInventory resourceInventory, ShopItem item)
     {
         //Prepare order
-        Object[] purchasedItems = new Object[item.GetStackSize()];
+        Object purchasedItem = null;
 
         //Check funds
-        if (!resourceInventory.Has(currency, item.GetPrice())) return purchasedItems;
+        if (!resourceInventory.Has(currency, item.GetPrice())) return purchasedItem;
 
         //Retrieve items from warehouse and pack them
-        purchasedItems = new Object[item.GetStackSize()];
-        for (int i = 0; i < item.GetStackSize(); ++i)
-            purchasedItems[i] = Instantiate(item.GetItem());
+        purchasedItem = Instantiate(item.GetItem());
+
+        //Label item for shipping
+        purchasedItem.name = item.GetItem().name;
 
         //Withdraw funds
         resourceInventory.Add(currency, -item.GetPrice());
 
         //Ship products
-        return purchasedItems;
+        return purchasedItem;
     }
 
 }

@@ -10,19 +10,12 @@ public class ShopItem : ScriptableObject {
     [SerializeField] private Sprite icon;
     [Tooltip("The category in the shop this item belongs to")]
     [SerializeField] private ShopItemCategory category;
-    [Tooltip("The amount of this item you get upon purchase")]
-    [SerializeField] private int stackSize;
     [Tooltip("The price in the shop's currency this item sells for")]
     [SerializeField] private int price;
 
     public Object GetItem ()
     {
         return item;
-    }
-
-    public int GetStackSize ()
-    {
-        return stackSize;
     }
 
     public int GetPrice ()

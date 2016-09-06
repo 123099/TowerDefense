@@ -13,4 +13,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PickupData
   pickupModel: {fileID: 114000011157557372, guid: 347d27a946ba84c42abc1e9e30aa1627,
     type: 2}
-  stackAmount: 2
+  stackAmount: 10

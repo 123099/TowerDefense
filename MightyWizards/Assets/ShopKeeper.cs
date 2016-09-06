@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
+using System.Collections.Generic;
 
 public class ShopKeeper : MonoBehaviour {
 
@@ -9,22 +10,40 @@ public class ShopKeeper : MonoBehaviour {
 
     [Tooltip("The subtitle for the shop. This displays the currency of the shop")]
     [SerializeField] private Text subtitle;
+    [Tooltip("The funds text area for the shop. This displays important messages")]
+    [SerializeField] private Text funds;
 
     [Tooltip("Staff button template")]
     [SerializeField] private ShopItemUI staffTemplate;
     [Tooltip("Turret button template")]
     [SerializeField] private ShopItemUI turretTemplate;
 
+    [Tooltip("The turret placing system to call when buying turrets")]
+    [SerializeField] private TurretPlacer turretPlacer;
+
+    private List<GameObject> spawnedButtons;
+
     private void OnEnable ()
     {
         subtitle.text = "We only accept " + shop.GetCurrency().name;
+        funds.gameObject.SetActive(false);
+
+        spawnedButtons = new List<GameObject>();
 
         SetupCategory(ShopItemCategory.Staff, staffTemplate);
         SetupCategory(ShopItemCategory.Turret, turretTemplate);
     }
 
+    private void OnDisable ()
+    {
+        foreach (GameObject obj in spawnedButtons)
+            Destroy(obj);
+    }
+
     private void SetupCategory(ShopItemCategory category, ShopItemUI template)
     {
+        template.gameObject.SetActive(false);
+
         ShopItem[] items = shop.GetItemsOfCategory(category);
         for(int i = 0; i < items.Length; ++i)
         {
@@ -32,6 +51,8 @@ public class ShopKeeper : MonoBehaviour {
 
             ShopItemUI shopItemUI = Instantiate(template, template.transform.parent) as ShopItemUI;
             shopItemUI.SetupShopItem(item);
+
+            shopItemUI.gameObject.SetActive(true);
 
             RectTransform shopItemTransform = shopItemUI.GetComponent<RectTransform>();
             Vector2 anchorMin = shopItemTransform.anchorMin;
@@ -47,25 +68,45 @@ public class ShopKeeper : MonoBehaviour {
 
             Button itemButton = shopItemUI.GetComponent<Button>();
             itemButton.onClick.AddListener(() => PurchaseItem(shop.IndexOf(item)));
-        }
 
-        template.gameObject.SetActive(false);
+            spawnedButtons.Add(shopItemUI.gameObject);
+        }
     }
 
 	public void PurchaseItem(int index)
     {
-        Object[] purchasedItems = shop.Purchase(GameUtils.GetPlayer().GetComponent<ResourceInventory>(), index);
-        
-        foreach(Object purchasedItem in purchasedItems)
-        {
-            if(purchasedItem is Staff)
-            {
-                GameUtils.GetPlayer().SetStaff(purchasedItem as Staff);
-            }
-            else if(purchasedItem is Turret)
-            {
+        Object purchasedItem = shop.Purchase(GameUtils.GetPlayer().GetComponent<ResourceInventory>(), index);
+        DisplayPurchaseMessage(purchasedItem != null);
 
+        if(purchasedItem is Staff)
+        {
+            GameUtils.GetPlayer().SetStaff(purchasedItem as Staff);
+        }
+        else if(purchasedItem is GameObject)
+        {
+            GameObject purchasedGameObject = purchasedItem as GameObject;
+            if (purchasedGameObject.GetComponentInChildren<Turret>())
+            {
+                turretPlacer.Initialize(shop, purchasedGameObject);
+                turretPlacer.gameObject.SetActive(true);
+                gameObject.SetActive(false);
             }
+        }
+    }
+
+    private void DisplayPurchaseMessage(bool success)
+    {
+        funds.gameObject.SetActive(true);
+
+        if (!success)
+        {
+            funds.text = "Insufficient funds!";
+            funds.color = Color.red;
+        }
+        else
+        {
+            funds.text = "Purchased successfully!";
+            funds.color = Color.green;
         }
     }
 }

@@ -9,6 +9,9 @@ public class AdaptiveMusic : MonoBehaviour {
 
     private AudioSource[] audioSources;
 
+    private bool firstPlay;
+    private bool paused;
+
     private void Awake ()
     {
         audioSources = new AudioSource[clips.Length];
@@ -20,23 +23,50 @@ public class AdaptiveMusic : MonoBehaviour {
             audioSources[i].volume = 0;
             audioSources[i].Play();
         }
+
+        firstPlay = true;
     }
 
 	void Update () {
-        int index = GetClipIndex(GameUtils.GetAllEnemies().Length);
-        if (index >= clips.Length) index = clips.Length - 1;
-        if(index < 0) index = 0;
+        if(paused) return;
+
+        int index = GetCurrentClipIndex(GameUtils.GetAllEnemies().Length);
+        
         for (int i = 0; i < clips.Length; ++i)
             if(i != index)
                 audioSources[i].volume = 0;
 
-        audioSources[index].volume += 0.01f;
+        if (firstPlay)
+        {
+            audioSources[index].volume += 0.01f;
+            if (audioSources[index].volume > 0.98f)
+                firstPlay = false;
+        }
+        else
+            audioSources[index].volume = 1f;
     }
 
-    private int GetClipIndex(int enemyCount)
+    private int GetCurrentClipIndex(int enemyCount)
     {
         if(enemyCount == 0) return 0;
         float clipIndexRaw = 0.9258f * Mathf.Log(enemyCount) - 0.5978f;
-        return (int)Mathf.Round(clipIndexRaw);
+        int index = (int)Mathf.Round(clipIndexRaw);
+
+        if (index >= clips.Length) index = clips.Length - 1;
+        if(index < 0) index = 0;
+
+        return index;
+    }
+
+    public void Stop ()
+    {
+        paused = true;
+        audioSources[GetCurrentClipIndex(GameUtils.GetAllEnemies().Length)].Pause();
+    }
+
+    public void Play ()
+    {
+        paused = false;
+        audioSources[GetCurrentClipIndex(GameUtils.GetAllEnemies().Length)].UnPause();
     }
 }

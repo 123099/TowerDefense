@@ -16,7 +16,7 @@ public class ShopItemUI : MonoBehaviour {
 	public void SetupShopItem(ShopItem shopItem)
     {
         icon.sprite = shopItem.GetIcon();
-        stackSizeText.text = shopItem.GetStackSize().ToString();
+        stackSizeText.text = "1";
         priceTag.text = shopItem.GetPrice().ToString();
     }
 }
