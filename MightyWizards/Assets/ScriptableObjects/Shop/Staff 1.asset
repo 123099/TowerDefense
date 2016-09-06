@@ -12,7 +12,6 @@ MonoBehaviour:
   m_Name: Staff 1
   m_EditorClassIdentifier: 
   item: {fileID: 11400000, guid: f866325ecb7b507419ae736b4dcd7003, type: 2}
-  icon: {fileID: 10915, guid: 0000000000000000f000000000000000, type: 0}
+  icon: {fileID: 0}
   category: 0
-  stackSize: 1
   price: 0
