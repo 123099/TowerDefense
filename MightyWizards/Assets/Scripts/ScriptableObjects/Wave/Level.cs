@@ -10,7 +10,7 @@ public class Level : ScriptableObject {
     [Tooltip("How much time to wait after the last round finished spawning to start spawning the next")]
     public float delayBetweenRounds;
     [Tooltip("Every how many rounds should there be a break phase")]
-    public float roundsBetweenBreaks;
+    public int roundsBetweenBreaks;
 
     public void Initialize ()
     {

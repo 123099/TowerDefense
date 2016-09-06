@@ -43,6 +43,8 @@ public class ShopKeeper : MonoBehaviour {
             shopItemTransform.anchorMin = anchorMin;
             shopItemTransform.anchorMax = anchorMax;
 
+            shopItemTransform.localScale = Vector3.one;
+
             Button itemButton = shopItemUI.GetComponent<Button>();
             itemButton.onClick.AddListener(() => PurchaseItem(shop.IndexOf(item)));
         }
