@@ -2549,6 +2549,7 @@ MonoBehaviour:
   startPickup: {fileID: 11400000, guid: 4f7e6e96e8027a8498b5a0798454f5b6, type: 2}
   spawnTime: 5
   allowMultiplePickups: 0
+  amountMultiplier: 1
   pickups:
   - {fileID: 11400000, guid: 4f7e6e96e8027a8498b5a0798454f5b6, type: 2}
 --- !u!4 &1127092404
@@ -4592,6 +4593,7 @@ MonoBehaviour:
   startPickup: {fileID: 11400000, guid: b7ceeb5ce67e40041ad2e6cd8176327d, type: 2}
   spawnTime: 15
   allowMultiplePickups: 0
+  amountMultiplier: 1
   pickups:
   - {fileID: 11400000, guid: b7ceeb5ce67e40041ad2e6cd8176327d, type: 2}
 --- !u!1001 &2056940150

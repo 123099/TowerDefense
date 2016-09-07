@@ -9,6 +9,8 @@ public class PickupSpawner : MonoBehaviour {
     [SerializeField] private float spawnTime;
     [Tooltip("Set to true if you want to allow more than 1 pickup to be alive at a time at this location")]
     [SerializeField] private bool allowMultiplePickups;
+    [Tooltip("The value by which to multiply the stack size of the pickup")]
+    [SerializeField] private float amountMultiplier;
     [Tooltip("A list of pickups which can be spawned at this location")]
     [SerializeField] private PickupData[] pickups;
 
@@ -39,9 +41,21 @@ public class PickupSpawner : MonoBehaviour {
     {
         if(pickup == null) return;
 
+        if(lastSpawned != null)
+            lastSpawned.OnCollect.RemoveAllListeners();
         lastSpawned = Instantiate(pickup.pickupModel, transform.position, transform.rotation) as Pickup;
-        lastSpawned.SetData(pickup);
+        lastSpawned.SetData(pickup, amountMultiplier);
         lastSpawned.OnCollect.AddListener(() => onLastSpawnedCollected());
+    }
+
+    public void SetAmountMultiplier(float amountMultiplier)
+    {
+        this.amountMultiplier = amountMultiplier;
+    }
+
+    public float GetAmountMultiplier ()
+    {
+        return amountMultiplier;
     }
 
     private void onLastSpawnedCollected ()

@@ -8,10 +8,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: af405928e74cb2c469820ffd16d47b95, type: 3}
-  m_Name: Staff 1
+  m_Script: {fileID: 11500000, guid: 60026b4406bfde547b16cd8d5c1e893d, type: 3}
+  m_Name: Lightning
   m_EditorClassIdentifier: 
-  item: {fileID: 11400000, guid: f866325ecb7b507419ae736b4dcd7003, type: 2}
-  icon: {fileID: 0}
-  category: 0
-  price: 5
+  spellPrefab: {fileID: 0}
+  uses: 1
+  damage: 99999
+  damageGroundUnits: 0
+  damageAirUnits: 1

@@ -97,9 +97,9 @@ public class ShopKeeper : MonoBehaviour {
         else if(purchasedItem is GameObject)
         {
             GameObject purchasedGameObject = purchasedItem as GameObject;
-            if (purchasedGameObject.GetComponentInChildren<Turret>())
+            if (purchasedGameObject.GetComponent<Turret>())
             {
-                turretPlacer.Initialize(shop, purchasedGameObject);
+                turretPlacer.Initialize(shop, purchasedGameObject.GetComponent<Turret>());
                 turretPlacer.gameObject.SetActive(true);
                 gameObject.SetActive(false);
             }

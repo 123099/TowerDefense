@@ -17,11 +17,11 @@ public class TurretPlacer : MonoBehaviour {
     [SerializeField] private UnityEvent OnClose;
 
     private Shop shop;
-    private GameObject turretToPlace;
+    private Turret turretToPlace;
 
     private List<GameObject> spawnedButtons;
 
-    public void Initialize(Shop shop, GameObject turret)
+    public void Initialize(Shop shop, Turret turret)
     {
         this.shop = shop;
         this.turretToPlace = turret;
@@ -95,7 +95,7 @@ public class TurretPlacer : MonoBehaviour {
         turretToPlace = null;
     }
 
-    private void RefundTurret(GameObject turret, float refundPercentage)
+    private void RefundTurret(Turret turret, float refundPercentage)
     {
         ShopItem turretShopItem = shop.GetShopItemByName(turret.name);
         GameUtils.GetPlayer().GetComponent<ResourceInventory>().Add(shop.GetCurrency(), (int)(turretShopItem.GetPrice() * refundPercentage));

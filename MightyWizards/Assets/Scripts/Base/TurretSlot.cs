@@ -8,9 +8,9 @@ public class TurretSlot : MonoBehaviour {
         return transform.childCount == 0;
     }
 
-    public GameObject GetTurret ()
+    public Turret GetTurret ()
     {
-        return transform.GetChild(0).gameObject;
+        return transform.GetChild(0).GetComponent<Turret>();
     }
 
     public void Clear ()

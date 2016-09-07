@@ -47,6 +47,8 @@ public class Player : MonoBehaviour {
 
     private void Update ()
     {
+        staff.spell.UpdatePassive();
+
         if(isStunned) return;
         if(GameUtils.IsGamePaused()) return;
 
@@ -136,9 +138,16 @@ public class Player : MonoBehaviour {
 
     public void SetStaff(Staff staff)
     {
-        if(equippedStaffClone) Destroy(equippedStaffClone);
+        if (equippedStaffClone)
+        {
+            staff.spell.PassiveStop();
+            Destroy(equippedStaffClone);
+        }
+
         this.staff = staff;
         equippedStaffClone = staff.Equip(staffSpawn);
+
+        staff.spell.PassiveStart();
     }
 
     public Staff GetStaff ()

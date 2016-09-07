@@ -14,6 +14,6 @@ MonoBehaviour:
   currency: {fileID: 11400000, guid: 4f7e6e96e8027a8498b5a0798454f5b6, type: 2}
   items:
   - {fileID: 11400000, guid: 645ea94aa0fbc9043be2d2b5877678de, type: 2}
-  - {fileID: 11400000, guid: b3b9ffd8e42330441afd6bc311825e36, type: 2}
-  - {fileID: 11400000, guid: 645ea94aa0fbc9043be2d2b5877678de, type: 2}
+  - {fileID: 11400000, guid: 8a5da835a7991a143a9d166fe9073199, type: 2}
   - {fileID: 11400000, guid: 0342db2592cf4f4448925bd02f7fa012, type: 2}
+  - {fileID: 11400000, guid: b3b9ffd8e42330441afd6bc311825e36, type: 2}

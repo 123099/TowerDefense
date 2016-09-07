@@ -4,9 +4,11 @@ using System.Collections;
 public abstract class Spell : ScriptableObject {
 
     [Tooltip("The prefab to spawn when the spell is activated")]
-    public GameObject spellPrefab;
+    [SerializeField] private GameObject spellPrefab;
     [Tooltip("The amount of times this spell can be used")]
-    public int uses;
+    [SerializeField] private int uses;
+    [Tooltip("Whether the spell is passive or active")]
+    [SerializeField] private bool passive;
 
     protected int useCount;
 
@@ -17,14 +19,23 @@ public abstract class Spell : ScriptableObject {
 
     public void Activate ()
     {
-        if(!HasUsesLeft()) return;
+        if(!HasUsesLeft() || passive) return;
 
         Effect();
 
         ++useCount;
     }
 
+    public void UpdatePassive ()
+    {
+        if(!passive) return;
+        Effect();
+    }
+
     protected abstract void Effect ();
+
+    public virtual void PassiveStart () { }
+    public virtual void PassiveStop () { }
 
     public bool HasUsesLeft ()
     {

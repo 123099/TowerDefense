@@ -5,6 +5,8 @@ using UnityEngine.Events;
 [DisallowMultipleComponent]
 public class Turret : MonoBehaviour {
 
+    [Tooltip("The part of the turret that should look at the enemy")]
+    [SerializeField] private Transform rotatingPiece;
     [Tooltip("The rate timer for firing the turret")]
     [SerializeField] private RateTimer fireTimer;
     [Tooltip("The maximum range at which the turret will shoot enemies")]
@@ -57,7 +59,7 @@ public class Turret : MonoBehaviour {
 
     private void LookAtEnemy()
     {
-        transform.LookAt(target.transform);
+        rotatingPiece.LookAt(target.transform);
     }
 
     private bool IsTargetInRange ()

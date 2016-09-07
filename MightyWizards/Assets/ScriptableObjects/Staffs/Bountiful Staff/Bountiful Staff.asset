@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 84bb3f1ebd8ed1240831f5d988d5b0ae, type: 3}
+  m_Name: Bountiful Staff
+  m_EditorClassIdentifier: 
+  modelPrefab: {fileID: 1000010389306780, guid: 61cf4bebd3a9f344da164260c324e730,
+    type: 2}
+  basicAttack: {fileID: 11400000, guid: 92ddba553874c304ea41e3f7b5a9e536, type: 2}
+  spell: {fileID: 11400000, guid: 4e9aae6d01c8b094e94de4441d609327, type: 2}
+  damageMultiplier: 1
+  autoAimRadius: 20
+  maxEnemiesHit: 2
+  locationOffset: {x: 0, y: 0, z: 0}
+  rotationOffset: {x: 0, y: 180, z: 0}
