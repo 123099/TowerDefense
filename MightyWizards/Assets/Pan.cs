@@ -27,7 +27,7 @@ public class Pan : MonoBehaviour {
             startPosition = Vector3.Slerp(startPosition, targetPosition, smoothing);
             transform.position = startPosition;
 
-            if (Vector3.Distance(transform.position, targetPosition) < 0.01f)
+            if (Vector3.Distance(transform.position, targetPosition) < 1f)
                 pan = false;
         }
     }
