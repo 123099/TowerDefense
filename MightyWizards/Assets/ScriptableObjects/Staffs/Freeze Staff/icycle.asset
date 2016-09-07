@@ -9,12 +9,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 53f9f62c58de93844894f438f24156cf, type: 3}
-  m_Name: basic
+  m_Name: icycle
   m_EditorClassIdentifier: 
   projectilePrefab: {fileID: 114000013387775612, guid: f8a6658a0702aaf42a88da2556074ca6,
     type: 2}
   launchForce: 2000
-  damage: 50
+  damage: 20
   lifetime: 2
   rotationOffset: {x: 0, y: 0, z: 0}
   rotateAroundZX: 0

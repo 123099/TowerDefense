@@ -9,14 +9,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 84bb3f1ebd8ed1240831f5d988d5b0ae, type: 3}
-  m_Name: Bloodlust
+  m_Name: Freeze staff
   m_EditorClassIdentifier: 
   modelPrefab: {fileID: 1000010389306780, guid: 027aebd688c48a84c9a23b06ee693b27,
     type: 2}
   basicAttack: {fileID: 11400000, guid: 9c642ddf4ecefab4c8d23cb56fa9aa76, type: 2}
-  spell: {fileID: 11400000, guid: f1b4947f24772d8459a63556d0546a6d, type: 2}
+  spell: {fileID: 11400000, guid: be804bb45b24e654db492367785112c9, type: 2}
   damageMultiplier: 1
   autoAimRadius: 30
-  maxEnemiesHit: 1
+  maxEnemiesHit: 10
   locationOffset: {x: 0, y: 0, z: 0}
   rotationOffset: {x: 0, y: 180, z: 0}
