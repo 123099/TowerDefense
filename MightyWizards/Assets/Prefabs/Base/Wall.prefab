@@ -265,7 +265,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   resourceType: {fileID: 11400000, guid: b7ceeb5ce67e40041ad2e6cd8176327d, type: 2}
-  cost: 2
+  cost: 20
 --- !u!114 &114000011331610104
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -368,7 +368,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6bfacfbe67f34af46a3663bcf42e2487, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 5000
+  maxHealth: 250
   invulnerable: 0
   OnHeal:
     m_PersistentCalls:

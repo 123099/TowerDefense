@@ -245,8 +245,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rotatingPiece: {fileID: 4000010585615230}
   fireTimer:
-    rate: 2
-  fireRange: 10
-  damageMultiplier: 1
+    rate: 3
+  fireRange: 12
+  damageMultiplier: 0.15
   projectile: {fileID: 11400000, guid: 3dc0899b1c9109c40834647c536de177, type: 2}
   fireLocation: {fileID: 4000012914754902}

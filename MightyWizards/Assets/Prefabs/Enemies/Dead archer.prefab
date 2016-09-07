@@ -574,6 +574,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isGroundUnit: 1
+  attackRate:
+    rate: 1
   fireLocation: {fileID: 4000011571096106}
   projectile: {fileID: 11400000, guid: 3ce924c62660df944ad27c00f503d346, type: 2}
   fireTimer:
@@ -690,7 +692,7 @@ MonoBehaviour:
   startPickup: {fileID: 0}
   spawnTime: 0
   allowMultiplePickups: 0
-  amountMultiplier: 1
+  amountMultiplier: 0.5
   pickups:
   - {fileID: 11400000, guid: 4f7e6e96e8027a8498b5a0798454f5b6, type: 2}
   - {fileID: 11400000, guid: b7ceeb5ce67e40041ad2e6cd8176327d, type: 2}
@@ -826,7 +828,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 10
+  m_Radius: 7
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!136 &136000012458098876
 CapsuleCollider:
