@@ -245,7 +245,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rotatingPiece: {fileID: 4000010585615230}
   fireTimer:
-    rate: 3
+    rate: 3.5
   fireRange: 12
   damageMultiplier: 0.35
   aoe: 0

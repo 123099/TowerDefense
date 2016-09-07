@@ -407,7 +407,7 @@ MonoBehaviour:
   staff: {fileID: 11400000, guid: 6e761f49eee8fc54382117d9157c7a04, type: 2}
   staffSpawn: {fileID: 4000011425766800}
   attackRate:
-    rate: 5
+    rate: 5.5
   OnLand:
     m_PersistentCalls:
       m_Calls: []
