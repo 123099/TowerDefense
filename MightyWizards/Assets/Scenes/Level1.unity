@@ -2323,7 +2323,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 843426105}
   m_LocalRotation: {x: -0.000000027276966, y: 0.9893335, z: -0.14566866, w: -0.00000018525617}
-  m_LocalPosition: {x: 0, y: 19.5, z: 66.4}
+  m_LocalPosition: {x: 0, y: 21.45, z: 66.4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
@@ -3048,7 +3048,7 @@ MonoBehaviour:
           m_BoolArgument: 1
         m_CallState: 2
       - m_Target: {fileID: 400250803}
-        m_MethodName: PanTowards
+        m_MethodName: PanFrom
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 843426106}
