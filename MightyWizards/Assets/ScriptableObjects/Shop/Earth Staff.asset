@@ -8,10 +8,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0ea0a98fecb4ee84c85aab2cad5d77ed, type: 3}
-  m_Name: Bloodlust
+  m_Script: {fileID: 11500000, guid: af405928e74cb2c469820ffd16d47b95, type: 3}
+  m_Name: Earth Staff
   m_EditorClassIdentifier: 
-  spellPrefab: {fileID: 0}
-  uses: 1
-  passive: 0
-  damageIncrease: 0.5
+  item: {fileID: 11400000, guid: f763ca273916b42479742165693466b3, type: 2}
+  icon: {fileID: 0}
+  category: 0
+  price: 10
