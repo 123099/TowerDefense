@@ -32,4 +32,10 @@ public class ShopItem : ScriptableObject {
     {
         return icon;
     }
+
+    //Setter methods should be used on clones only
+    public void SetPrice (int price)
+    {
+        this.price = price;
+    }
 }

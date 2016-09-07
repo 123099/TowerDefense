@@ -29,6 +29,8 @@ public class Player : MonoBehaviour {
 
     private GameObject equippedStaffClone;
 
+    private Vector3 previousVelocity;
+
     private void Awake ()
     {
         resourceInventory = GetComponent<ResourceInventory>();
@@ -48,6 +50,8 @@ public class Player : MonoBehaviour {
         if(isStunned) return;
         if(GameUtils.IsGamePaused()) return;
 
+        previousVelocity = rigidbody.velocity;
+
         CheckGrounded();
         Attack();
         BuildWall();
@@ -57,6 +61,15 @@ public class Player : MonoBehaviour {
     {
         if (col.gameObject.GetComponent<Pickup>())
             col.gameObject.GetComponent<Pickup>().Collect(resourceInventory);
+
+        if (col.gameObject.layer == LayerMask.NameToLayer("Platform"))
+        {
+            if (col.contacts.Length > 0 && col.contacts[0].normal.y == -1)
+            {
+                Physics.IgnoreCollision(collider, col.collider);
+                rigidbody.velocity = previousVelocity;
+            }
+        }
     }
 
     private void BuildWall ()

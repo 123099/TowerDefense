@@ -7,10 +7,14 @@ using UnityEngine.EventSystems;
 
 public class TurretPlacer : MonoBehaviour {
 
-    [SerializeField] private UnityEvent OnClose;
-
     [Tooltip("Turret slot button template")]
     [SerializeField] private Button slotTemplate;
+    [Tooltip("The color for a taken slot")]
+    [SerializeField] private Color takenSlotColor;
+    [Tooltip("The color for a free slot")]
+    [SerializeField] private Color freeSlotColor;
+
+    [SerializeField] private UnityEvent OnClose;
 
     private Shop shop;
     private GameObject turretToPlace;
@@ -44,9 +48,9 @@ public class TurretPlacer : MonoBehaviour {
             slotButtonTransform.localScale = Vector3.one;
 
             if (!slot.IsFree())
-                slotButton.GetComponent<Image>().color = Color.red;
+                slotButton.GetComponent<Image>().color = takenSlotColor;
             else
-                slotButton.GetComponent<Image>().color = Color.yellow;
+                slotButton.GetComponent<Image>().color = freeSlotColor;
 
             slotButton.onClick.AddListener(() =>
             {
@@ -67,25 +71,34 @@ public class TurretPlacer : MonoBehaviour {
             Destroy(obj);
     }
 
+    private void Update ()
+    {
+        if(Input.GetButtonDown("Cancel") && turretToPlace)
+        {
+            RefundTurret(turretToPlace, 1f);
+            OnClose.Invoke();
+        }
+    }
+
     private void PlaceTurret(TurretSlot slot)
     {
         if (!slot.IsFree())
-            RefundTurret(slot);
+        {
+            RefundTurret(slot.GetTurret(), 0.5f);
+            slot.Clear();
+        }
 
         turretToPlace.transform.SetParent(slot.transform);
         turretToPlace.transform.localPosition = Vector3.zero;
         turretToPlace.transform.localRotation = Quaternion.identity;
+
+        turretToPlace = null;
     }
 
-    private void RefundTurret(TurretSlot slot)
+    private void RefundTurret(GameObject turret, float refundPercentage)
     {
-        GameObject turretInSlot = slot.GetTurret();
-        for (int i = 0; i < shop.GetItemCount(); ++i)
-            if (shop.GetItemAt(i).name.Equals(turretInSlot.name))
-            {
-                GameUtils.GetPlayer().GetComponent<ResourceInventory>().Add(shop.GetCurrency(), shop.GetItemAt(i).GetPrice() / 2);
-                slot.Clear();
-            }
+        ShopItem turretShopItem = shop.GetShopItemByName(turret.name);
+        GameUtils.GetPlayer().GetComponent<ResourceInventory>().Add(shop.GetCurrency(), (int)(turretShopItem.GetPrice() * refundPercentage));
     }
 
     private IEnumerator select (GameObject button)

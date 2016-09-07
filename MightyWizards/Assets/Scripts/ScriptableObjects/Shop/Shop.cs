@@ -34,6 +34,15 @@ public class Shop : ScriptableObject {
         return -1;
     }
 
+    public ShopItem GetShopItemByName(string name)
+    {
+        foreach (ShopItem item in items)
+            if (item.GetItem().name == name)
+                return item;
+
+        return null;
+    }
+
     public ShopItem[] GetItemsOfCategory (ShopItemCategory category)
     {
         List<ShopItem> items = new List<ShopItem>();
@@ -70,4 +79,14 @@ public class Shop : ScriptableObject {
         return purchasedItem;
     }
 
+    public Shop Clone ()
+    {
+        Shop shop = Instantiate(this);
+        ShopItem[] clonedItems = new ShopItem[items.Length];
+        for (int i = 0; i < items.Length; ++i)
+            clonedItems[i] = Instantiate(items[i]);
+        shop.items = clonedItems;
+
+        return shop;
+    }
 }

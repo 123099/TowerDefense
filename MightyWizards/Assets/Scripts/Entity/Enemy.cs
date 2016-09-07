@@ -82,8 +82,10 @@ public abstract class Enemy : MonoBehaviour {
         {
             Player player = col.gameObject.GetComponent<Player>();
             Vector3 dir = player.transform.position - transform.position;
-            dir.y += 1;
-            player.Knockback(dir.normalized * 30000);
+            Vector3 force = Mathf.Sign(dir.x) * Vector3.right + Vector3.up * 0.5f;
+            force *= 40000;
+
+            player.Knockback(force);
             player.Stun(1f);
         } 
     }

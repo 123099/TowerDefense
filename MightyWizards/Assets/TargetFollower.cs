@@ -47,7 +47,7 @@ public class TargetFollower : MonoBehaviour {
         if (dirSign == startToTransformSign && startToTransform.magnitude > maxMoveDistance)
             return;
 
-        transform.Translate(Vector3.left * dirSign * moveSpeed * Time.deltaTime);
+        transform.position = Vector3.Slerp(transform.position, transform.position + Vector3.right * dirSign * moveSpeed * Time.deltaTime, 0.6f);
     }
 
     public void ResetPosition ()

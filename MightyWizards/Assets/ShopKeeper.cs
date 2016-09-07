@@ -24,6 +24,12 @@ public class ShopKeeper : MonoBehaviour {
 
     private List<GameObject> spawnedButtons;
 
+    private void Awake ()
+    {
+        //Clone shop to be able to modify values
+        shop = shop.Clone();
+    }
+
     private void OnEnable ()
     {
         subtitle.text = "We only accept " + shop.GetCurrency().name;
@@ -71,20 +77,22 @@ public class ShopKeeper : MonoBehaviour {
             shopItemTransform.localScale = Vector3.one;
 
             Button itemButton = shopItemUI.GetComponent<Button>();
-            itemButton.onClick.AddListener(() => PurchaseItem(shop.IndexOf(item)));
+            itemButton.onClick.AddListener(() => PurchaseItem(item, shopItemUI));
 
             spawnedButtons.Add(shopItemUI.gameObject);
         }
     }
 
-	public void PurchaseItem(int index)
+	public void PurchaseItem(ShopItem shopItem, ShopItemUI shopItemUI)
     {
-        Object purchasedItem = shop.Purchase(GameUtils.GetPlayer().GetComponent<ResourceInventory>(), index);
+        Object purchasedItem = shop.Purchase(GameUtils.GetPlayer().GetComponent<ResourceInventory>(), shopItem);
         DisplayPurchaseMessage(purchasedItem != null);
 
         if(purchasedItem is Staff)
         {
             GameUtils.GetPlayer().SetStaff(purchasedItem as Staff);
+            shopItem.SetPrice(0);
+            shopItemUI.SetupShopItem(shopItem);
         }
         else if(purchasedItem is GameObject)
         {
