@@ -21,7 +21,6 @@ public class WizardBase : MonoBehaviour {
 
     public bool SpawnWall ()
     {
-        print("Wall spawned");
         for(int i = 0; i < spawnedWalls.Length; ++i)
         {
             if(!spawnedWalls[i] || !spawnedWalls[i].GetComponent<Health>().IsAlive())
