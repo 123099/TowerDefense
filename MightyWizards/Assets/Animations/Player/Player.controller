@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 6
-  jumpSpeed: 12
+  jumpSpeed: 13.5
 --- !u!206 &206000010756310646
 BlendTree:
   m_ObjectHideFlags: 1
