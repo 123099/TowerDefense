@@ -897,7 +897,7 @@ GameObject:
   - 222: {fileID: 390825116}
   - 114: {fileID: 390825115}
   m_Layer: 5
-  m_Name: Funds
+  m_Name: Messges
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1045,7 +1045,6 @@ GameObject:
   - 114: {fileID: 400250801}
   - 114: {fileID: 400250802}
   - 114: {fileID: 400250803}
-  - 114: {fileID: 400250804}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1133,9 +1132,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 841685057}
-  startDistance: 0.445
-  moveSpeed: 6
-  maxMoveDistance: 15
+  startDistance: 0.25
+  moveSpeed: 6.5
+  maxMoveDistance: 16
   pivot: {fileID: 180877076}
 --- !u!114 &400250802
 MonoBehaviour:
@@ -1172,17 +1171,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   smoothing: 0.01
---- !u!114 &400250804
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 400250795}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2dae00dfa397153468ac33548e13d8ce, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &403462966
 GameObject:
   m_ObjectHideFlags: 0
@@ -1407,6 +1395,7 @@ GameObject:
   - 114: {fileID: 459581616}
   - 114: {fileID: 459581615}
   - 114: {fileID: 459581614}
+  - 114: {fileID: 459581619}
   m_Layer: 5
   m_Name: TurretIconTemplate
   m_TagString: Untagged
@@ -1522,6 +1511,19 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 65, y: 65}
   m_Pivot: {x: 0, y: 1}
+--- !u!114 &459581619
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 459581613}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1862395651, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates: []
+  delegates: []
 --- !u!4 &499839923
 Transform:
   m_ObjectHideFlags: 0
@@ -2537,7 +2539,7 @@ RectTransform:
   m_Father: {fileID: 2072769881}
   m_RootOrder: 0
   m_AnchorMin: {x: 0.05, y: 0.9}
-  m_AnchorMax: {x: 0.15, y: 0.9}
+  m_AnchorMax: {x: 0.145, y: 0.9}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 35}
   m_Pivot: {x: 0, y: 1}
@@ -3540,7 +3542,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shop: {fileID: 11400000, guid: 7123a0db02785eb4bb2402e9e5ce8845, type: 2}
   subtitle: {fileID: 1738041866}
-  funds: {fileID: 390825115}
+  messages: {fileID: 390825115}
   staffTemplate: {fileID: 1511960491}
   turretTemplate: {fileID: 459581614}
   turretPlacer: {fileID: 403685498}
@@ -3738,6 +3740,7 @@ GameObject:
   - 114: {fileID: 1511960488}
   - 114: {fileID: 1511960490}
   - 114: {fileID: 1511960491}
+  - 114: {fileID: 1511960492}
   m_Layer: 5
   m_Name: StaffIconTemplate
   m_TagString: Untagged
@@ -3853,6 +3856,19 @@ MonoBehaviour:
   icon: {fileID: 1511960488}
   stackSizeText: {fileID: 1127854183}
   priceTag: {fileID: 238094469}
+--- !u!114 &1511960492
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1511960486}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1862395651, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates: []
+  delegates: []
 --- !u!1 &1516080799 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1000010477880412, guid: 421cbbca3b560d347896ead5baf4ae54,
@@ -4068,7 +4084,7 @@ RectTransform:
   m_Father: {fileID: 1071171702}
   m_RootOrder: 0
   m_AnchorMin: {x: 0.05, y: 0.9}
-  m_AnchorMax: {x: 0.15, y: 0.9}
+  m_AnchorMax: {x: 0.145, y: 0.9}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 35}
   m_Pivot: {x: 0, y: 1}
