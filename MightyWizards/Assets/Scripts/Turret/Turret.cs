@@ -13,6 +13,8 @@ public class Turret : MonoBehaviour {
     [SerializeField] private float fireRange;
     [Tooltip("The amount by which to multiply the damage of all basic attacks")]
     [SerializeField] private float damageMultiplier;
+    [Tooltip("Do the projectiles of this turret hit multiples enemies at once or not")]
+    [SerializeField] private bool aoe;
 
     [Tooltip("The projectile this turret will shoot")]
     [SerializeField] private ProjectileData projectile;
@@ -55,6 +57,7 @@ public class Turret : MonoBehaviour {
     {
         Projectile proj = projectile.Launch(fireLocation);
         proj.SetDamage(projectile.damage * damageMultiplier);
+        proj.SetAOE(aoe);
     }
 
     private void LookAtEnemy()
