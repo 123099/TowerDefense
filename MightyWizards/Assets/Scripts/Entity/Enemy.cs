@@ -10,6 +10,8 @@ public abstract class Enemy : MonoBehaviour {
     [Tooltip("Set to true if this enemy is a ground unit or false if it's aerial. Aerial units are not affected by gravity")]
     [SerializeField] private bool isGroundUnit;
 
+    public RateTimer attackRate;
+
     private Rigidbody rigidbody;
 
     private WizardBase wizardBase;
@@ -36,7 +38,7 @@ public abstract class Enemy : MonoBehaviour {
 
     private void Update ()
     {
-        if (target && target.IsAlive())
+        if (target && target.IsAlive() && attackRate.IsReady())
                 Attack();
 
         if (wizardBase && !wizardBase.GetComponent<Health>().IsAlive())

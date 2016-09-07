@@ -13,6 +13,8 @@ public class Player : MonoBehaviour {
     [Tooltip("The position and rotation at which staffs spawn")]
     [SerializeField] private Transform staffSpawn;
 
+    public RateTimer attackRate;
+
     public UnityEvent OnLand;
     public UnityEvent OnJump;
 
@@ -92,7 +94,7 @@ public class Player : MonoBehaviour {
 
     private void Attack ()
     {
-        if (Input.GetButtonDown("Fire"))
+        if (Input.GetButtonDown("Fire") && attackRate.IsReady())
             staff.Attack();
     }
 
