@@ -193,7 +193,7 @@ Transform:
   - {fileID: 805649925}
   - {fileID: 1296842924}
   m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_RootOrder: 15
 --- !u!1 &135983270
 GameObject:
   m_ObjectHideFlags: 0
@@ -388,7 +388,7 @@ Transform:
   - {fileID: 409178647}
   - {fileID: 2141938423}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
 --- !u!114 &212119324
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -851,7 +851,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 15
+  m_RootOrder: 16
 --- !u!114 &354107764 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 114000013566781468, guid: cdcecbc08ef27b24899e0333fb52430a,
@@ -1016,6 +1016,7 @@ GameObject:
   - 81: {fileID: 400250796}
   - 114: {fileID: 400250801}
   - 114: {fileID: 400250802}
+  - 114: {fileID: 400250803}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1085,12 +1086,12 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 400250795}
   m_LocalRotation: {x: -0.000000027276966, y: 0.9893335, z: -0.14566866, w: -0.00000018525617}
-  m_LocalPosition: {x: 0, y: 16, z: 37}
+  m_LocalPosition: {x: -0.3, y: 16, z: 58.78}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 16.752, y: 180.00002, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
 --- !u!114 &400250801
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1129,6 +1130,18 @@ MonoBehaviour:
   separableBlurShader: {fileID: 4800000, guid: e97c14fbb5ea04c3a902cc533d7fc5d1, type: 3}
   chromAberrationShader: {fileID: 4800000, guid: 2b4f29398d9484ccfa9fd220449f5eee,
     type: 3}
+--- !u!114 &400250803
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 400250795}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f32907708e07e1e4f8bc0dc4ce55fd78, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  smoothing: 0.01
 --- !u!1 &403462966
 GameObject:
   m_ObjectHideFlags: 0
@@ -1298,7 +1311,7 @@ RectTransform:
   m_Children:
   - {fileID: 930534679}
   m_Father: {fileID: 0}
-  m_RootOrder: 17
+  m_RootOrder: 18
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
@@ -1847,7 +1860,7 @@ Transform:
   - {fileID: 1319984321}
   - {fileID: 2056940151}
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 12
 --- !u!114 &585623239
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2288,6 +2301,34 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 1593118119}
   m_Script: {fileID: 11500000, guid: 31a67eed2519deb4c9175ab4061fce33, type: 3}
+--- !u!1 &843426105
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 843426106}
+  m_Layer: 0
+  m_Name: Pan target
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &843426106
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 843426105}
+  m_LocalRotation: {x: -0.000000027276966, y: 0.9893335, z: -0.14566866, w: -0.00000018525617}
+  m_LocalPosition: {x: 0, y: 16, z: 37}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
 --- !u!1001 &863811529
 Prefab:
   m_ObjectHideFlags: 0
@@ -2624,7 +2665,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 11
 --- !u!114 &1033070310
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3003,6 +3044,17 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0.1
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 400250803}
+        m_MethodName: PanTowards
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 843426106}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Transform, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
@@ -3428,7 +3480,7 @@ RectTransform:
   m_Children:
   - {fileID: 238484674}
   m_Father: {fileID: 0}
-  m_RootOrder: 16
+  m_RootOrder: 17
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
@@ -3481,7 +3533,7 @@ Transform:
   - {fileID: 2045278432}
   - {fileID: 1454872090}
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 13
 --- !u!1 &1441387421
 GameObject:
   m_ObjectHideFlags: 0
@@ -3818,7 +3870,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4000010265270006, guid: 421cbbca3b560d347896ead5baf4ae54, type: 2}
       propertyPath: m_RootOrder
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 114000011292621858, guid: 421cbbca3b560d347896ead5baf4ae54,
         type: 2}
@@ -3926,7 +3978,7 @@ RectTransform:
   - {fileID: 504022092}
   - {fileID: 391475572}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
@@ -4698,7 +4750,7 @@ Transform:
   - {fileID: 1153449519}
   - {fileID: 1830143543}
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 14
 --- !u!1 &1934278877
 GameObject:
   m_ObjectHideFlags: 0
@@ -5497,7 +5549,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
 --- !u!1 &2072769880
 GameObject:
   m_ObjectHideFlags: 0
@@ -5670,7 +5722,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 10
 --- !u!1 &2136376549
 GameObject:
   m_ObjectHideFlags: 0
