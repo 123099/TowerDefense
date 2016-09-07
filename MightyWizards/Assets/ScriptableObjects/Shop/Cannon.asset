@@ -12,6 +12,8 @@ MonoBehaviour:
   m_Name: Cannon
   m_EditorClassIdentifier: 
   item: {fileID: 1000014068751032, guid: c4f0ecab232b7b74cb00d362aadd2d6d, type: 2}
+  itemName: Cannon
+  itemDesc: short range, medium damage, attacks both, AoE
   icon: {fileID: 0}
   category: 1
   price: 5

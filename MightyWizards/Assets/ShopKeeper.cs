@@ -13,6 +13,8 @@ public class ShopKeeper : MonoBehaviour {
     [SerializeField] private Text subtitle;
     [Tooltip("The text area for the shop. This displays important messages")]
     [SerializeField] private Text messages;
+    [Tooltip("The text area for the selected item description.")]
+    [SerializeField] private Text itemDescription;
 
     [Tooltip("Staff button template")]
     [SerializeField] private ShopItemUI staffTemplate;
@@ -80,7 +82,7 @@ public class ShopKeeper : MonoBehaviour {
 
             EventTrigger.Entry entry = new EventTrigger.Entry();
             entry.eventID = EventTriggerType.Select;
-            entry.callback.AddListener((eventData) => DisplaySelectedItemName(item.GetItem().name));
+            entry.callback.AddListener((eventData) => DisplaySelectedItem(item));
 
             itemButton.GetComponent<EventTrigger>().triggers.Add(entry);
 
@@ -111,10 +113,12 @@ public class ShopKeeper : MonoBehaviour {
         }
     }
 
-    private void DisplaySelectedItemName(string name)
+    private void DisplaySelectedItem(ShopItem item)
     {
-        messages.text = name;
+        messages.text = item.GetName();
         messages.color = Color.cyan;
+
+        itemDescription.text = item.GetDesc();
     }
 
     private void DisplayPurchaseMessage(bool success)

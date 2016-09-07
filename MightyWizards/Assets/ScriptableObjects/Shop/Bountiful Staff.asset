@@ -12,6 +12,8 @@ MonoBehaviour:
   m_Name: Bountiful Staff
   m_EditorClassIdentifier: 
   item: {fileID: 11400000, guid: 9bfa8617fd415cf4bb7feef2ee94be3b, type: 2}
+  itemName: Bountiful Staff
+  itemDesc: 'Passive: All enemies reward more resources '
   icon: {fileID: 0}
   category: 0
   price: 4

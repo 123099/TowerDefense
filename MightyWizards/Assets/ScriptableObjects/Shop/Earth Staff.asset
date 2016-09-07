@@ -12,6 +12,8 @@ MonoBehaviour:
   m_Name: Earth Staff
   m_EditorClassIdentifier: 
   item: {fileID: 11400000, guid: f763ca273916b42479742165693466b3, type: 2}
+  itemName: Earth Staff
+  itemDesc: Melee range, normal attack speed, normal AoE damage.
   icon: {fileID: 0}
   category: 0
   price: 10

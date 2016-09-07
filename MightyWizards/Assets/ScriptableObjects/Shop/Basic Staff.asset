@@ -12,6 +12,8 @@ MonoBehaviour:
   m_Name: Basic Staff
   m_EditorClassIdentifier: 
   item: {fileID: 11400000, guid: 6e761f49eee8fc54382117d9157c7a04, type: 2}
+  itemName: Basic Staff
+  itemDesc: Small attacks speed, normal damage, medium range. AoE attacks.
   icon: {fileID: 0}
   category: 0
   price: 2

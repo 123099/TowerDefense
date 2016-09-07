@@ -12,6 +12,8 @@ MonoBehaviour:
   m_Name: Hellstorm Staff
   m_EditorClassIdentifier: 
   item: {fileID: 11400000, guid: f866325ecb7b507419ae736b4dcd7003, type: 2}
+  itemName: Hell Staff
+  itemDesc: normal attacks speed, normal damage, medium range
   icon: {fileID: 0}
   category: 0
   price: 10
