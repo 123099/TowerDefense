@@ -12,7 +12,7 @@ public class Pan : MonoBehaviour {
 
     private bool pan;
 
-	public void PanTowards(Transform startPosition)
+	public void PanFrom(Transform startPosition)
     {
         this.startPosition = startPosition.position;
         targetPosition = transform.position;
@@ -23,6 +23,9 @@ public class Pan : MonoBehaviour {
     private void Update ()
     {
         if (pan)
-            transform.position = Vector3.Slerp(startPosition, targetPosition, smoothing);
+        {
+            startPosition = Vector3.Slerp(startPosition, targetPosition, smoothing);
+            transform.position = startPosition;
+        }
     }
 }
