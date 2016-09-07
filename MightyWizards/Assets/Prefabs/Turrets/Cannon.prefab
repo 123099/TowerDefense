@@ -70,7 +70,7 @@ GameObject:
   - 4: {fileID: 4000011098767996}
   - 114: {fileID: 114000014247845340}
   m_Layer: 11
-  m_Name: Turret
+  m_Name: Cannon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -128,7 +128,7 @@ Transform:
   m_GameObject: {fileID: 1000014068751032}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.4582841, y: 1.4582851, z: 1.4582851}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 4000010452720358}
@@ -245,9 +245,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rotatingPiece: {fileID: 4000010585615230}
   fireTimer:
-    rate: 3
-  fireRange: 12
-  damageMultiplier: 0.35
-  aoe: 0
+    rate: 1
+  fireRange: 10
+  damageMultiplier: 0.25
+  aoe: 1
   projectile: {fileID: 11400000, guid: 3dc0899b1c9109c40834647c536de177, type: 2}
   fireLocation: {fileID: 4000012914754902}
