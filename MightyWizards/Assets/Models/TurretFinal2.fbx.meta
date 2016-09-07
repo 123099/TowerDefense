@@ -1,36 +1,36 @@
 fileFormatVersion: 2
-guid: 15155ddc270f1f146a28686e08261e18
-timeCreated: 1473249163
+guid: 17f3a4af0899b2f4da97ea28d9ac99ee
+timeCreated: 1473253489
 licenseType: Free
 ModelImporter:
   serializedVersion: 19
   fileIDToRecycleName:
     100000: Bottom
     100002: Frame
-    100004: String
-    100006: Top
-    100008: //RootNode
-    100010: Wheel
+    100004: group1
+    100006: String1
+    100008: Top
+    100010: //RootNode
+    100012: Wheel
     400000: Bottom
     400002: Frame
-    400004: String
-    400006: Top
-    400008: //RootNode
-    400010: Wheel
+    400004: group1
+    400006: String1
+    400008: Top
+    400010: //RootNode
+    400012: Wheel
     2300000: Bottom
-    2300002: Frame
-    2300004: String
-    2300006: Wheel
+    2300002: Wheel
     3300000: Bottom
-    3300002: Frame
-    3300004: String
-    3300006: Wheel
+    3300002: Wheel
     4300000: Wheel
-    4300002: String
-    4300004: Frame
-    4300006: Bottom
+    4300002: Frame
+    4300004: Bottom
+    4300006: String1
     7400000: Take 001
     9500000: //RootNode
+    13700000: Frame
+    13700002: String1
   materials:
     importMaterials: 1
     materialName: 0

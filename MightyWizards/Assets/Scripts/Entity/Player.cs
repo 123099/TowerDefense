@@ -12,6 +12,8 @@ public class Player : MonoBehaviour {
     [SerializeField] private Staff staff;
     [Tooltip("The position and rotation at which staffs spawn")]
     [SerializeField] private Transform staffSpawn;
+    [Tooltip("The maximum velocity the player can move at")]
+    [SerializeField] private float maxSpeed;
 
     public RateTimer attackRate;
 
@@ -90,6 +92,12 @@ public class Player : MonoBehaviour {
                     resourceInventory.Add(wallPrefab.GetResourceType(), -wallPrefab.GetCost());
             }
         }
+    }
+
+    private void FixedUpdate ()
+    {
+        if (rigidbody.velocity.magnitude > maxSpeed)
+            rigidbody.velocity = rigidbody.velocity.normalized * maxSpeed;
     }
 
     private void Attack ()

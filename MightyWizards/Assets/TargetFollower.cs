@@ -14,6 +14,8 @@ public class TargetFollower : MonoBehaviour {
     [Tooltip("The maximum distance from the starting position the camera will move")]
     [SerializeField] private float maxMoveDistance;
 
+    public Transform pivot;
+
     private Vector3 startPos;
 
     private Camera camera;
@@ -48,6 +50,8 @@ public class TargetFollower : MonoBehaviour {
             return;
 
         transform.position = Vector3.Slerp(transform.position, transform.position + Vector3.right * dirSign * moveSpeed * Time.deltaTime, 0.6f);
+
+       // transform.RotateAround(pivot.position, Vector3.up, dirSign * moveSpeed * Time.deltaTime);
     }
 
     public void ResetPosition ()
