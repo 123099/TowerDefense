@@ -7,20 +7,22 @@ public class Pan : MonoBehaviour {
     [Tooltip("The factor by which to blend between the start and target positions each frame")]
     [SerializeField] private float smoothing;
 
-    private Transform startPosition;
-    private Transform targetPosition;
+    private Vector3 startPosition;
+    private Vector3 targetPosition;
 
-	public void PanTowards(Transform targetPosition)
+    private bool pan;
+
+	public void PanTowards(Transform startPosition)
     {
-        startPosition = transform;
-        this.targetPosition = targetPosition;
+        this.startPosition = startPosition.position;
+        targetPosition = transform.position;
+
+        pan = true;
     }
 
     private void Update ()
     {
-        if (targetPosition)
-        {
-            transform.position = Vector3.Slerp(startPosition.position, targetPosition.position, smoothing);
-        }
+        if (pan)
+            transform.position = Vector3.Slerp(startPosition, targetPosition, smoothing);
     }
 }
