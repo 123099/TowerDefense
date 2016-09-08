@@ -9,6 +9,7 @@ public class MeleeEnemy : Enemy {
 
     public override void Attack ()
     {
+        if(!target) return;
         target.Damage(damage);
     }
 }

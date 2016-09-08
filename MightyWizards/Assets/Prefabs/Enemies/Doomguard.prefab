@@ -227,7 +227,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000011223515012}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1081.1158, y: 712.70557, z: 798.95605}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
@@ -244,7 +244,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000010507158206}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.261, z: 0.603}
+  m_LocalPosition: {x: 0, y: 0.471, z: 0.63}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
@@ -257,7 +257,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000011280567614}
   m_LocalRotation: {x: 0.5, y: 0.5, z: 0.5, w: 0.5}
-  m_LocalPosition: {x: -0.00266586, y: 0.030525798, z: -0.0000000035762786}
+  m_LocalPosition: {x: 0, y: 1.09, z: -0.035}
   m_LocalScale: {x: 40, y: 40, z: 40}
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 90}
   m_Children: []
@@ -718,6 +718,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isGroundUnit: 0
+  animator: {fileID: 0}
   attackRate:
     rate: 1
   fireLocation: {fileID: 4000013415237296}
@@ -840,9 +841,9 @@ CapsuleCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.5
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Height: 2.18
+  m_Direction: 2
+  m_Center: {x: 0, y: 1, z: -0.07}
 --- !u!222 &222000010257009682
 CanvasRenderer:
   m_ObjectHideFlags: 1
@@ -960,7 +961,7 @@ RectTransform:
   m_RootOrder: 1
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 2.54}
+  m_AnchoredPosition: {x: 0, y: 3.65}
   m_SizeDelta: {x: 800, y: 450}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224000011142761836
@@ -997,7 +998,7 @@ RectTransform:
   m_RootOrder: 2
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 1.33}
+  m_AnchoredPosition: {x: 0, y: 2.44}
   m_SizeDelta: {x: 622, y: 350}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224000011732391602

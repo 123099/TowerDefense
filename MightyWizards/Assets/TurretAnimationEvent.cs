@@ -5,6 +5,6 @@ public class TurretAnimationEvent : MonoBehaviour {
 
 	public void Shoot ()
     {
-        transform.root.GetComponent<Turret>().Shoot();
+        transform.parent.GetComponent<Turret>().Shoot();
     }
 }

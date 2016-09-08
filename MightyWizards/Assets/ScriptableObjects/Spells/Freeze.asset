@@ -11,6 +11,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dfc5c3e22e4130e4f9b6ee5b8589cca5, type: 3}
   m_Name: Freeze
   m_EditorClassIdentifier: 
-  spellPrefab: {fileID: 0}
+  spellPrefab: {fileID: 1000012002249244, guid: b052ccb42f45a5847a78a5f9ad603287,
+    type: 2}
   uses: 2
+  passive: 0
   freezeDuration: 3

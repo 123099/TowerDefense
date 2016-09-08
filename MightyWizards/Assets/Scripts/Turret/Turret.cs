@@ -7,8 +7,8 @@ public class Turret : MonoBehaviour {
 
     [Tooltip("The part of the turret that should look at the enemy")]
     [SerializeField] private Transform rotatingPiece;
-    [Tooltip("The rate timer for firing the turret")]
-    [SerializeField] private RateTimer fireTimer;
+    [Tooltip("The turret's animator")]
+    [SerializeField] private Animator turretAnimator;
     [Tooltip("The maximum range at which the turret will shoot enemies")]
     [SerializeField] private float fireRange;
     [Tooltip("The amount by which to multiply the damage of all basic attacks")]
@@ -27,12 +27,13 @@ public class Turret : MonoBehaviour {
         if (IsTargetInRange())
         {
             LookAtEnemy();
-
-            //if (fireTimer.IsReady())
-                //Shoot();
+            turretAnimator.SetBool("Attacking", true);
 
             if (!target.GetComponent<Health>().IsAlive())
+            {
                 target = null;
+                turretAnimator.SetBool("Attacking", false);
+            }
         }
         else
             SetTarget(GameUtils.GetNearestEnemyTo(transform, fireRange));
@@ -62,7 +63,9 @@ public class Turret : MonoBehaviour {
 
     private void LookAtEnemy()
     {
-        rotatingPiece.LookAt(target.transform);
+        Vector3 dir = target.transform.position - rotatingPiece.position;
+        Quaternion rotation = Quaternion.LookRotation(dir);
+        rotatingPiece.rotation = Quaternion.Slerp(rotatingPiece.rotation, rotation, 0.5f);
     }
 
     private bool IsTargetInRange ()

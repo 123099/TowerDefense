@@ -14,7 +14,7 @@ MonoBehaviour:
   modelPrefab: {fileID: 1000010389306780, guid: 027aebd688c48a84c9a23b06ee693b27,
     type: 2}
   basicAttack: {fileID: 11400000, guid: 2729e5565a517be47bea564cf71c5803, type: 2}
-  spell: {fileID: 11400000, guid: db761abb7bad8b241af82cd5f7ed3bff, type: 2}
+  spell: {fileID: 11400000, guid: be804bb45b24e654db492367785112c9, type: 2}
   damageMultiplier: 1
   autoAimRadius: 20
   maxEnemiesHit: 1

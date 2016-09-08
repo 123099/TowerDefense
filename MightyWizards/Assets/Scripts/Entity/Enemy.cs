@@ -9,6 +9,8 @@ public abstract class Enemy : MonoBehaviour {
 
     [Tooltip("Set to true if this enemy is a ground unit or false if it's aerial. Aerial units are not affected by gravity")]
     [SerializeField] private bool isGroundUnit;
+    [Tooltip("Enemy animator")]
+    [SerializeField] private Animator animator;
 
     public RateTimer attackRate;
 
@@ -38,7 +40,9 @@ public abstract class Enemy : MonoBehaviour {
 
     private void Update ()
     {
-        if (target && target.IsAlive() && attackRate.IsReady())
+        if (animator)
+            animator.SetBool("Attacking", target && target.IsAlive());
+        else if (target && target.IsAlive() && attackRate.IsReady())
                 Attack();
 
         if (wizardBase && !wizardBase.GetComponent<Health>().IsAlive())
@@ -120,8 +124,10 @@ public abstract class Enemy : MonoBehaviour {
 
     private IEnumerator freeze(float duration)
     {
+        print("Freezing start");
         Stop();
         yield return new WaitForSeconds(duration);
         Move();
+        print("Freezing end");
     }
 }

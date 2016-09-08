@@ -395,6 +395,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000013461167642}
   - 95: {fileID: 95000011286379056}
+  - 114: {fileID: 114000011816245202}
   m_Layer: 0
   m_Name: Golem_Anim_fbx
   m_TagString: Untagged
@@ -1239,7 +1240,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000011223515012}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 7.549378, y: -0.44, z: -0.59778714}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
@@ -2220,6 +2221,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isGroundUnit: 1
+  animator: {fileID: 95000011286379056}
   attackRate:
     rate: 1
   damage: 8
@@ -2310,6 +2312,17 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.Slider+SliderEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!114 &114000011816245202
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000011547514804}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 432bf2bb46c88b14e9a0ce637915b782, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114000013259980946
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2452,10 +2465,10 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.5
-  m_Height: 2
+  m_Radius: 1.7
+  m_Height: 4.6
   m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: 2.05, z: 0}
 --- !u!137 &137000013372237238
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1
@@ -2668,7 +2681,7 @@ RectTransform:
   m_RootOrder: 0
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 2.54}
+  m_AnchoredPosition: {x: 0, y: 5.9099693}
   m_SizeDelta: {x: 800, y: 450}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224000011142761836
@@ -2705,7 +2718,7 @@ RectTransform:
   m_RootOrder: 1
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 1.33}
+  m_AnchoredPosition: {x: 0, y: 4.519969}
   m_SizeDelta: {x: 622, y: 350}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224000011732391602

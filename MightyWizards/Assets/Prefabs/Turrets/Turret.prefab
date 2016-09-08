@@ -363,8 +363,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotatingPiece: {fileID: 4000012722328162}
-  fireTimer:
-    rate: 3.5
+  turretAnimator: {fileID: 95000010610634956}
   fireRange: 12
   damageMultiplier: 0.35
   aoe: 0

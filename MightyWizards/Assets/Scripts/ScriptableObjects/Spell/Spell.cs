@@ -4,7 +4,7 @@ using System.Collections;
 public abstract class Spell : ScriptableObject {
 
     [Tooltip("The prefab to spawn when the spell is activated")]
-    [SerializeField] private GameObject spellPrefab;
+    [SerializeField] protected GameObject spellPrefab;
     [Tooltip("The amount of times this spell can be used")]
     [SerializeField] private int uses;
     [Tooltip("Whether the spell is passive or active")]
