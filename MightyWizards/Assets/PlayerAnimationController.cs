@@ -65,7 +65,7 @@ public class PlayerAnimationController : StateMachineBehaviour {
             }
             else if(input == -1)
             {
-                if(player.GetGround().gameObject.layer != LayerMask.NameToLayer("Ground"))
+                if(player.GetGround().gameObject.layer == LayerMask.NameToLayer("Platform"))
                 {
                     Physics.IgnoreCollision(player.GetComponent<Collider>(), player.GetGround(), true);
                 }

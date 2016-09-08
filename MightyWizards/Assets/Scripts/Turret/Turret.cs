@@ -28,8 +28,8 @@ public class Turret : MonoBehaviour {
         {
             LookAtEnemy();
 
-            if (fireTimer.IsReady())
-                Shoot();
+            //if (fireTimer.IsReady())
+                //Shoot();
 
             if (!target.GetComponent<Health>().IsAlive())
                 target = null;
@@ -53,7 +53,7 @@ public class Turret : MonoBehaviour {
         this.damageMultiplier = damageMultiplier;
     }
 
-    private void Shoot ()
+    public void Shoot ()
     {
         Projectile proj = projectile.Launch(fireLocation);
         proj.SetDamage(projectile.damage * damageMultiplier);
