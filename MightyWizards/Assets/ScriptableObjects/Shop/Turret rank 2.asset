@@ -9,11 +9,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: af405928e74cb2c469820ffd16d47b95, type: 3}
-  m_Name: Cannon
+  m_Name: Turret rank 2
   m_EditorClassIdentifier: 
-  item: {fileID: 1000014068751032, guid: 6b1002b3a45994442bf479f8aa484be6, type: 2}
-  itemName: Cannon
-  itemDesc: short range, medium damage, attacks both, AoE
+  item: {fileID: 1000014068751032, guid: 2a9493fd22dadee489a383b625109ddb, type: 2}
+  itemName: Crossbow
+  itemDesc: Long range, medium damage, attacks both aerial and grounded units
   icon: {fileID: 0}
   category: 1
-  price: 5
+  price: 3

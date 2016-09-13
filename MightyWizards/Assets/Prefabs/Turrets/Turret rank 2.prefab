@@ -1,0 +1,98 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 1
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 1000014068751032}
+  m_IsPrefabParent: 1
+--- !u!1 &1000014068751032
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 4000011098767996}
+  - 114: {fileID: 114000011137093732}
+  - 114: {fileID: 114000014247845340}
+  m_Layer: 11
+  m_Name: Turret rank 2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4000011098767996
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000014068751032}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1.4582841, y: 1.4582851, z: 1.4582851}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+--- !u!114 &114000011137093732
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000014068751032}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9753da727c9285a43b9d3196cfeda23d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  model: Turret/Turret
+  forceOneInstance: 1
+  position: {x: 0, y: 0, z: 0}
+  rotation: {x: 0, y: 0, z: 0}
+  scale: {x: 10, y: 10, z: 10}
+  animationController: {fileID: 9100000, guid: 453db8154f448f9408018a2de442af9d, type: 2}
+  applyRootMotion: 0
+  material: {fileID: 0}
+  scripts:
+  - TurretAnimationEvent
+  OnModelLoaded:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 114000014247845340}
+        m_MethodName: OnModelSet
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: ModelLoadEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
+--- !u!114 &114000014247845340
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000014068751032}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a73e8f4ee16ed72409eee02bfa24bff1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rotatingPiece: {fileID: 0}
+  turretAnimator: {fileID: 0}
+  fireRange: 13
+  damageMultiplier: 0.35
+  aoe: 0
+  projectile: {fileID: 11400000, guid: 3dc0899b1c9109c40834647c536de177, type: 2}
+  fireLocation: {fileID: 0}

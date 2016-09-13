@@ -9,12 +9,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: af405928e74cb2c469820ffd16d47b95, type: 3}
-  m_Name: Bountiful Staff
+  m_Name: Cannon rank 3
   m_EditorClassIdentifier: 
-  item: {fileID: 11400000, guid: 9bfa8617fd415cf4bb7feef2ee94be3b, type: 2}
-  itemName: Bountiful Staff
-  itemDesc: A relic made by a greedy goblin warlock. It transforms the enemies into
-    more resources while also being decent in combat.
+  item: {fileID: 1000014068751032, guid: 7fb2b50204e44894aaba70a4a7514518, type: 2}
+  itemName: Cannon
+  itemDesc: short range, medium damage, attacks both, AoE
   icon: {fileID: 0}
-  category: 0
-  price: 4
+  category: 1
+  price: 5

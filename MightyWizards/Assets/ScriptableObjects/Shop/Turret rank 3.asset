@@ -9,7 +9,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: af405928e74cb2c469820ffd16d47b95, type: 3}
-  m_Name: Turret
+  m_Name: Turret rank 3
   m_EditorClassIdentifier: 
   item: {fileID: 1000014068751032, guid: 74c951124704f4f45993f72a5cb1f065, type: 2}
   itemName: Crossbow

@@ -85,7 +85,7 @@ GameObject:
   - 114: {fileID: 114000011137093732}
   - 114: {fileID: 114000014247845340}
   m_Layer: 11
-  m_Name: Cannon
+  m_Name: Cannon Rank 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

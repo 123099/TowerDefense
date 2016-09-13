@@ -13,7 +13,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   item: {fileID: 11400000, guid: f866325ecb7b507419ae736b4dcd7003, type: 2}
   itemName: Hell Staff
-  itemDesc: normal attacks speed, normal damage, medium range
+  itemDesc: Stolen from one of the commanders of the Underworld, this unstoppable
+    relic deals a huge amount of damage to many enemies. In dire situations it can
+    even summon fire from the pitts of doom to aid you in combat.
   icon: {fileID: 0}
   category: 0
   price: 10

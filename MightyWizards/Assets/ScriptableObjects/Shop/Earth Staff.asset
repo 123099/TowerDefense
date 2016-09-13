@@ -13,7 +13,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   item: {fileID: 11400000, guid: f763ca273916b42479742165693466b3, type: 2}
   itemName: Earth Staff
-  itemDesc: Melee range, normal attack speed, normal AoE damage.
+  itemDesc: Made from the spine of a the Mole King, this staff deals a huge amount
+    of damage and it also increases the effectivness of all your turrets.
   icon: {fileID: 0}
   category: 0
   price: 10
