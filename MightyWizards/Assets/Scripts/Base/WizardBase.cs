@@ -27,7 +27,7 @@ public class WizardBase : MonoBehaviour {
             {
                 spawnedWalls[i] = Instantiate(wallPrefab, wallSpawnPositions[i]) as Wall;
                 spawnedWalls[i].transform.localPosition = Vector3.zero;
-                spawnedWalls[i].transform.localRotation = Quaternion.identity;
+                spawnedWalls[i].transform.localRotation = Quaternion.Euler(0, -Mathf.Sign(wallSpawnPositions[i].forward.x) * 20, 0);
                 return true;
             }
         }

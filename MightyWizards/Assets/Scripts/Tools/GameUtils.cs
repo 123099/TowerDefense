@@ -36,13 +36,13 @@ public static class GameUtils
         return getNearestEnemyFromList(GetAllEnemies(), transform, radius);
     }
 
-    public static T[] GetNearestObjectsInFrontOf<T>(Transform transform, float range, float halfHeight, int amount, bool debug = false) where T : MonoBehaviour
+    public static T[] GetNearestObjectsInFrontOf<T>(Transform transform, Vector3 transformOffset, float range, float halfHeight, int amount, bool debug = false) where T : MonoBehaviour
     {
         float halfRange = range * 0.5f;
         Vector3 forward = transform.forward;
         forward.y = 0;
         
-        Vector3 boxCenter = transform.position + forward.normalized * halfRange + transform.up.normalized * halfHeight;
+        Vector3 boxCenter = transform.position + forward.normalized * halfRange + transformOffset;
         Vector3 halfExtents = new Vector3(halfRange, halfHeight, halfRange);
 
         if (debug)
@@ -50,7 +50,7 @@ public static class GameUtils
             GameObject cube = GameObject.CreatePrimitive(PrimitiveType.Cube);
             cube.transform.position = boxCenter;
             cube.transform.localScale = halfExtents * 2;
-            GameObject.Destroy(cube, 0.05f);
+            GameObject.Destroy(cube, 0.2f);
         }
 
         Collider[] collidersInFront = Physics.OverlapBox(boxCenter, halfExtents);

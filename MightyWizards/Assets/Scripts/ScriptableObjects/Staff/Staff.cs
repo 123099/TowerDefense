@@ -36,8 +36,10 @@ public class Staff : ScriptableObject {
 
     public void Attack (Transform fireLocation)
     {
-        Enemy[] nearestEnemies = GameUtils.GetNearestObjectsInFrontOf<Enemy>(fireLocation, autoAimRadius, 3, maxEnemiesHit);
-
+        Enemy[] nearestEnemies = GameUtils.GetNearestObjectsInFrontOf<Enemy>(fireLocation, Vector3.down, autoAimRadius, 3, maxEnemiesHit);
+        Debug.Log(nearestEnemies.Length);
+        foreach (Enemy enemy in nearestEnemies)
+            Debug.Log(enemy.name);
         if (nearestEnemies.Length > 0)
         {
             foreach (Enemy enemy in nearestEnemies)

@@ -45,6 +45,9 @@ public class PickupSpawner : MonoBehaviour {
         if(lastSpawned != null)
             lastSpawned.OnCollect.RemoveAllListeners();
         lastSpawned = Instantiate(pickup.pickupModel, transform.position, transform.rotation) as Pickup;
+        Vector3 pos = lastSpawned.transform.position;
+        pos.z = 0;
+        lastSpawned.transform.position = pos;
         lastSpawned.SetData(pickup, amountMultiplier);
         lastSpawned.OnCollect.AddListener(() => onLastSpawnedCollected());
     }

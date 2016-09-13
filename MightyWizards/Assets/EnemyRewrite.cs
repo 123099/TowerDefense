@@ -58,7 +58,7 @@ public class EnemyRewrite : MonoBehaviour {
 
     private Health GetTarget ()
     {
-        Health[] objectsInFront = GameUtils.GetNearestObjectsInFrontOf<Health>(transform, attackRange, halfHeight, 10);
+        Health[] objectsInFront = GameUtils.GetNearestObjectsInFrontOf<Health>(transform, Vector3.up * halfHeight, attackRange, halfHeight, 10);
 
         if (objectsInFront != null && objectsInFront.Length > 0 && ( objectsInFront[0].GetComponent<Wall>() || objectsInFront[0].GetComponent<WizardBase>() ))
             return objectsInFront[0];

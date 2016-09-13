@@ -57,7 +57,7 @@ public class Enemy : MonoBehaviour {
 
         if (target)
         {
-            animator.SetBool("Ranged", Vector3.Distance(transform.position, target.transform.position) < rangeThreshold);
+            //animator.SetBool("Ranged", Vector3.Distance(transform.position, target.transform.position) < rangeThreshold);
             if (target.IsAlive())
             {
                 Attack();
@@ -72,8 +72,8 @@ public class Enemy : MonoBehaviour {
 
     private Health GetTarget ()
     {
-        Wall[] wallsInFront = GameUtils.GetNearestObjectsInFrontOf<Wall>(transform, attackRange, halfHeight, 5);
-        WizardBase[] basesInFront = GameUtils.GetNearestObjectsInFrontOf<WizardBase>(transform, attackRange, halfHeight, 5);
+        Wall[] wallsInFront = GameUtils.GetNearestObjectsInFrontOf<Wall>(transform, Vector3.up * halfHeight, attackRange, halfHeight, 5);
+        WizardBase[] basesInFront = GameUtils.GetNearestObjectsInFrontOf<WizardBase>(transform, Vector3.up * halfHeight, attackRange, halfHeight, 5);
 
         if (wallsInFront != null && wallsInFront.Length > 0)
             return wallsInFront[0].GetComponent<Health>();
