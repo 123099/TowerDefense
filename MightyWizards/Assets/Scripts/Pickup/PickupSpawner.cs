@@ -20,14 +20,15 @@ public class PickupSpawner : MonoBehaviour {
 	private void Start () {
         SpawnPickup(startPickup);
 
-        spawnTimer = new RateTimer(1f / spawnTime, Time.time);
+        if(spawnTime != 0)
+            spawnTimer = new RateTimer(1f / spawnTime, Time.time);
 	}
 	
 	private void Update () {
         if (pickups.Length == 0)
             return;
 
-        if (spawnTimer.IsReady())
+        if (spawnTimer != null && spawnTimer.IsReady())
             if (allowMultiplePickups || !lastSpawned)
                 SpawnRandomPickup();
 	}

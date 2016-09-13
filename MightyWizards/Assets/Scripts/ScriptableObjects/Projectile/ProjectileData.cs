@@ -19,16 +19,16 @@ public class ProjectileData : ScriptableObject {
     [Tooltip("Set to true to destroy the projectile the moment it hits something")]
     public bool destroyUponImpact;
 
-    public Projectile Launch (Transform fireLocation)
+    public Projectile SpawnProjectile(Transform fireLocation)
     {
-        return Launch(fireLocation, fireLocation.rotation, false);
+        return SpawnProjectile(fireLocation, fireLocation.rotation, false);
     }
 
-    public Projectile Launch(Transform fireLocation, Quaternion rotation, bool ignoreRotateAroundXZ = true)
+    public Projectile SpawnProjectile(Transform fireLocation, Quaternion rotation, bool ignoreRotateAroundXZ = true)
     {
-        Projectile projectile = Instantiate(projectilePrefab,
-            fireLocation.position,
-            rotation * Quaternion.Euler(rotationOffset)) as Projectile;
+        Projectile projectile = Instantiate(projectilePrefab,fireLocation) as Projectile;
+        projectile.transform.position = fireLocation.position;
+        projectile.transform.rotation = rotation * Quaternion.Euler(rotationOffset);
 
         if (!ignoreRotateAroundXZ && !rotateAroundZX)
         {
@@ -38,12 +38,23 @@ public class ProjectileData : ScriptableObject {
             projectile.transform.rotation = Quaternion.Euler(eulerRot);
         }
 
+        return projectile;
+    }
+
+    public void Launch(Projectile projectile)
+    {
+        Launch(projectile, projectile.transform.rotation);
+    }
+
+    public void Launch(Projectile projectile, Quaternion overrideRotation)
+    {
+        
+        projectile.transform.SetParent(null);
+        projectile.transform.rotation = overrideRotation;
         projectile.SetDestroyOnImpact(destroyUponImpact);
         projectile.SetDamage(damage);
         projectile.GetComponent<Rigidbody>().AddRelativeForce(Vector3.forward * launchForce);
 
         Destroy(projectile.gameObject, lifetime);
-
-        return projectile;
     }
 }

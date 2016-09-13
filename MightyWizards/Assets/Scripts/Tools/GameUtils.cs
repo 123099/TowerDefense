@@ -36,14 +36,22 @@ public static class GameUtils
         return getNearestEnemyFromList(GetAllEnemies(), transform, radius);
     }
 
-    public static T[] GetNearestObjectsInFrontOf<T>(Transform transform, float range, float halfHeight, int amount) where T : MonoBehaviour
+    public static T[] GetNearestObjectsInFrontOf<T>(Transform transform, float range, float halfHeight, int amount, bool debug = false) where T : MonoBehaviour
     {
         float halfRange = range * 0.5f;
         Vector3 forward = transform.forward;
         forward.y = 0;
         
-        Vector3 boxCenter = transform.position + forward.normalized * halfRange;
+        Vector3 boxCenter = transform.position + forward.normalized * halfRange + transform.up.normalized * halfHeight;
         Vector3 halfExtents = new Vector3(halfRange, halfHeight, halfRange);
+
+        if (debug)
+        {
+            GameObject cube = GameObject.CreatePrimitive(PrimitiveType.Cube);
+            cube.transform.position = boxCenter;
+            cube.transform.localScale = halfExtents * 2;
+            GameObject.Destroy(cube, 0.05f);
+        }
 
         Collider[] collidersInFront = Physics.OverlapBox(boxCenter, halfExtents);
 
@@ -51,7 +59,7 @@ public static class GameUtils
 
         foreach (Collider collider in collidersInFront)
         {
-            if (collider.GetComponent<T>() != null)
+            if (collider.GetComponent<T>() != null && collider.GetComponent<Transform>() != transform)
             {
                 if (objects.Count < amount)
                     objects.Add(collider.GetComponent<T>());
@@ -116,5 +124,34 @@ public static class GameUtils
     public static bool IsGamePaused ()
     {
         return Time.timeScale == 0;
+    }
+
+    public static void SetLayer(GameObject gameObject, LayerMask layer, bool applyToChildren = true)
+    {
+        gameObject.layer = layer;
+
+        if (applyToChildren)
+        {
+            foreach (Transform child in gameObject.GetComponentsInChildren<Transform>(true))
+                child.gameObject.layer = layer;
+        }
+    }
+
+    public static Transform FindRecursively(Transform startTransform, string childName)
+    {
+        if (startTransform.childCount == 0)
+            return null;
+
+        foreach (Transform child in startTransform)
+            if (child.name == childName)
+                return child;
+            else
+            {
+                Transform found = FindRecursively(child, childName);
+                if (found)
+                    return found;
+            }
+
+        return null;
     }
 }

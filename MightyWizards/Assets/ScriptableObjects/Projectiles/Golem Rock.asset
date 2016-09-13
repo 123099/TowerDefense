@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53f9f62c58de93844894f438f24156cf, type: 3}
+  m_Name: Golem Rock
+  m_EditorClassIdentifier: 
+  projectilePrefab: {fileID: 114000010493497868, guid: f0d8f9e2cb971be42a1d4236510a4a3b,
+    type: 2}
+  launchForce: 2000
+  damage: 50
+  lifetime: 5
+  rotationOffset: {x: 0, y: 0, z: 0}
+  rotateAroundZX: 1
+  destroyUponImpact: 1

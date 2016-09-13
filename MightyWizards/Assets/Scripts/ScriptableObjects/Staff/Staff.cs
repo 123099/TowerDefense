@@ -23,22 +23,18 @@ public class Staff : ScriptableObject {
     [Tooltip("The offset to rotate the staff around itself")]
     public Vector3 rotationOffset;
 
-    private Transform fireLocation;
-
     public GameObject Equip(Transform equipper)
     {
         GameObject staffPrefab = Instantiate(modelPrefab, equipper) as GameObject;
         staffPrefab.transform.position = equipper.position + locationOffset;
         staffPrefab.transform.rotation = equipper.rotation * Quaternion.Euler(rotationOffset);
 
-        fireLocation = GameObjectExtension.FindObjectWithTagIn(staffPrefab, "FireLocation").transform;
-
         spell.Initialize();
 
         return staffPrefab;
     }
 
-    public void Attack ()
+    public void Attack (Transform fireLocation)
     {
         Enemy[] nearestEnemies = GameUtils.GetNearestObjectsInFrontOf<Enemy>(fireLocation, autoAimRadius, 2, maxEnemiesHit);
 
@@ -46,14 +42,18 @@ public class Staff : ScriptableObject {
         {
             foreach (Enemy enemy in nearestEnemies)
             {
+                if(!enemy.GetComponent<Health>().IsAlive()) continue;
+
                 Quaternion rotation = Quaternion.LookRotation(enemy.transform.position - fireLocation.transform.position);
-                Projectile projectile = basicAttack.Launch(fireLocation, rotation);
+                Projectile projectile = basicAttack.SpawnProjectile(fireLocation, rotation);
+                basicAttack.Launch(projectile);
                 projectile.SetDamage(basicAttack.damage * damageMultiplier);
             }
         }
         else
         {
-            Projectile projectile = basicAttack.Launch(fireLocation);
+            Projectile projectile = basicAttack.SpawnProjectile(fireLocation);
+            basicAttack.Launch(projectile);
             projectile.SetDamage(basicAttack.damage * damageMultiplier);
         }
 

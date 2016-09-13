@@ -1,0 +1,346 @@
+fileFormatVersion: 2
+guid: 64b62e04ff36d834cb7a83f9ca6737fc
+timeCreated: 1473445929
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: CTRL_MASTER
+    100002: CTRL_Pelvis
+    100004: //RootNode
+    100006: Head
+    100008: L_Ankle
+    100010: L_Clavicle
+    100012: L_Clavicle_Nub
+    100014: L_Elbow
+    100016: L_Elbow_Helper
+    100018: L_Foot
+    100020: L_ForeArmTwistHelp
+    100022: L_Hand
+    100024: L_Index_Joint1
+    100026: L_Index_Joint2
+    100028: L_Index_Joint3
+    100030: L_LowerLeg
+    100032: L_Middle_Joint1
+    100034: L_Middle_Joint2
+    100036: L_Middle_Joint3
+    100038: L_Pinky_Joint1
+    100040: L_Pinky_Joint2
+    100042: L_Pinky_Joint3
+    100044: L_Shoulder
+    100046: L_Thumb_Joint1
+    100048: L_Thumb_Joint2
+    100050: L_Thumb_Joint3
+    100052: L_Toes
+    100054: L_UpperLeg
+    100056: Neck
+    100058: pasted__Golem15
+    100060: R_Ankle
+    100062: R_Clavicle
+    100064: R_Clavicle_Nub
+    100066: R_Elbow1
+    100068: R_Elbow_Helper1
+    100070: R_Foot
+    100072: R_ForeArmTwistHelp1
+    100074: R_Hand1
+    100076: R_LowerLeg
+    100078: R_Middle_Joint1
+    100080: R_Middle_Joint2
+    100082: R_Middle_Joint3
+    100084: R_Pinky_Joint1
+    100086: R_Pinky_Joint2
+    100088: R_Pinky_Joint3
+    100090: R_Pinky_Joint4
+    100092: R_Pinky_Joint5
+    100094: R_Pinky_Joint6
+    100096: R_Shoulder1
+    100098: R_Thumb_Joint4
+    100100: R_Thumb_Joint5
+    100102: R_Thumb_Joint6
+    100104: R_Toes
+    100106: R_UpperLeg
+    100108: Spine_1
+    100110: Spine_2
+    100112: Spine_3
+    100114: Spine_4
+    100116: transform4
+    400000: CTRL_MASTER
+    400002: CTRL_Pelvis
+    400004: //RootNode
+    400006: Head
+    400008: L_Ankle
+    400010: L_Clavicle
+    400012: L_Clavicle_Nub
+    400014: L_Elbow
+    400016: L_Elbow_Helper
+    400018: L_Foot
+    400020: L_ForeArmTwistHelp
+    400022: L_Hand
+    400024: L_Index_Joint1
+    400026: L_Index_Joint2
+    400028: L_Index_Joint3
+    400030: L_LowerLeg
+    400032: L_Middle_Joint1
+    400034: L_Middle_Joint2
+    400036: L_Middle_Joint3
+    400038: L_Pinky_Joint1
+    400040: L_Pinky_Joint2
+    400042: L_Pinky_Joint3
+    400044: L_Shoulder
+    400046: L_Thumb_Joint1
+    400048: L_Thumb_Joint2
+    400050: L_Thumb_Joint3
+    400052: L_Toes
+    400054: L_UpperLeg
+    400056: Neck
+    400058: pasted__Golem15
+    400060: R_Ankle
+    400062: R_Clavicle
+    400064: R_Clavicle_Nub
+    400066: R_Elbow1
+    400068: R_Elbow_Helper1
+    400070: R_Foot
+    400072: R_ForeArmTwistHelp1
+    400074: R_Hand1
+    400076: R_LowerLeg
+    400078: R_Middle_Joint1
+    400080: R_Middle_Joint2
+    400082: R_Middle_Joint3
+    400084: R_Pinky_Joint1
+    400086: R_Pinky_Joint2
+    400088: R_Pinky_Joint3
+    400090: R_Pinky_Joint4
+    400092: R_Pinky_Joint5
+    400094: R_Pinky_Joint6
+    400096: R_Shoulder1
+    400098: R_Thumb_Joint4
+    400100: R_Thumb_Joint5
+    400102: R_Thumb_Joint6
+    400104: R_Toes
+    400106: R_UpperLeg
+    400108: Spine_1
+    400110: Spine_2
+    400112: Spine_3
+    400114: Spine_4
+    400116: transform4
+    4300000: pasted__Golem15
+    7400000: Take 001
+    9500000: //RootNode
+    13700000: pasted__Golem15
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Take 001
+      takeName: Take 001
+      firstFrame: 1
+      lastFrame: 30
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 1
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events:
+      - time: 0.5274261
+        functionName: Attack
+        data: 
+        objectReferenceParameter: {instanceID: 0}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      transformMask:
+      - path: 
+        weight: 1
+      - path: CTRL_MASTER
+        weight: 1
+      - path: CTRL_MASTER/CTRL_Pelvis
+        weight: 1
+      - path: CTRL_MASTER/CTRL_Pelvis/Spine_1
+        weight: 1
+      - path: CTRL_MASTER/CTRL_Pelvis/Spine_1/L_UpperLeg
+        weight: 1
+      - path: CTRL_MASTER/CTRL_Pelvis/Spine_1/L_UpperLeg/L_LowerLeg
+        weight: 1
+      - path: CTRL_MASTER/CTRL_Pelvis/Spine_1/L_UpperLeg/L_LowerLeg/L_Ankle
+        weight: 1
+      - path: CTRL_MASTER/CTRL_Pelvis/Spine_1/L_UpperLeg/L_LowerLeg/L_Ankle/L_Foot
+        weight: 1
+      - path: CTRL_MASTER/CTRL_Pelvis/Spine_1/L_UpperLeg/L_LowerLeg/L_Ankle/L_Foot/L_Toes
+        weight: 1
+      - path: CTRL_MASTER/CTRL_Pelvis/Spine_1/Spine_2
+        weight: 1
+      - path: CTRL_MASTER/CTRL_Pelvis/Spine_1/Spine_2/Spine_3
+        weight: 1
+      - path: CTRL_MASTER/CTRL_Pelvis/Spine_1/Spine_2/Spine_3/L_Clavicle
+        weight: 1
+      - path: CTRL_MASTER/CTRL_Pelvis/Spine_1/Spine_2/Spine_3/L_Clavicle/L_Clavicle_Nub
+        weight: 1
+      - path: CTRL_MASTER/CTRL_Pelvis/Spine_1/Spine_2/Spine_3/L_Clavicle/L_Clavicle_Nub/L_Shoulder
+        weight: 1
+      - path: CTRL_MASTER/CTRL_Pelvis/Spine_1/Spine_2/Spine_3/L_Clavicle/L_Clavicle_Nub/L_Shoulder/L_Elbow_Helper
+        weight: 1
+      - path: CTRL_MASTER/CTRL_Pelvis/Spine_1/Spine_2/Spine_3/L_Clavicle/L_Clavicle_Nub/L_Shoulder/L_Elbow_Helper/L_Elbow
+        weight: 1
+      - path: CTRL_MASTER/CTRL_Pelvis/Spine_1/Spine_2/Spine_3/L_Clavicle/L_Clavicle_Nub/L_Shoulder/L_Elbow_Helper/L_Elbow/L_ForeArmTwistHelp
+        weight: 1
+      - path: CTRL_MASTER/CTRL_Pelvis/Spine_1/Spine_2/Spine_3/L_Clavicle/L_Clavicle_Nub/L_Shoulder/L_Elbow_Helper/L_Elbow/L_ForeArmTwistHelp/L_Hand
+        weight: 1
+      - path: CTRL_MASTER/CTRL_Pelvis/Spine_1/Spine_2/Spine_3/L_Clavicle/L_Clavicle_Nub/L_Shoulder/L_Elbow_Helper/L_Elbow/L_ForeArmTwistHelp/L_Hand/L_Index_Joint1
+        weight: 1
+      - path: CTRL_MASTER/CTRL_Pelvis/Spine_1/Spine_2/Spine_3/L_Clavicle/L_Clavicle_Nub/L_Shoulder/L_Elbow_Helper/L_Elbow/L_ForeArmTwistHelp/L_Hand/L_Index_Joint1/L_Index_Joint2
+        weight: 1
+      - path: CTRL_MASTER/CTRL_Pelvis/Spine_1/Spine_2/Spine_3/L_Clavicle/L_Clavicle_Nub/L_Shoulder/L_Elbow_Helper/L_Elbow/L_ForeArmTwistHelp/L_Hand/L_Index_Joint1/L_Index_Joint2/L_Index_Joint3
+        weight: 1
+      - path: CTRL_MASTER/CTRL_Pelvis/Spine_1/Spine_2/Spine_3/L_Clavicle/L_Clavicle_Nub/L_Shoulder/L_Elbow_Helper/L_Elbow/L_ForeArmTwistHelp/L_Hand/L_Middle_Joint1
+        weight: 1
+      - path: CTRL_MASTER/CTRL_Pelvis/Spine_1/Spine_2/Spine_3/L_Clavicle/L_Clavicle_Nub/L_Shoulder/L_Elbow_Helper/L_Elbow/L_ForeArmTwistHelp/L_Hand/L_Middle_Joint1/L_Middle_Joint2
+        weight: 1
+      - path: CTRL_MASTER/CTRL_Pelvis/Spine_1/Spine_2/Spine_3/L_Clavicle/L_Clavicle_Nub/L_Shoulder/L_Elbow_Helper/L_Elbow/L_ForeArmTwistHelp/L_Hand/L_Middle_Joint1/L_Middle_Joint2/L_Middle_Joint3
+        weight: 1
+      - path: CTRL_MASTER/CTRL_Pelvis/Spine_1/Spine_2/Spine_3/L_Clavicle/L_Clavicle_Nub/L_Shoulder/L_Elbow_Helper/L_Elbow/L_ForeArmTwistHelp/L_Hand/L_Pinky_Joint1
+        weight: 1
+      - path: CTRL_MASTER/CTRL_Pelvis/Spine_1/Spine_2/Spine_3/L_Clavicle/L_Clavicle_Nub/L_Shoulder/L_Elbow_Helper/L_Elbow/L_ForeArmTwistHelp/L_Hand/L_Pinky_Joint1/L_Pinky_Joint2
+        weight: 1
+      - path: CTRL_MASTER/CTRL_Pelvis/Spine_1/Spine_2/Spine_3/L_Clavicle/L_Clavicle_Nub/L_Shoulder/L_Elbow_Helper/L_Elbow/L_ForeArmTwistHelp/L_Hand/L_Pinky_Joint1/L_Pinky_Joint2/L_Pinky_Joint3
+        weight: 1
+      - path: CTRL_MASTER/CTRL_Pelvis/Spine_1/Spine_2/Spine_3/L_Clavicle/L_Clavicle_Nub/L_Shoulder/L_Elbow_Helper/L_Elbow/L_ForeArmTwistHelp/L_Hand/L_Thumb_Joint1
+        weight: 1
+      - path: CTRL_MASTER/CTRL_Pelvis/Spine_1/Spine_2/Spine_3/L_Clavicle/L_Clavicle_Nub/L_Shoulder/L_Elbow_Helper/L_Elbow/L_ForeArmTwistHelp/L_Hand/L_Thumb_Joint1/L_Thumb_Joint2
+        weight: 1
+      - path: CTRL_MASTER/CTRL_Pelvis/Spine_1/Spine_2/Spine_3/L_Clavicle/L_Clavicle_Nub/L_Shoulder/L_Elbow_Helper/L_Elbow/L_ForeArmTwistHelp/L_Hand/L_Thumb_Joint1/L_Thumb_Joint2/L_Thumb_Joint3
+        weight: 1
+      - path: CTRL_MASTER/CTRL_Pelvis/Spine_1/Spine_2/Spine_3/R_Clavicle
+        weight: 1
+      - path: CTRL_MASTER/CTRL_Pelvis/Spine_1/Spine_2/Spine_3/R_Clavicle/R_Clavicle_Nub
+        weight: 1
+      - path: CTRL_MASTER/CTRL_Pelvis/Spine_1/Spine_2/Spine_3/R_Clavicle/R_Clavicle_Nub/R_Shoulder1
+        weight: 1
+      - path: CTRL_MASTER/CTRL_Pelvis/Spine_1/Spine_2/Spine_3/R_Clavicle/R_Clavicle_Nub/R_Shoulder1/R_Elbow_Helper1
+        weight: 1
+      - path: CTRL_MASTER/CTRL_Pelvis/Spine_1/Spine_2/Spine_3/R_Clavicle/R_Clavicle_Nub/R_Shoulder1/R_Elbow_Helper1/R_Elbow1
+        weight: 1
+      - path: CTRL_MASTER/CTRL_Pelvis/Spine_1/Spine_2/Spine_3/R_Clavicle/R_Clavicle_Nub/R_Shoulder1/R_Elbow_Helper1/R_Elbow1/R_ForeArmTwistHelp1
+        weight: 1
+      - path: CTRL_MASTER/CTRL_Pelvis/Spine_1/Spine_2/Spine_3/R_Clavicle/R_Clavicle_Nub/R_Shoulder1/R_Elbow_Helper1/R_Elbow1/R_ForeArmTwistHelp1/R_Hand1
+        weight: 1
+      - path: CTRL_MASTER/CTRL_Pelvis/Spine_1/Spine_2/Spine_3/R_Clavicle/R_Clavicle_Nub/R_Shoulder1/R_Elbow_Helper1/R_Elbow1/R_ForeArmTwistHelp1/R_Hand1/R_Middle_Joint1
+        weight: 1
+      - path: CTRL_MASTER/CTRL_Pelvis/Spine_1/Spine_2/Spine_3/R_Clavicle/R_Clavicle_Nub/R_Shoulder1/R_Elbow_Helper1/R_Elbow1/R_ForeArmTwistHelp1/R_Hand1/R_Middle_Joint1/R_Middle_Joint2
+        weight: 1
+      - path: CTRL_MASTER/CTRL_Pelvis/Spine_1/Spine_2/Spine_3/R_Clavicle/R_Clavicle_Nub/R_Shoulder1/R_Elbow_Helper1/R_Elbow1/R_ForeArmTwistHelp1/R_Hand1/R_Middle_Joint1/R_Middle_Joint2/R_Middle_Joint3
+        weight: 1
+      - path: CTRL_MASTER/CTRL_Pelvis/Spine_1/Spine_2/Spine_3/R_Clavicle/R_Clavicle_Nub/R_Shoulder1/R_Elbow_Helper1/R_Elbow1/R_ForeArmTwistHelp1/R_Hand1/R_Pinky_Joint1
+        weight: 1
+      - path: CTRL_MASTER/CTRL_Pelvis/Spine_1/Spine_2/Spine_3/R_Clavicle/R_Clavicle_Nub/R_Shoulder1/R_Elbow_Helper1/R_Elbow1/R_ForeArmTwistHelp1/R_Hand1/R_Pinky_Joint1/R_Pinky_Joint2
+        weight: 1
+      - path: CTRL_MASTER/CTRL_Pelvis/Spine_1/Spine_2/Spine_3/R_Clavicle/R_Clavicle_Nub/R_Shoulder1/R_Elbow_Helper1/R_Elbow1/R_ForeArmTwistHelp1/R_Hand1/R_Pinky_Joint1/R_Pinky_Joint2/R_Pinky_Joint3
+        weight: 1
+      - path: CTRL_MASTER/CTRL_Pelvis/Spine_1/Spine_2/Spine_3/R_Clavicle/R_Clavicle_Nub/R_Shoulder1/R_Elbow_Helper1/R_Elbow1/R_ForeArmTwistHelp1/R_Hand1/R_Pinky_Joint4
+        weight: 1
+      - path: CTRL_MASTER/CTRL_Pelvis/Spine_1/Spine_2/Spine_3/R_Clavicle/R_Clavicle_Nub/R_Shoulder1/R_Elbow_Helper1/R_Elbow1/R_ForeArmTwistHelp1/R_Hand1/R_Pinky_Joint4/R_Pinky_Joint5
+        weight: 1
+      - path: CTRL_MASTER/CTRL_Pelvis/Spine_1/Spine_2/Spine_3/R_Clavicle/R_Clavicle_Nub/R_Shoulder1/R_Elbow_Helper1/R_Elbow1/R_ForeArmTwistHelp1/R_Hand1/R_Pinky_Joint4/R_Pinky_Joint5/R_Pinky_Joint6
+        weight: 1
+      - path: CTRL_MASTER/CTRL_Pelvis/Spine_1/Spine_2/Spine_3/R_Clavicle/R_Clavicle_Nub/R_Shoulder1/R_Elbow_Helper1/R_Elbow1/R_ForeArmTwistHelp1/R_Hand1/R_Thumb_Joint4
+        weight: 1
+      - path: CTRL_MASTER/CTRL_Pelvis/Spine_1/Spine_2/Spine_3/R_Clavicle/R_Clavicle_Nub/R_Shoulder1/R_Elbow_Helper1/R_Elbow1/R_ForeArmTwistHelp1/R_Hand1/R_Thumb_Joint4/R_Thumb_Joint5
+        weight: 1
+      - path: CTRL_MASTER/CTRL_Pelvis/Spine_1/Spine_2/Spine_3/R_Clavicle/R_Clavicle_Nub/R_Shoulder1/R_Elbow_Helper1/R_Elbow1/R_ForeArmTwistHelp1/R_Hand1/R_Thumb_Joint4/R_Thumb_Joint5/R_Thumb_Joint6
+        weight: 1
+      - path: CTRL_MASTER/CTRL_Pelvis/Spine_1/Spine_2/Spine_3/Spine_4
+        weight: 1
+      - path: CTRL_MASTER/CTRL_Pelvis/Spine_1/Spine_2/Spine_3/Spine_4/Neck
+        weight: 1
+      - path: CTRL_MASTER/CTRL_Pelvis/Spine_1/Spine_2/Spine_3/Spine_4/Neck/Head
+        weight: 1
+      - path: CTRL_MASTER/CTRL_Pelvis/Spine_1/transform4
+        weight: 1
+      - path: CTRL_MASTER/CTRL_Pelvis/Spine_1/transform4/R_UpperLeg
+        weight: 1
+      - path: CTRL_MASTER/CTRL_Pelvis/Spine_1/transform4/R_UpperLeg/R_LowerLeg
+        weight: 1
+      - path: CTRL_MASTER/CTRL_Pelvis/Spine_1/transform4/R_UpperLeg/R_LowerLeg/R_Ankle
+        weight: 1
+      - path: CTRL_MASTER/CTRL_Pelvis/Spine_1/transform4/R_UpperLeg/R_LowerLeg/R_Ankle/R_Foot
+        weight: 1
+      - path: CTRL_MASTER/CTRL_Pelvis/Spine_1/transform4/R_UpperLeg/R_LowerLeg/R_Ankle/R_Foot/R_Toes
+        weight: 1
+      - path: pasted__Golem15
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 1
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

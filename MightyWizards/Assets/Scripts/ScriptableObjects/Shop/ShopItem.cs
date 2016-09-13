@@ -9,7 +9,7 @@ public class ShopItem : ScriptableObject {
     [Tooltip("The name of the item to display in the shop")]
     [SerializeField] private string itemName;
     [Tooltip("The description of the item to display in the shop")]
-    [SerializeField] private string itemDesc;
+    [SerializeField] [TextArea(1, 4)] private string itemDesc;
     [Tooltip("The icon to display in the shop")]
     [SerializeField] private Sprite icon;
     [Tooltip("The category in the shop this item belongs to")]

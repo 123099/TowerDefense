@@ -26,6 +26,7 @@ public class LevelManager : MonoBehaviour {
 
     private void Update ()
     {
+        //print(currentRound);
         level.UpdateRound(currentRound);
 
         if (level.KilledAll())
@@ -36,6 +37,7 @@ public class LevelManager : MonoBehaviour {
         }
         else
         {
+            print(level.KilledAllInRound(currentRound) + "," + currentRound);
             if (level.KilledAllInRound(currentRound))
             {
                 roundTimer.SetLastReadyTimeOnce(Time.time);

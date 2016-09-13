@@ -28,15 +28,15 @@ public class Turret : MonoBehaviour {
         {
             LookAtEnemy();
             turretAnimator.SetBool("Attacking", true);
-
-            if (!target.GetComponent<Health>().IsAlive())
-            {
-                target = null;
-                turretAnimator.SetBool("Attacking", false);
-            }
         }
         else
             SetTarget(GameUtils.GetNearestEnemyTo(transform, fireRange));
+
+        if (!target || !target.GetComponent<Health>().IsAlive())
+        {
+            target = null;
+            turretAnimator.SetBool("Attacking", false);
+        }
     }
 
     public void SetTarget(Enemy target)
@@ -56,7 +56,14 @@ public class Turret : MonoBehaviour {
 
     public void Shoot ()
     {
-        Projectile proj = projectile.Launch(fireLocation);
+        if (!fireLocation)
+        {
+            print("Fire location not set");
+            return;
+        }
+
+        Projectile proj = projectile.SpawnProjectile(fireLocation);
+        projectile.Launch(proj);
         proj.SetDamage(projectile.damage * damageMultiplier);
         proj.SetAOE(aoe);
     }
@@ -76,5 +83,19 @@ public class Turret : MonoBehaviour {
     public ProjectileData GetProjectile ()
     {
         return projectile;
+    }
+
+    public void OnModelSet(GameObject model)
+    {
+        turretAnimator = model.GetComponent<Animator>();
+
+        rotatingPiece = model.transform.Find("Top");
+        if (rotatingPiece)
+            fireLocation = rotatingPiece.Find("Fire_Location");
+        else
+            Debug.Log("No 'Top' transform found attached to the turret model");
+
+        if (!fireLocation)
+            Debug.Log("No 'FireLocation' found attached to 'Top' in the turret model");
     }
 }

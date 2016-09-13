@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7874e0923d2fbc542a50c69aef3120ab, type: 3}
+  m_Name: Level 4
+  m_EditorClassIdentifier: 
+  rounds:
+  - {fileID: 11400000, guid: 1b1214154c126d74eb7c644ac0352992, type: 2}
+  - {fileID: 11400000, guid: 0ddd7c7925c4b344ca716fd3ad569106, type: 2}
+  - {fileID: 11400000, guid: 686ec59e44a9aa64e96e524ece19c73e, type: 2}
+  - {fileID: 11400000, guid: 21e3c98bc81fa9b45a08ae960d608c81, type: 2}
+  - {fileID: 11400000, guid: cd6ebe0621047434a881b498c5c40e8e, type: 2}
+  - {fileID: 11400000, guid: 8f8e81048bd599b4eb28ff4e19ab1285, type: 2}
+  delayBetweenRounds: 5
+  roundsBetweenBreaks: 2

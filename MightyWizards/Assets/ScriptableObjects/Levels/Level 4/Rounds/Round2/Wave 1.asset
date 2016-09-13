@@ -1,0 +1,59 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 61b11cc9d84310346adafcacfbfe3820, type: 3}
+  m_Name: Wave 1
+  m_EditorClassIdentifier: 
+  spawnPoint: {x: 42, y: 2, z: -2}
+  units:
+  - modelPrefab: {fileID: 114000010717766848, guid: 178d34b162143cf4bac3baf6789f00e7,
+      type: 2}
+    spawnOffset: {x: 0, y: 0, z: 2}
+    spawnDelayAfterLastUnit: 1.5
+  - modelPrefab: {fileID: 114000010717766848, guid: 178d34b162143cf4bac3baf6789f00e7,
+      type: 2}
+    spawnOffset: {x: 0, y: 0, z: 4}
+    spawnDelayAfterLastUnit: 3
+  - modelPrefab: {fileID: 114000010717766848, guid: 2ed0107323254fc4484ade2f3eb639c8,
+      type: 2}
+    spawnOffset: {x: 0, y: 0, z: 1}
+    spawnDelayAfterLastUnit: 1.5
+  - modelPrefab: {fileID: 114000010717766848, guid: 2ed0107323254fc4484ade2f3eb639c8,
+      type: 2}
+    spawnOffset: {x: 0, y: 0, z: 0}
+    spawnDelayAfterLastUnit: 1.5
+  - modelPrefab: {fileID: 114000010717766848, guid: 2ed0107323254fc4484ade2f3eb639c8,
+      type: 2}
+    spawnOffset: {x: 0, y: 0, z: 2}
+    spawnDelayAfterLastUnit: 1.5
+  - modelPrefab: {fileID: 114000010717766848, guid: 178d34b162143cf4bac3baf6789f00e7,
+      type: 2}
+    spawnOffset: {x: 0, y: 0, z: 0}
+    spawnDelayAfterLastUnit: 1.5
+  - modelPrefab: {fileID: 114000011273424912, guid: 9c562da3b1219654aa121568b8abae63,
+      type: 2}
+    spawnOffset: {x: 0, y: 0, z: 2}
+    spawnDelayAfterLastUnit: 1.5
+  - modelPrefab: {fileID: 114000011273424912, guid: 9c562da3b1219654aa121568b8abae63,
+      type: 2}
+    spawnOffset: {x: 0, y: 0, z: 4}
+    spawnDelayAfterLastUnit: 1.5
+  - modelPrefab: {fileID: 114000011273424912, guid: 9c562da3b1219654aa121568b8abae63,
+      type: 2}
+    spawnOffset: {x: 0, y: 0, z: 4}
+    spawnDelayAfterLastUnit: 1.5
+  - modelPrefab: {fileID: 114000011273424912, guid: 9c562da3b1219654aa121568b8abae63,
+      type: 2}
+    spawnOffset: {x: 0, y: 0, z: 4}
+    spawnDelayAfterLastUnit: 1.5
+  - modelPrefab: {fileID: 114000011273424912, guid: 9c562da3b1219654aa121568b8abae63,
+      type: 2}
+    spawnOffset: {x: 0, y: 0, z: 4}
+    spawnDelayAfterLastUnit: 1.5

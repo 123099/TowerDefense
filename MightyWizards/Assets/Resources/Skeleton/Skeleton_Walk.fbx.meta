@@ -1,0 +1,203 @@
+fileFormatVersion: 2
+guid: fe27a721fc6555b449a228d7805c52aa
+timeCreated: 1473683837
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: CTRL_Master
+    100002: CTRL_Pelvis
+    100004: Head
+    100006: L_Ankle
+    100008: L_Elbow
+    100010: L_Hand
+    100012: L_Hip
+    100014: L_Knee
+    100016: L_Shoulder
+    100018: L_Toes
+    100020: L_Wrist
+    100022: Neck
+    100024: pasted__polySurface27
+    100026: R_Ankle
+    100028: R_Elbow1
+    100030: R_Hand
+    100032: R_Hip
+    100034: R_Knee
+    100036: R_Shoulder
+    100038: R_Toes
+    100040: R_Wrist
+    100042: //RootNode
+    100044: Spine1
+    100046: Spine2
+    100048: Spine3
+    400000: CTRL_Master
+    400002: CTRL_Pelvis
+    400004: Head
+    400006: L_Ankle
+    400008: L_Elbow
+    400010: L_Hand
+    400012: L_Hip
+    400014: L_Knee
+    400016: L_Shoulder
+    400018: L_Toes
+    400020: L_Wrist
+    400022: Neck
+    400024: pasted__polySurface27
+    400026: R_Ankle
+    400028: R_Elbow1
+    400030: R_Hand
+    400032: R_Hip
+    400034: R_Knee
+    400036: R_Shoulder
+    400038: R_Toes
+    400040: R_Wrist
+    400042: //RootNode
+    400044: Spine1
+    400046: Spine2
+    400048: Spine3
+    4300000: pasted__polySurface27
+    7400000: Walk
+    9500000: //RootNode
+    13700000: pasted__polySurface27
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Walk
+      takeName: Take 001
+      firstFrame: 1
+      lastFrame: 32
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 1
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: CTRL_Master
+        weight: 1
+      - path: CTRL_Master/CTRL_Pelvis
+        weight: 1
+      - path: CTRL_Master/CTRL_Pelvis/Spine1
+        weight: 1
+      - path: CTRL_Master/CTRL_Pelvis/Spine1/L_Hip
+        weight: 1
+      - path: CTRL_Master/CTRL_Pelvis/Spine1/L_Hip/L_Knee
+        weight: 1
+      - path: CTRL_Master/CTRL_Pelvis/Spine1/L_Hip/L_Knee/L_Ankle
+        weight: 1
+      - path: CTRL_Master/CTRL_Pelvis/Spine1/L_Hip/L_Knee/L_Ankle/L_Toes
+        weight: 1
+      - path: CTRL_Master/CTRL_Pelvis/Spine1/R_Hip
+        weight: 1
+      - path: CTRL_Master/CTRL_Pelvis/Spine1/R_Hip/R_Knee
+        weight: 1
+      - path: CTRL_Master/CTRL_Pelvis/Spine1/R_Hip/R_Knee/R_Ankle
+        weight: 1
+      - path: CTRL_Master/CTRL_Pelvis/Spine1/R_Hip/R_Knee/R_Ankle/R_Toes
+        weight: 1
+      - path: CTRL_Master/CTRL_Pelvis/Spine1/Spine2
+        weight: 1
+      - path: CTRL_Master/CTRL_Pelvis/Spine1/Spine2/Spine3
+        weight: 1
+      - path: CTRL_Master/CTRL_Pelvis/Spine1/Spine2/Spine3/L_Shoulder
+        weight: 1
+      - path: CTRL_Master/CTRL_Pelvis/Spine1/Spine2/Spine3/L_Shoulder/L_Elbow
+        weight: 1
+      - path: CTRL_Master/CTRL_Pelvis/Spine1/Spine2/Spine3/L_Shoulder/L_Elbow/L_Wrist
+        weight: 1
+      - path: CTRL_Master/CTRL_Pelvis/Spine1/Spine2/Spine3/L_Shoulder/L_Elbow/L_Wrist/L_Hand
+        weight: 1
+      - path: CTRL_Master/CTRL_Pelvis/Spine1/Spine2/Spine3/Neck
+        weight: 1
+      - path: CTRL_Master/CTRL_Pelvis/Spine1/Spine2/Spine3/Neck/Head
+        weight: 1
+      - path: CTRL_Master/CTRL_Pelvis/Spine1/Spine2/Spine3/R_Shoulder
+        weight: 1
+      - path: CTRL_Master/CTRL_Pelvis/Spine1/Spine2/Spine3/R_Shoulder/R_Elbow1
+        weight: 1
+      - path: CTRL_Master/CTRL_Pelvis/Spine1/Spine2/Spine3/R_Shoulder/R_Elbow1/R_Wrist
+        weight: 1
+      - path: CTRL_Master/CTRL_Pelvis/Spine1/Spine2/Spine3/R_Shoulder/R_Elbow1/R_Wrist/R_Hand
+        weight: 1
+      - path: pasted__polySurface27
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 1
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

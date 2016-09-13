@@ -12,6 +12,8 @@ public class PlayerAnimationController : StateMachineBehaviour {
     private Rigidbody rigidbody;
     private Animator animator;
 
+    private bool attacking;
+
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter (Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
@@ -29,12 +31,17 @@ public class PlayerAnimationController : StateMachineBehaviour {
         if(player.IsStunned()) return;
         if(GameUtils.IsGamePaused()) return;
 
+        attacking = animator.GetCurrentAnimatorStateInfo(0).IsTag("Attack");
+
         Move();
         Jump();
+        Attack();
     }
 
     private void Move ()
     {
+       // if(attacking) return;
+
         float input = Input.GetAxisRaw("Horizontal");
 
         if (Mathf.Abs(input) == 1)
@@ -61,7 +68,7 @@ public class PlayerAnimationController : StateMachineBehaviour {
                 rigidbody.velocity = rigidbodyVel;
                 animator.SetBool("Jump", true);
 
-                player.OnJump.Invoke();
+                player.OnJumpUp.Invoke();
             }
             else if(input == -1)
             {
@@ -76,6 +83,14 @@ public class PlayerAnimationController : StateMachineBehaviour {
     private void onPlayerLand ()
     {
         animator.SetBool("Jump", false);
+    }
+
+    private void Attack ()
+    {
+        if (Input.GetButtonDown("Fire"))
+        {
+            animator.SetTrigger("Attack");
+        }
     }
 
     // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
