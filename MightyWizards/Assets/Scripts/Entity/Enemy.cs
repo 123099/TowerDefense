@@ -128,7 +128,6 @@ public class Enemy : MonoBehaviour {
 
     public void Die ()
     {
-        print("dying");
         SetVelocity(0);
         frozen = true;
         animator.SetBool("Die", true);

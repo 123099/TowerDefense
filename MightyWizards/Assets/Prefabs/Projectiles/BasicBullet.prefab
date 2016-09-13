@@ -118,7 +118,7 @@ ParticleSystem:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000010303429274}
   serializedVersion: 2
-  lengthInSec: 5
+  lengthInSec: 1
   startDelay:
     scalar: 0
     maxCurve:
@@ -165,7 +165,7 @@ ParticleSystem:
     serializedVersion: 2
     enabled: 1
     startLifetime:
-      scalar: 2.9
+      scalar: 0.1
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -200,7 +200,7 @@ ParticleSystem:
         m_RotationOrder: 4
       minMaxState: 0
     startSpeed:
-      scalar: 0.5
+      scalar: 10
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -323,10 +323,10 @@ ParticleSystem:
         m_NumColorKeys: 2
         m_NumAlphaKeys: 2
       minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 0.3529412, g: 0.74509805, b: 0.9411765, a: 1}
+      maxColor: {r: 0.19607843, g: 0.30588236, b: 0.83137256, a: 1}
       minMaxState: 0
     startSize:
-      scalar: 1
+      scalar: 0.3
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -543,10 +543,10 @@ ParticleSystem:
   ShapeModule:
     serializedVersion: 2
     enabled: 1
-    type: 0
-    radius: 0.82
-    angle: 25
-    length: 5
+    type: 9
+    radius: 0.01
+    angle: 2.68
+    length: 2.1
     boxX: 1
     boxY: 1
     boxZ: 1
@@ -565,7 +565,7 @@ ParticleSystem:
     serializedVersion: 2
     m_Type: 0
     rate:
-      scalar: 10
+      scalar: 50
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -1893,12 +1893,12 @@ ParticleSystemRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_RenderMode: 0
+  m_RenderMode: 1
   m_SortMode: 0
   m_MinParticleSize: 0
   m_MaxParticleSize: 0.5
   m_CameraVelocityScale: 0
-  m_VelocityScale: 0
+  m_VelocityScale: -0.73
   m_LengthScale: 2
   m_SortingFudge: 0
   m_NormalDirection: 1

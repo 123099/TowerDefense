@@ -34,7 +34,7 @@ public class Explosion : MonoBehaviour {
     {
         if(exploded) return;
 
-        if (col.GetComponent<Enemy>())
+        if (col.GetComponent<Enemy>() && col.name.Contains("Golem"))
             Explode();
     }
 }
