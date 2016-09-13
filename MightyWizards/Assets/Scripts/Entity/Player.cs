@@ -227,8 +227,12 @@ public class Player : MonoBehaviour {
 
     public void Stun(float duration)
     {
-        if (!isStunned)
+        if (!isStunned && duration > 0)
             StartCoroutine(stun(duration));
+        else if (duration == 0)
+            isStunned = false;
+        else if (duration < 0)
+            isStunned = true;
     }
 
     private IEnumerator stun(float duration)

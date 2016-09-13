@@ -1,36 +1,29 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class PlayerAttackSMB : StateMachineBehaviour {
+public class PlayerSpecialAttackSMB : StateMachineBehaviour {
+
+    private float speed;
 
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter (Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        animator.SetBool("Attacking", false);
+        speed = animator.GetFloat("Speed");
+        animator.SetFloat("Speed", 0);
+        FindObjectOfType<Player>().Stun(-1);
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
-    override public void OnStateUpdate (Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
-    {
-        float time = stateInfo.normalizedTime - (int)stateInfo.normalizedTime;
-        if (time < 0.05f)
-            OnStateEnter(animator, stateInfo, layerIndex);
-
-        if (animator.GetBool("Attacking") == false && Input.GetButtonDown("Fire"))
-        {
-            animator.SetBool("Attacking", true);
-            if (animator.GetFloat("Speed") == 0)
-            {
-                animator.SetLayerWeight(1, 0);
-            }
-        }
-    }
+    //override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {
+    //
+    //}
 
     // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
-    //override public void OnStateExit (Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
-    //{
-
-    //}
+    override public void OnStateExit (Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
+    {
+        animator.SetFloat("Speed", speed);
+        FindObjectOfType<Player>().Stun(0);
+    }
 
     // OnStateMove is called right after Animator.OnAnimatorMove(). Code that processes and affects root motion should be implemented here
     //override public void OnStateMove(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {

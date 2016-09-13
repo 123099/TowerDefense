@@ -57,6 +57,7 @@ public class Enemy : MonoBehaviour {
 
         if (target)
         {
+            animator.SetBool("Ranged", Vector3.Distance(transform.position, target.transform.position) < rangeThreshold);
             if (target.IsAlive())
             {
                 Attack();
@@ -147,13 +148,19 @@ public class Enemy : MonoBehaviour {
     public void SpawnProjectile ()
     {
         if (projectileData)
+        {
             spawnedProjectile = projectileData.SpawnProjectile(fireLocation);
+            spawnedProjectile.GetComponent<Rigidbody>().isKinematic = true;
+        }
     }
 
     public void ShootProjectile ()
     {
         if (spawnedProjectile)
+        {
+            spawnedProjectile.GetComponent<Rigidbody>().isKinematic = false;
             projectileData.Launch(spawnedProjectile, Quaternion.LookRotation(transform.forward));
+        }
     }
 
     public bool IsGroundUnit ()

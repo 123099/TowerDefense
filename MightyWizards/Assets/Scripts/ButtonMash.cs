@@ -21,7 +21,7 @@ public class ButtonMash : MonoBehaviour {
 
     private float timeProgressZero;
 
-    private bool paused;
+    private bool paused = true;
 
     public void StartMash ()
     {

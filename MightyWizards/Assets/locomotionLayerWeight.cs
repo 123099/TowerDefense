@@ -1,35 +1,22 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class PlayerAttackSMB : StateMachineBehaviour {
+public class locomotionLayerWeight : StateMachineBehaviour {
 
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter (Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        animator.SetBool("Attacking", false);
+        animator.SetLayerWeight(1, 1);
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
-    override public void OnStateUpdate (Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
-    {
-        float time = stateInfo.normalizedTime - (int)stateInfo.normalizedTime;
-        if (time < 0.05f)
-            OnStateEnter(animator, stateInfo, layerIndex);
-
-        if (animator.GetBool("Attacking") == false && Input.GetButtonDown("Fire"))
-        {
-            animator.SetBool("Attacking", true);
-            if (animator.GetFloat("Speed") == 0)
-            {
-                animator.SetLayerWeight(1, 0);
-            }
-        }
-    }
+    //override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {
+    //
+    //}
 
     // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
-    //override public void OnStateExit (Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
-    //{
-
+    //override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {
+    //
     //}
 
     // OnStateMove is called right after Animator.OnAnimatorMove(). Code that processes and affects root motion should be implemented here

@@ -25,7 +25,8 @@ public class PlayerSMB : StateMachineBehaviour {
 
     private void OnPlayerMove ()
     {
-        animator.SetFloat("Speed", 1);   
+        animator.SetFloat("Speed", 1);
+        animator.SetLayerWeight(1, 1);
     }
 
     private void OnPlayerStop ()
@@ -51,6 +52,8 @@ public class PlayerSMB : StateMachineBehaviour {
     private void OnPlayerAttack ()
     {
         animator.SetBool("Attacking", true);
+        if (animator.GetFloat("Speed") == 0)
+            animator.SetLayerWeight(1, 0);
     }
 
     private void OnPlayerStartSpellCast ()

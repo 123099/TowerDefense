@@ -48,7 +48,6 @@ public class ProjectileData : ScriptableObject {
 
     public void Launch(Projectile projectile, Quaternion overrideRotation)
     {
-        
         projectile.transform.SetParent(null);
         projectile.transform.rotation = overrideRotation;
         projectile.SetDestroyOnImpact(destroyUponImpact);

@@ -36,7 +36,7 @@ public class Staff : ScriptableObject {
 
     public void Attack (Transform fireLocation)
     {
-        Enemy[] nearestEnemies = GameUtils.GetNearestObjectsInFrontOf<Enemy>(fireLocation, autoAimRadius, 2, maxEnemiesHit);
+        Enemy[] nearestEnemies = GameUtils.GetNearestObjectsInFrontOf<Enemy>(fireLocation, autoAimRadius, 3, maxEnemiesHit);
 
         if (nearestEnemies.Length > 0)
         {
@@ -44,7 +44,7 @@ public class Staff : ScriptableObject {
             {
                 if(!enemy.GetComponent<Health>().IsAlive()) continue;
 
-                Quaternion rotation = Quaternion.LookRotation(enemy.transform.position - fireLocation.transform.position);
+                Quaternion rotation = Quaternion.LookRotation(enemy.transform.position + Vector3.up - fireLocation.transform.position);
                 Projectile projectile = basicAttack.SpawnProjectile(fireLocation, rotation);
                 basicAttack.Launch(projectile);
                 projectile.SetDamage(basicAttack.damage * damageMultiplier);

@@ -1,64 +1,59 @@
 fileFormatVersion: 2
-guid: 15a502f2b7a3f4b47a87f0ff00615801
-timeCreated: 1473592446
+guid: 8b155a3152048814aa714a852dc0a8c6
+timeCreated: 1473758221
 licenseType: Free
 ModelImporter:
   serializedVersion: 19
   fileIDToRecycleName:
     100000: CTRL_MASTER
     100002: CTRL_Pelvis
-    100004: DontTouchThis
-    100006: Head
-    100008: L_Elbow
-    100010: L_Foot
-    100012: L_Hand
-    100014: L_Hip
-    100016: L_Knee
-    100018: L_Shoulder
-    100020: L_Wrist
-    100022: //RootNode
-    100024: Magus
-    100026: pasted__polySurface4
-    100028: Pelvis
-    100030: R_Elbow
-    100032: R_Foot
-    100034: R_Hand
-    100036: R_Hip
-    100038: R_Knee
-    100040: R_Shoulder
-    100042: R_Wrist
-    100044: Spine
-    100046: Spine_2
-    100048: transform1
+    100004: Head
+    100006: L_Elbow
+    100008: L_Foot
+    100010: L_Hand
+    100012: L_Hip
+    100014: L_Knee
+    100016: L_Shoulder
+    100018: L_Wrist
+    100020: //RootNode
+    100022: Magus
+    100024: Pelvis
+    100026: R_Elbow
+    100028: R_Foot
+    100030: R_Hand
+    100032: R_Hip
+    100034: R_Knee
+    100036: R_Shoulder
+    100038: R_Wrist
+    100040: Spine
+    100042: Spine_2
+    100044: StaffSpawn
+    100046: transform1
     400000: CTRL_MASTER
     400002: CTRL_Pelvis
-    400004: DontTouchThis
-    400006: Head
-    400008: L_Elbow
-    400010: L_Foot
-    400012: L_Hand
-    400014: L_Hip
-    400016: L_Knee
-    400018: L_Shoulder
-    400020: L_Wrist
-    400022: //RootNode
-    400024: Magus
-    400026: pasted__polySurface4
-    400028: Pelvis
-    400030: R_Elbow
-    400032: R_Foot
-    400034: R_Hand
-    400036: R_Hip
-    400038: R_Knee
-    400040: R_Shoulder
-    400042: R_Wrist
-    400044: Spine
-    400046: Spine_2
-    400048: transform1
-    2300000: pasted__polySurface4
-    3300000: pasted__polySurface4
+    400004: Head
+    400006: L_Elbow
+    400008: L_Foot
+    400010: L_Hand
+    400012: L_Hip
+    400014: L_Knee
+    400016: L_Shoulder
+    400018: L_Wrist
+    400020: //RootNode
+    400022: Magus
+    400024: Pelvis
+    400026: R_Elbow
+    400028: R_Foot
+    400030: R_Hand
+    400032: R_Hip
+    400034: R_Knee
+    400036: R_Shoulder
+    400038: R_Wrist
+    400040: Spine
+    400042: Spine_2
+    400044: StaffSpawn
+    400046: transform1
     4300000: Magus
-    4300002: pasted__polySurface4
     7400000: Special Attack
     9500000: //RootNode
     13700000: Magus
@@ -87,7 +82,7 @@ ModelImporter:
       name: Special Attack
       takeName: Take 001
       firstFrame: 1
-      lastFrame: 20
+      lastFrame: 30
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -95,7 +90,7 @@ ModelImporter:
       loop: 0
       hasAdditiveReferencePose: 0
       loopTime: 0
-      loopBlend: 1
+      loopBlend: 0
       loopBlendOrientation: 0
       loopBlendPositionY: 0
       loopBlendPositionXZ: 0
@@ -107,7 +102,7 @@ ModelImporter:
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
       events:
-      - time: 0.4093137
+      - time: 0.66019416
         functionName: CastSpell
         data: 
         objectReferenceParameter: {instanceID: 0}
@@ -159,9 +154,7 @@ ModelImporter:
         weight: 1
       - path: CTRL_MASTER/CTRL_Pelvis/transform1/Pelvis/Spine_2/Spine/R_Shoulder/R_Elbow/R_Wrist/R_Hand
         weight: 1
-      - path: DontTouchThis
-        weight: 1
-      - path: DontTouchThis/pasted__polySurface4
+      - path: CTRL_MASTER/StaffSpawn
         weight: 1
       - path: Magus
         weight: 1

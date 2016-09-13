@@ -55,6 +55,7 @@ ModelImporter:
     400046: transform1
     4300000: Magus
     7400000: Idle
+    7400002: Idle Freeze
     9500000: //RootNode
     13700000: Magus
   materials:
@@ -71,7 +72,7 @@ ModelImporter:
     animationImportWarnings: 
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
-    animationCompression: 1
+    animationCompression: 3
     animationRotationError: 0.5
     animationPositionError: 0.5
     animationScaleError: 0.5
@@ -91,6 +92,82 @@ ModelImporter:
       hasAdditiveReferencePose: 0
       loopTime: 1
       loopBlend: 1
+      loopBlendOrientation: 1
+      loopBlendPositionY: 1
+      loopBlendPositionXZ: 1
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: CTRL_MASTER
+        weight: 1
+      - path: CTRL_MASTER/CTRL_Pelvis
+        weight: 1
+      - path: CTRL_MASTER/CTRL_Pelvis/transform1
+        weight: 1
+      - path: CTRL_MASTER/CTRL_Pelvis/transform1/Pelvis
+        weight: 1
+      - path: CTRL_MASTER/CTRL_Pelvis/transform1/Pelvis/L_Hip
+        weight: 1
+      - path: CTRL_MASTER/CTRL_Pelvis/transform1/Pelvis/L_Hip/L_Knee
+        weight: 1
+      - path: CTRL_MASTER/CTRL_Pelvis/transform1/Pelvis/L_Hip/L_Knee/L_Foot
+        weight: 1
+      - path: CTRL_MASTER/CTRL_Pelvis/transform1/Pelvis/R_Hip
+        weight: 1
+      - path: CTRL_MASTER/CTRL_Pelvis/transform1/Pelvis/R_Hip/R_Knee
+        weight: 1
+      - path: CTRL_MASTER/CTRL_Pelvis/transform1/Pelvis/R_Hip/R_Knee/R_Foot
+        weight: 1
+      - path: CTRL_MASTER/CTRL_Pelvis/transform1/Pelvis/Spine_2
+        weight: 1
+      - path: CTRL_MASTER/CTRL_Pelvis/transform1/Pelvis/Spine_2/Spine
+        weight: 1
+      - path: CTRL_MASTER/CTRL_Pelvis/transform1/Pelvis/Spine_2/Spine/Head
+        weight: 1
+      - path: CTRL_MASTER/CTRL_Pelvis/transform1/Pelvis/Spine_2/Spine/L_Shoulder
+        weight: 1
+      - path: CTRL_MASTER/CTRL_Pelvis/transform1/Pelvis/Spine_2/Spine/L_Shoulder/L_Elbow
+        weight: 1
+      - path: CTRL_MASTER/CTRL_Pelvis/transform1/Pelvis/Spine_2/Spine/L_Shoulder/L_Elbow/L_Wrist
+        weight: 1
+      - path: CTRL_MASTER/CTRL_Pelvis/transform1/Pelvis/Spine_2/Spine/L_Shoulder/L_Elbow/L_Wrist/L_Hand
+        weight: 1
+      - path: CTRL_MASTER/CTRL_Pelvis/transform1/Pelvis/Spine_2/Spine/R_Shoulder
+        weight: 1
+      - path: CTRL_MASTER/CTRL_Pelvis/transform1/Pelvis/Spine_2/Spine/R_Shoulder/R_Elbow
+        weight: 1
+      - path: CTRL_MASTER/CTRL_Pelvis/transform1/Pelvis/Spine_2/Spine/R_Shoulder/R_Elbow/R_Wrist
+        weight: 1
+      - path: CTRL_MASTER/CTRL_Pelvis/transform1/Pelvis/Spine_2/Spine/R_Shoulder/R_Elbow/R_Wrist/R_Hand
+        weight: 1
+      - path: CTRL_MASTER/StaffSpawn
+        weight: 1
+      - path: Magus
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 1
+    - serializedVersion: 16
+      name: Idle Freeze
+      takeName: Take 001
+      firstFrame: 1
+      lastFrame: 1
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
       loopBlendOrientation: 0
       loopBlendPositionY: 0
       loopBlendPositionXZ: 0
