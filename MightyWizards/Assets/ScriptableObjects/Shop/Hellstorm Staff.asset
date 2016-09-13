@@ -16,6 +16,7 @@ MonoBehaviour:
   itemDesc: Stolen from one of the commanders of the Underworld, this unstoppable
     relic deals a huge amount of damage to many enemies. In dire situations it can
     even summon fire from the pitts of doom to aid you in combat.
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: e8ac61441d977624abb5e4d4b8d8ad52, type: 3}
+  highLightIcon: {fileID: 21300000, guid: be64c856c6870114db0533f52cf826de, type: 3}
   category: 0
   price: 10

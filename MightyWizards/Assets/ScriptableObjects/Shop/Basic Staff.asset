@@ -15,6 +15,7 @@ MonoBehaviour:
   itemName: Basic Staff
   itemDesc: The most basic tool of a mage. The spell this staff is able to cast heals
     your main building and creates 2 walls to protect it.
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: 4d6018275c7adb14b8ebfe6e685e615d, type: 3}
+  highLightIcon: {fileID: 21300000, guid: 9ff59c2196ebf3d4c9ff0f998ebd9daa, type: 3}
   category: 0
   price: 2

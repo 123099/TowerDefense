@@ -18,5 +18,9 @@ public class ShopItemUI : MonoBehaviour {
         icon.sprite = shopItem.GetIcon();
         stackSizeText.text = "1";
         priceTag.text = shopItem.GetPrice().ToString();
+
+        SpriteState spriteState = GetComponent<Button>().spriteState;
+        spriteState.highlightedSprite = shopItem.GetHighlightIcon();
+        GetComponent<Button>().spriteState = spriteState;
     }
 }

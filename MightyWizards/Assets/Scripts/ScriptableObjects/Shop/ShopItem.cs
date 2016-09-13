@@ -12,6 +12,8 @@ public class ShopItem : ScriptableObject {
     [SerializeField] [TextArea(1, 4)] private string itemDesc;
     [Tooltip("The icon to display in the shop")]
     [SerializeField] private Sprite icon;
+    [Tooltip("The highlighted version of the icon")]
+    [SerializeField] private Sprite highLightIcon;
     [Tooltip("The category in the shop this item belongs to")]
     [SerializeField] private ShopItemCategory category;
     [Tooltip("The price in the shop's currency this item sells for")]
@@ -35,6 +37,11 @@ public class ShopItem : ScriptableObject {
     public Sprite GetIcon ()
     {
         return icon;
+    }
+
+    public Sprite GetHighlightIcon ()
+    {
+        return highLightIcon;
     }
 
     public string GetName ()

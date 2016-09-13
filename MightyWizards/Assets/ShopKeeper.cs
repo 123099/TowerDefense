@@ -28,7 +28,6 @@ public class ShopKeeper : MonoBehaviour {
 
     private void Awake ()
     {
-        //Clone shop to be able to modify values
         shop = shop.Clone();
     }
 
@@ -140,5 +139,11 @@ public class ShopKeeper : MonoBehaviour {
         yield return 0;
         EventSystem.current.SetSelectedGameObject(null);
         EventSystem.current.SetSelectedGameObject(button);
+    }
+
+    public void HideSpeechBubble ()
+    {
+        messages.text = "";
+        itemDescription.text = "";
     }
 }

@@ -15,6 +15,7 @@ MonoBehaviour:
   itemName: Earth Staff
   itemDesc: Made from the spine of a the Mole King, this staff deals a huge amount
     of damage and it also increases the effectivness of all your turrets.
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: 7fcdfd65ca7d8c248ab6fca36a81da47, type: 3}
+  highLightIcon: {fileID: 21300000, guid: 45e6d56265b84c2429ddd75ebe1619bc, type: 3}
   category: 0
   price: 10

@@ -99,6 +99,7 @@ public class TurretPlacer : MonoBehaviour {
     {
         ShopItem turretShopItem = shop.GetShopItemByName(turret.name);
         GameUtils.GetPlayer().GetComponent<ResourceInventory>().Add(shop.GetCurrency(), (int)(turretShopItem.GetPrice() * refundPercentage));
+        DestroyImmediate(turret.gameObject);
     }
 
     private IEnumerator select (GameObject button)

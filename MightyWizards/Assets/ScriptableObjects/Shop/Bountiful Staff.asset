@@ -15,6 +15,7 @@ MonoBehaviour:
   itemName: Bountiful Staff
   itemDesc: A relic made by a greedy goblin warlock. It transforms the enemies into
     more resources while also being decent in combat.
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: 70ffac57c4c7a3e41a77148325378ada, type: 3}
+  highLightIcon: {fileID: 21300000, guid: 4d41e0586af2b154d80afacbf013e926, type: 3}
   category: 0
   price: 4

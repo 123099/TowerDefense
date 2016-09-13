@@ -16,6 +16,7 @@ MonoBehaviour:
   itemDesc: The mere sight of this item gives you chills down your spines. It shoots
     icicles that pass trough many units and it can even freeze the entire battlefield
     for a moment.
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: 6977cc81538801b4ca46dbdee9fbd4e1, type: 3}
+  highLightIcon: {fileID: 21300000, guid: 511e5f41fd8a0b24086bb2a08947e770, type: 3}
   category: 0
   price: 2

@@ -57,7 +57,10 @@ public class Enemy : MonoBehaviour {
 
         if (target)
         {
-            //animator.SetBool("Ranged", Vector3.Distance(transform.position, target.transform.position) < rangeThreshold);
+            if (target.GetComponent<WizardBase>())
+            {
+                Health t = GetTarget();
+            }
             if (target.IsAlive())
             {
                 Attack();
