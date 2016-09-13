@@ -11,4 +11,9 @@ public class PlayerIgnoreCollisionExit : MonoBehaviour {
         if (col.GetComponent<Player>())
             Physics.IgnoreCollision(col, platformCollider, false);
     }
+
+    public void OnModelLoaded(GameObject model)
+    {
+        platformCollider = model.GetComponent<Collider>();
+    }
 }
