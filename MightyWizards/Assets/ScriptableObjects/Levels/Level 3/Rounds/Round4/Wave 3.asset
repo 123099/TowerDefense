@@ -25,7 +25,7 @@ MonoBehaviour:
       type: 2}
     spawnOffset: {x: 0, y: 0, z: 1}
     spawnDelayAfterLastUnit: 1.5
-  - modelPrefab: {fileID: 114000013383748126, guid: db4d2a7ff23e0ad4a83bf25704b2b1cd,
+  - modelPrefab: {fileID: 114000010717766848, guid: ba47c3c73580dd342ac69390408e4a25,
       type: 2}
     spawnOffset: {x: 0, y: 0, z: 3}
     spawnDelayAfterLastUnit: 1.5
@@ -37,11 +37,11 @@ MonoBehaviour:
       type: 2}
     spawnOffset: {x: 0, y: 0, z: 2}
     spawnDelayAfterLastUnit: 1.5
-  - modelPrefab: {fileID: 114000013383748126, guid: db4d2a7ff23e0ad4a83bf25704b2b1cd,
+  - modelPrefab: {fileID: 114000010717766848, guid: ba47c3c73580dd342ac69390408e4a25,
       type: 2}
     spawnOffset: {x: 0, y: 0, z: 1}
     spawnDelayAfterLastUnit: 1.5
-  - modelPrefab: {fileID: 114000013383748126, guid: db4d2a7ff23e0ad4a83bf25704b2b1cd,
+  - modelPrefab: {fileID: 114000010717766848, guid: ba47c3c73580dd342ac69390408e4a25,
       type: 2}
     spawnOffset: {x: 0, y: 0, z: 1}
     spawnDelayAfterLastUnit: 1.5

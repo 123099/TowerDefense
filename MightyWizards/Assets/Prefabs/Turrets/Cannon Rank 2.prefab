@@ -402,7 +402,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rotatingPiece: {fileID: 0}
   turretAnimator: {fileID: 0}
-  fireRange: 10
+  fireRange: 12
   damageMultiplier: 0.25
   aoe: 1
   projectile: {fileID: 11400000, guid: 3dc0899b1c9109c40834647c536de177, type: 2}
