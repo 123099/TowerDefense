@@ -13,7 +13,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnPoint: {x: -42, y: 2, z: -2}
   units:
-  - modelPrefab: {fileID: 114000012500052588, guid: 178d34b162143cf4bac3baf6789f00e7,
+  - modelPrefab: {fileID: 114000010717766848, guid: 2ed0107323254fc4484ade2f3eb639c8,
       type: 2}
     spawnOffset: {x: 0, y: 0, z: 2}
     spawnDelayAfterLastUnit: 1.5
