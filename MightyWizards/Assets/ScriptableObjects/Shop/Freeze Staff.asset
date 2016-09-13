@@ -11,10 +11,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af405928e74cb2c469820ffd16d47b95, type: 3}
   m_Name: Freeze Staff
   m_EditorClassIdentifier: 
-  item: {fileID: 11400000, guid: 6e761f49eee8fc54382117d9157c7a04, type: 2}
-  itemName: Basic Staff
-  itemDesc: The most basic tool of a mage. The spell this staff is able to cast heals
-    your main building and creates 2 walls to protect it.
+  item: {fileID: 11400000, guid: bcc179722d4a7cd46a34282688f75abd, type: 2}
+  itemName: Freeze staff
+  itemDesc: The mere sight of this item gives you chills down your spines. It shoots
+    icicles that pass trough many units and it can even freeze the entire battlefield
+    for a moment.
   icon: {fileID: 0}
   category: 0
   price: 2
