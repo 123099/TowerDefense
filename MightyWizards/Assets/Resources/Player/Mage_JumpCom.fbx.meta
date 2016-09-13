@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: fedc5689660929641b3155b938069cd5
-timeCreated: 1473608276
+guid: 9c4eb7f565e22d84187596440fe8192f
+timeCreated: 1473762579
 licenseType: Free
 ModelImporter:
   serializedVersion: 19
@@ -63,6 +63,7 @@ ModelImporter:
     4300002: pasted__polySurface4
     7400000: Jump Start
     7400002: Jump Loop
+    7400004: Land
     9500000: //RootNode
     13700000: Magus
   materials:
@@ -177,8 +178,88 @@ ModelImporter:
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
-      loopTime: 1
-      loopBlend: 1
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: CTRL_MASTER
+        weight: 1
+      - path: CTRL_MASTER/CTRL_Pelvis
+        weight: 1
+      - path: CTRL_MASTER/CTRL_Pelvis/transform1
+        weight: 1
+      - path: CTRL_MASTER/CTRL_Pelvis/transform1/Pelvis
+        weight: 1
+      - path: CTRL_MASTER/CTRL_Pelvis/transform1/Pelvis/L_Hip
+        weight: 1
+      - path: CTRL_MASTER/CTRL_Pelvis/transform1/Pelvis/L_Hip/L_Knee
+        weight: 1
+      - path: CTRL_MASTER/CTRL_Pelvis/transform1/Pelvis/L_Hip/L_Knee/L_Foot
+        weight: 1
+      - path: CTRL_MASTER/CTRL_Pelvis/transform1/Pelvis/R_Hip
+        weight: 1
+      - path: CTRL_MASTER/CTRL_Pelvis/transform1/Pelvis/R_Hip/R_Knee
+        weight: 1
+      - path: CTRL_MASTER/CTRL_Pelvis/transform1/Pelvis/R_Hip/R_Knee/R_Foot
+        weight: 1
+      - path: CTRL_MASTER/CTRL_Pelvis/transform1/Pelvis/Spine_2
+        weight: 1
+      - path: CTRL_MASTER/CTRL_Pelvis/transform1/Pelvis/Spine_2/Spine
+        weight: 1
+      - path: CTRL_MASTER/CTRL_Pelvis/transform1/Pelvis/Spine_2/Spine/Head
+        weight: 1
+      - path: CTRL_MASTER/CTRL_Pelvis/transform1/Pelvis/Spine_2/Spine/L_Shoulder
+        weight: 1
+      - path: CTRL_MASTER/CTRL_Pelvis/transform1/Pelvis/Spine_2/Spine/L_Shoulder/L_Elbow
+        weight: 1
+      - path: CTRL_MASTER/CTRL_Pelvis/transform1/Pelvis/Spine_2/Spine/L_Shoulder/L_Elbow/L_Wrist
+        weight: 1
+      - path: CTRL_MASTER/CTRL_Pelvis/transform1/Pelvis/Spine_2/Spine/L_Shoulder/L_Elbow/L_Wrist/L_Hand
+        weight: 1
+      - path: CTRL_MASTER/CTRL_Pelvis/transform1/Pelvis/Spine_2/Spine/R_Shoulder
+        weight: 1
+      - path: CTRL_MASTER/CTRL_Pelvis/transform1/Pelvis/Spine_2/Spine/R_Shoulder/R_Elbow
+        weight: 1
+      - path: CTRL_MASTER/CTRL_Pelvis/transform1/Pelvis/Spine_2/Spine/R_Shoulder/R_Elbow/R_Wrist
+        weight: 1
+      - path: CTRL_MASTER/CTRL_Pelvis/transform1/Pelvis/Spine_2/Spine/R_Shoulder/R_Elbow/R_Wrist/R_Hand
+        weight: 1
+      - path: CTRL_MASTER/StaffSpawn
+        weight: 1
+      - path: DontTouchThis
+        weight: 1
+      - path: DontTouchThis/pasted__polySurface4
+        weight: 1
+      - path: Magus
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 1
+    - serializedVersion: 16
+      name: Land
+      takeName: Take 001
+      firstFrame: 24
+      lastFrame: 40
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
       loopBlendOrientation: 0
       loopBlendPositionY: 0
       loopBlendPositionXZ: 0

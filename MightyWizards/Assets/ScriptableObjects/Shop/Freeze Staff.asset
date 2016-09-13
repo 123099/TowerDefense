@@ -9,7 +9,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: af405928e74cb2c469820ffd16d47b95, type: 3}
-  m_Name: Basic Staff
+  m_Name: Freeze Staff
   m_EditorClassIdentifier: 
   item: {fileID: 11400000, guid: 6e761f49eee8fc54382117d9157c7a04, type: 2}
   itemName: Basic Staff
