@@ -33,8 +33,7 @@ public class Enemy : MonoBehaviour {
 
         halfHeight = GetComponent<Collider>().bounds.extents.y;
 
-        if (attackRange >= rangeThreshold)
-            animator.SetBool("Ranged", true);
+        animator.SetBool("Ranged", attackRange >= rangeThreshold);
 
         rigidbody.useGravity = isGroundUnit;
 
@@ -51,16 +50,21 @@ public class Enemy : MonoBehaviour {
 
     private void Update ()
     {
+        if(!wizardBase) Win();
+
         if(won || frozen) return;
 
-        if(!wizardBase) Win();
+        target = GetTarget();
 
         if (target)
         {
             if (target.GetComponent<WizardBase>())
             {
                 Health t = GetTarget();
+                if (t && t.GetComponent<Wall>() && t.IsAlive())
+                    target = t;
             }
+
             if (target.IsAlive())
             {
                 Attack();
@@ -68,7 +72,6 @@ public class Enemy : MonoBehaviour {
         }
         else
         {
-            target = GetTarget();
             Move();
         }
     }
@@ -124,7 +127,6 @@ public class Enemy : MonoBehaviour {
 
     private void Win ()
     {
-        print("Win!");
         Stop();
         target = null;
         won = true;
@@ -145,8 +147,23 @@ public class Enemy : MonoBehaviour {
 
     public void DestroySelf ()
     {
-        Destroy(gameObject);
+        if (isGroundUnit)
+            StartCoroutine(destroySelf());
+        else
+            Destroy(gameObject);
     }
+
+    private IEnumerator destroySelf ()
+    {
+        Vector3 start = transform.position;
+        Vector3 destination = start + 0.5f*Vector3.down;
+        for (float t = 0; t <= 1; t += 0.05f)
+        {
+            transform.position = Vector3.Slerp(start, destination, t);
+            yield return 0;
+        }
+        Destroy(gameObject);
+}
 
     public void SpawnProjectile ()
     {

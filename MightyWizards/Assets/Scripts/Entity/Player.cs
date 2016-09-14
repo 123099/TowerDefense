@@ -27,6 +27,7 @@ public class Player : MonoBehaviour {
     public UnityEvent OnLand;
     public UnityEvent OnAttack;
     public UnityEvent OnSpellCastStart;
+    public UnityEvent OnDeath;
     #endregion
 
     private Transform fireLocation;
@@ -247,5 +248,15 @@ public class Player : MonoBehaviour {
         staffSpawn = GameUtils.FindRecursively(model.transform, "StaffSpawn");
         if (!staffSpawn)
             Debug.Log("Could not find 'StaffSpawn' in player model");
+    }
+
+    private void OnDestroy ()
+    {
+        OnDeath.Invoke();
+    }
+
+    public void DestroySelf ()
+    {
+        Destroy(gameObject);
     }
 }

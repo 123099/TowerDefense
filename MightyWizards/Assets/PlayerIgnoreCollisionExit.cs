@@ -14,6 +14,6 @@ public class PlayerIgnoreCollisionExit : MonoBehaviour {
 
     public void OnModelLoaded(GameObject model)
     {
-        platformCollider = model.GetComponent<Collider>();
+        platformCollider = GameUtils.FindRecursively(model.transform, "Frame").GetComponent<Collider>();
     }
 }

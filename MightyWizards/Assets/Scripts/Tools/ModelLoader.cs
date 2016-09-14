@@ -92,7 +92,6 @@ public class ModelLoader : MonoBehaviour {
 
     public void DeleteModel ()
     {
-        print(model);
         GameObject resource = Resources.Load<GameObject>(model);
         GameObject[] previousInstances = CheckInstanceExists(resource);
         foreach (GameObject previousInstance in previousInstances)

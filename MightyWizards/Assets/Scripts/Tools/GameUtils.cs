@@ -139,19 +139,43 @@ public static class GameUtils
 
     public static Transform FindRecursively(Transform startTransform, string childName)
     {
+        //if (startTransform.childCount == 0)
+        //    return null;
+
+        //foreach (Transform child in startTransform)
+        //    if (child.name == childName)
+        //        return child;
+        //    else
+        //    {
+        //        Transform found = FindRecursively(child, childName);
+        //        if (found)
+        //            return found;
+        //    }
+
+        //return null;
+
+        Transform[] found = FindAllRecursively(startTransform, childName);
+        if (found.Length == 0) return null;
+        else return found[0];
+    }
+
+    public static Transform[] FindAllRecursively (Transform startTransform, string childName)
+    {
+        List<Transform> transforms = new List<Transform>();
+
         if (startTransform.childCount == 0)
-            return null;
+            return transforms.ToArray();
 
         foreach (Transform child in startTransform)
-            if (child.name == childName)
-                return child;
+            if (child.name.Contains(childName))
+                transforms.Add(child);
             else
             {
-                Transform found = FindRecursively(child, childName);
-                if (found)
-                    return found;
+                Transform[] found = FindAllRecursively(child, childName);
+                if (found.Length > 0)
+                    transforms.AddRange(found);
             }
 
-        return null;
+        return transforms.ToArray();
     }
 }

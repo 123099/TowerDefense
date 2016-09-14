@@ -9,12 +9,17 @@ public class ShopKeeper : MonoBehaviour {
     [Tooltip("The shop this keeper is keeping")]
     [SerializeField] private Shop shop;
 
-    [Tooltip("The subtitle for the shop. This displays the currency of the shop")]
-    [SerializeField] private Text subtitle;
     [Tooltip("The text area for the shop. This displays important messages")]
     [SerializeField] private Text messages;
     [Tooltip("The text area for the selected item description.")]
     [SerializeField] private Text itemDescription;
+
+    [Tooltip("Color for successful purchase")]
+    [SerializeField] private Color purchaseColor;
+    [Tooltip("Color for no funds")]
+    [SerializeField] private Color fundsColor;
+    [Tooltip("Color for item name")]
+    [SerializeField] private Color itemColor;
 
     [Tooltip("Staff button template")]
     [SerializeField] private ShopItemUI staffTemplate;
@@ -33,8 +38,6 @@ public class ShopKeeper : MonoBehaviour {
 
     private void OnEnable ()
     {
-        subtitle.text = "We only accept " + shop.GetCurrency().name;
-
         spawnedButtons = new List<GameObject>();
 
         SetupCategory(ShopItemCategory.Staff, staffTemplate);
@@ -68,8 +71,8 @@ public class ShopKeeper : MonoBehaviour {
             Vector2 anchorMin = shopItemTransform.anchorMin;
             Vector2 anchorMax = shopItemTransform.anchorMax;
 
-            anchorMin.x *= i + 1;
-            anchorMax.x *= i + 1;
+            anchorMin.x *= 2 * i + 1;
+            anchorMax.x *= 2 * i + 1;
 
             shopItemTransform.anchorMin = anchorMin;
             shopItemTransform.anchorMax = anchorMax;
@@ -115,7 +118,7 @@ public class ShopKeeper : MonoBehaviour {
     private void DisplaySelectedItem(ShopItem item)
     {
         messages.text = item.GetName();
-        messages.color = Color.cyan;
+        messages.color = itemColor;
 
         itemDescription.text = item.GetDesc();
     }
@@ -125,12 +128,12 @@ public class ShopKeeper : MonoBehaviour {
         if (!success)
         {
             messages.text = "Insufficient funds!";
-            messages.color = Color.red;
+            messages.color = fundsColor;
         }
         else
         {
             messages.text = "Purchased successfully!";
-            messages.color = Color.green;
+            messages.color = purchaseColor;
         }
     }
 

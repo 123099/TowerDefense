@@ -65,6 +65,7 @@ public class PickupSpawner : MonoBehaviour {
 
     private void onLastSpawnedCollected ()
     {
-        spawnTimer.SetLastReadyTime(Time.time);
+        if(spawnTimer != null)
+            spawnTimer.SetLastReadyTime(Time.time);
     }
 }

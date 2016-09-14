@@ -36,20 +36,23 @@ public class Staff : ScriptableObject {
 
     public void Attack (Transform fireLocation)
     {
-        Enemy[] nearestEnemies = GameUtils.GetNearestObjectsInFrontOf<Enemy>(fireLocation, Vector3.down, autoAimRadius, 3, maxEnemiesHit);
-        Debug.Log(nearestEnemies.Length);
-        foreach (Enemy enemy in nearestEnemies)
-            Debug.Log(enemy.name);
+        Enemy[] nearestEnemies = GameUtils.GetNearestObjectsInFrontOf<Enemy>(fireLocation, Vector3.down, autoAimRadius, 3, 999);
+
         if (nearestEnemies.Length > 0)
         {
-            foreach (Enemy enemy in nearestEnemies)
+            int shots = 0;
+            for (int i = 0; i < nearestEnemies.Length && shots < maxEnemiesHit; ++i)
             {
-                if(!enemy.GetComponent<Health>().IsAlive()) continue;
+                Enemy enemy = nearestEnemies[i];
+
+                if (!enemy.GetComponent<Health>().IsAlive())
+                    continue;
 
                 Quaternion rotation = Quaternion.LookRotation(enemy.transform.position + Vector3.up - fireLocation.transform.position);
                 Projectile projectile = basicAttack.SpawnProjectile(fireLocation, rotation);
                 basicAttack.Launch(projectile);
                 projectile.SetDamage(basicAttack.damage * damageMultiplier);
+                ++shots;
             }
         }
         else
@@ -58,7 +61,6 @@ public class Staff : ScriptableObject {
             basicAttack.Launch(projectile);
             projectile.SetDamage(basicAttack.damage * damageMultiplier);
         }
-
     }
 
     public void CastSpell ()

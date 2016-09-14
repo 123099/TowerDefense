@@ -408,6 +408,7 @@ GameObject:
   - 114: {fileID: 114000011273424912}
   - 114: {fileID: 114000013068070270}
   - 114: {fileID: 114000010790779476}
+  - 114: {fileID: 114000011951690652}
   m_Layer: 9
   m_Name: Dead archer
   m_TagString: Untagged
@@ -1922,7 +1923,7 @@ Rigidbody:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000011223515012}
   serializedVersion: 2
-  m_Mass: 1
+  m_Mass: 100
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 1
@@ -2190,7 +2191,7 @@ MonoBehaviour:
   scale: {x: 40, y: 40, z: 40}
   animationController: {fileID: 9100000, guid: 5239beda355a4c543b6b423b7c830ceb, type: 2}
   applyRootMotion: 0
-  material: {fileID: 0}
+  material: {fileID: 2100000, guid: 263f569731d85554a9cb93c095f2d55e, type: 2}
   scripts:
   - GolemAnimationEvent
   OnModelLoaded:
@@ -2315,6 +2316,34 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.Slider+SliderEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!114 &114000011951690652
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000011223515012}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e436d84296994b418a1c5f40c67e3ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  deathHeight: -5
+  OnDeath:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 114000010258806972}
+        m_MethodName: Damage
+        m_Mode: 4
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 99999
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
 --- !u!114 &114000013020990560
 MonoBehaviour:
   m_ObjectHideFlags: 1
